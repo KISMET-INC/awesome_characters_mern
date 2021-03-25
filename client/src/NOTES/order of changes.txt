@@ -1,0 +1,45 @@
+#Bottom up
+#Change server.js routes
+// Routes
+#Rename File
+# Change UserController - uppercase findAllUsers
+# change users
+# change User = lowercase require user.controller
+
+// Modeles
+#Rename File
+# Change all UserSchema
+# update model fields with validations
+
+//Controllers
+#Rename File
+#Change user:
+#Change User - lowercase require - lowercase item label in FindAllProducts
+
+
+//Config
+#Update database name
+
+
+
+
+DESIGN THE APP
+
+COMPONENTS
+Form  
+List
+
+//Views
+Product
+Main
+
+VIEW W PATHS
+'/'  - Main [Form /List]
+'/:id' - Product
+
+MOVE VIEWS FROM COMPONENTS
+
+
+#BOTTOM UP DESIGN
+SET PATHS IN APP.JS
+VIEWS

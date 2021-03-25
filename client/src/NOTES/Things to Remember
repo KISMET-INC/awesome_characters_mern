@@ -1,0 +1,108 @@
+SET LOADED ON EDIT
+ON UNIQUE CONTROLLER CHANGE TITLE
+KEEP UPDATE VIEW IN CONTEXT
+
+SUBMIT HANDLER DATA
+{ e=> {submitHandler( e, {price, title, description}}
+
+SET TODO LIST ARRAY
+setTodoList([...todoList , {task: e.target.task.value, completed: false}]);
+
+//*********************************************//
+// NO CURLY BRACES IN .MAP!
+//*********************************************//
+productList.map((product, i) => 
+    <div>
+    <Link to = {`/${product}`}>{product.title}</Link>
+    <button value ={product._id} onClick={deleteItem}>Delete</button>
+    </div>
+)
+
+//*********************************************//
+// ACCESS PRODUCT ID IN REQ BODY
+//*********************************************//
+req.body.data.product._id
+
+//*********************************************//
+// INITIALIZING STATE VARIABLES
+// *Only initialize the main type inside useState
+// this can be an array of ANYTHING
+//*********************************************//
+const [list, setList] = useState([])
+
+setItem({task: e.target.item.value, completed: false})
+
+setList([...list,item]);
+
+//*********************************************//
+// ACCESSING INPUT NAME IN EVENTS
+//
+//*********************************************//
+<input type ='text' name='item'></input>
+
+ setItem({task: e.target.item.value, completed: false})
+
+
+//*********************************************//
+// CHECK BOX AND SELECT DROPDOWN
+//*********************************************//
+import React, { useState } from 'react';
+ 
+const fruits = [
+    'banana',
+    'pineapple',
+    'peach',
+    'apple'
+];
+ 
+export default function FruitForm() {
+    const [selectedFruit, setSelectedFruit] = useState(fruits[0]);
+    const [isTasty, setIsTasty] = useState(false);
+ 
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log('The ' + selectedFruit + ' is' + (isTasty ? '' : ' not') + ' tasty!');
+    }
+ 
+    return (
+        <form onSubmit={handleSubmit}>
+            <select value={selectedFruit} onChange={e => setSelectedFruit(e.target.value)}>
+                {fruits.map((fruit, idx) => (
+                    <option key={idx} value={fruit}>{fruit}</option>
+                )}
+            </select>
+            <label>
+                <input type="checkbox" checked={isTasty} onChange={e => setIsTasty(e.target.checked)}/> Is it tasty?
+            </label>
+            <button>Take a bite!</button>
+        </form>
+    );
+}
+
+//*********************************************//
+// REMOVING AND REPLACING FROM ARRAY
+//*********************************************//
+
+   const setCompleted = (e) =>{
+    const complete = Newitem.completed ? false : true 
+    setNewItem({...item, completed: complete})
+    let NewList = [...list]
+    NewList.splice(i,1, {...Newitem, completed: complete})
+    console.log(i)
+    setList(NewList)
+   }
+
+   const deleteItem = () =>{
+    let NewList = [...list]
+    NewList.splice(i,1)
+    console.log(NewList)
+    setList(NewList);
+   }
+
+
+
+
+//*********************************************//
+// SORT NAMES
+//*********************************************//
+authors.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1).map((author, i) => 

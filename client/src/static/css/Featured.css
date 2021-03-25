@@ -79,3 +79,16 @@
         font-family: var(--monst);
         margin-bottom: 10px;
     }
+
+
+
+/******************** */
+/* OVERRIDE CAROUSEL-DOTS
+/******************** */
+.carousel-dots li button:before {
+    color:white;
+}
+
+.carousel-dots li.carousel-dots-active button:before{
+    color: var(--orange);
+}

@@ -18,6 +18,7 @@
 h1,h2,h3,h4,h5,h6 {
     margin: 0px;
     color: white;
+    font-family: var(--monst);
 }
 
 p{
@@ -33,6 +34,9 @@ input {
     height: 30px;
 }
 
+img {
+    object-fit: cover;
+}
 nav {
     margin-top: 20px;
     background-color: black;
@@ -43,6 +47,11 @@ nav {
     align-items: center;;
     
 }
+
+.link {
+    color: var(--orange)
+}
+
 
 
 .nav_left {

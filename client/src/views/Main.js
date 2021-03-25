@@ -13,7 +13,7 @@ const Main = props => {
         <>
         <Nav />
         <Featured />
-        
+        <Honorable />
         </>
     )
 

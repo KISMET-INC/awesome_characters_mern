@@ -1,0 +1,29 @@
+#honorable_wrapper {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 75px;
+}
+
+#honorable_wrapper h3 {
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+#honorable_wrapper span {
+    font-size: 15px;
+}
+
+.honorable_cards {
+    justify-content: space-between;
+}
+
+.honorable_cards #character_wrapper:nth-child(1){
+    margin-left: 0px;
+}
+
+.carousel-initialized {
+    width: 100%;
+}
+
+
+

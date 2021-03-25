@@ -1,5 +1,81 @@
-.featured h2 {
+#feature_wrapper{
+    width:70%;
+    margin: auto;
+}
+
+.feature_title {
     color:white;
     font-family: var(--monst);
     font-size: 20px;
+    margin:15px 0px;
+    margin-top: 30px;
 }
+
+
+/******************** */
+/* POST 
+/******************** */
+.feature_post{
+    background-color: var(--transblack);
+    border-top: 5px dashed var(--orange);
+    border-bottom: 5px dashed var(--orange);
+    height: 350px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+    .feature_post img {
+        height: 100%;
+        width:350px;
+        object-fit: cover;
+        border-radius: 80px 10px 100px 10px;
+        border: 2px solid var(--orange);
+    }
+
+
+/******************** */
+/* INFO
+/******************** */
+.feature_info {
+    width: 35%;
+}
+
+.feature_info .top, .feature_info .middle {
+    margin-bottom: 20px;
+}
+
+
+.feature_info h3 {
+    font-family: var(--monst);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.feature_info p {
+    font-family: var(--comforta);
+    margin-bottom: 10px;
+}
+
+
+
+/******************** */
+/* BUTTONS
+/******************** */
+.feature_btns{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .feature_btns button {
+        margin-bottom: 20px;
+    }
+
+    .feature_btns h3 {
+        font-family: var(--monst);
+        margin-bottom: 10px;
+    }

@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    color:white;
     
 }
 
@@ -10,9 +11,11 @@
     --lightgold: #EDD087;
     --medgold:  rgba(218, 165, 32,0.5);
     --darkgold: #7C5E13;
+    --orange: #FF9100;
+    --transblack: rgb(0,0,0,0.5);
 }
 
-h1 {
+h1,h2,h3,h4,h5,h6 {
     margin: 0px;
     color: white;
 }
@@ -86,12 +89,22 @@ nav {
     display:flex;
 }
 
+.monst {
+    font-family: var(--monst);
+}
+
+.comforta {
+    font-family: var(--comforta)
+}
+
+
 button {
     border-radius: 8px;
     background-color: var(--lightgold);
     border: 2px solid var(--medgold);
-
+    color: var(--transblack);
     width: 150px;
     height: 25px;
+    font-weight: bold;
 
 }

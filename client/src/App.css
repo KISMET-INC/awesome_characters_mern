@@ -26,7 +26,7 @@ p{
 }
 
 body {
-    background-image: url('./static/img/background.jpg');
+    background-image: url('./static/img/background2.jpg');
 }
 
 input {
@@ -52,7 +52,13 @@ nav {
     color: var(--orange)
 }
 
+i.fa-linkedin {
+    color: #0077B5
+}
 
+i.fa-github {
+    color:black;
+}
 
 .nav_left {
     align-items: center;

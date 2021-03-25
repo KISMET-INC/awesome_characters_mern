@@ -16,7 +16,7 @@ const Nav = props => {
                     
                     <div class ="heading">
                         <p>Rate your favorite movie characters</p>
-                        <h1>Awesome Movie Characters</h1>
+                        <h1>Epic Movie Characters</h1>
                     </div>
                 </section>
 

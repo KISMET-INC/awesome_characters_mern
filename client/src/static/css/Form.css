@@ -1,0 +1,37 @@
+#add_form_wrapper div.flex {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+#add_form_wrapper form{
+    width: 50%;
+    flex-direction: column;
+    margin:auto;
+}
+
+#add_form_wrapper img {
+    width: 400px;
+    border-radius: 120px 20px 20px 120px;
+    border: 2px dashed var(--orange);
+    opacity:0.5;
+}
+
+#add_form_wrapper h2 {
+    text-align: center;
+}
+
+#add_form_wrapper p {
+    text-align: center;
+    font-family: var(--comforta);
+    color: var(--orange);
+    margin-bottom: 30px;
+}
+
+#add_form_wrapper form input {
+    height: 30px;
+    margin-bottom: 20px;
+    border: 2px dashed var(--orange);
+    background-color: transparent;
+}

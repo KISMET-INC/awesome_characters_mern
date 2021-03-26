@@ -6,13 +6,13 @@ import {navigate} from '@reach/router';
 
 const AddCharBtn = props => {
 
-    const to_search = () =>{
-        navigate('/add_char')
+    const to_add = () =>{
+        navigate('/add')
     }
 
 
 return (
-    <button onClick = { to_search }>Add Character</button>
+    <button onClick = { to_add}>Add Character</button>
 )
 
 }

@@ -5,28 +5,44 @@ import Featured from '../components/Featured';
 import Footer from '../components/Footer';
 import Honorable from '../components/Honorable';
 import Nav from '../components/Nav.js';
+import Test from '../components/Test.js';
 import '../static/css/Main_Breakpoints.css';
+import axios from 'axios';
 
 
 const Main = props => {
     const [windowSize, setWindowSize] = useState(window.innerWidth);
+    const [characterList, setCharacterList] = useState([])
     
 
-    useEffect (()=>{
-        window.addEventListener("resize", ()=>{
-            setWindowSize(window.innerWidth)
+    // useEffect (()=>{
+    //     window.addEventListener("resize", ()=>{
+    //         setWindowSize(window.innerWidth)
+    //     })
         
-    }, [windowSize])
+    // }, [windowSize]);
+
+    useEffect(()=> {
+        axios.get('http://localhost:8000/api/characters/')
+        .then(response=>{
+            setCharacterList(response.data.characters)
+            console.log((response.data.characters[0].movie == undefined))
+        }).catch(err=>console.log(err))
+
+    },[]);
+
 
     
-});
+
     return (
-        <>
+        <div>
+
         <Nav />
-        <Featured />
-        <Honorable windowSize = {windowSize}/>
+        <Featured characterList ={characterList}/>
+        <Honorable characterList ={characterList} />
         <Footer />
-        </>
+       
+        </div>
     )
 
 }

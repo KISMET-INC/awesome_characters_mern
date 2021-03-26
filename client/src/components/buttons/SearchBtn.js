@@ -4,17 +4,17 @@ import {navigate} from '@reach/router';
 
 
 
-const Search_Btn = props => {
+const SearchBtn = props => {
 
-    const to_search = () =>{
+    const goto_search = () =>{
         navigate('/search')
     }
 
 
 return (
-    <button onClick = { to_search }>Search</button>
+    <button onClick = { goto_search }>Search</button>
 )
 
 }
 
-export default Search_Btn;
+export default SearchBtn;

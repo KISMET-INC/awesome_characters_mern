@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import '../App.css';
 import Featured from '../components/Featured';
 import Footer from '../components/Footer';
 import Honorable from '../components/Honorable';
 import Nav from '../components/Nav.js';
-import Test from '../components/Test.jsx';
 import '../static/css/Main_Breakpoints.css';
 
 
@@ -23,7 +22,6 @@ const Main = props => {
 });
     return (
         <>
-
         <Nav />
         <Featured />
         <Honorable windowSize = {windowSize}/>

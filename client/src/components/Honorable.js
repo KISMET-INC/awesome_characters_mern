@@ -1,6 +1,6 @@
 import { Link } from '@reach/router';
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
+import { useEffect,useState } from 'react';
 import '../App.css';
 import '../static/css/Honorable.css'
 import CharacterCard from './CharacterCard';
@@ -10,18 +10,34 @@ import Slider from 'infinite-react-carousel';
 
 
 const Honorable = props => {
+    const [numSlides, setNumSlides] = useState(2)
+    const [size, setSize]  = useState(true)
+    const [windowSize, setWindowSize] =useState(window.innerWidth)
 
-    const [setWinSize, getWinSize] = useState ({
-        width:window.innerWidth
-    });
+    const changeNumSlides = useCallback(() => {
+        if(windowSize > 500)
+            setNumSlides(1)
+    },[]);
 
-    console.log("hi")
 
+    useEffect(()=> {
+        window.addEventListener("resize", ()=>{
+            setWindowSize(window.innerWidth)
+            changeNumSlides()
+            console.log('hi')
+        })
+    
+
+    },[])
+    
+    
     const settings = {
         dots: true,
-        slidesToShow: 1,
+        slidesToShow: numSlides,
         arrows:false,
     };
+    console.log(numSlides)
+    console.log(windowSize)
 
     return(
         <div id = "honorable_wrapper">
@@ -44,5 +60,6 @@ const Honorable = props => {
 
     )
 }
+
 
 export default Honorable;

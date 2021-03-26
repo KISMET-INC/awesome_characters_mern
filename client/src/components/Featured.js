@@ -12,10 +12,11 @@ import Edit_Btn from './buttons/Edit_Btn';
 const Featured = props => {
 
     const settings =  {
-        autoplay: true,
+        //autoplay: true,
         arrows: false,
         dots: true,
-        wheel: true,
+        //fwheel: true,
+        gutter: 4,
         slidesToShow: 1,
         duration: 700,
         autoplaySpeed: 8000,

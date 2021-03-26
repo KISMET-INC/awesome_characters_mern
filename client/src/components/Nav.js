@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import '../static/css/Nav.css'
 import clapper from '../static/img/clapper.png'; 
 import Add_Char_Btn from './buttons/Add_Char_Btn';
 import Search_Btn from './buttons/Search_Btn';
@@ -22,7 +23,7 @@ const Nav = props => {
 
                 <section class ="nav_right">
                     <Signature />
-                    <div  class="flex">
+                    <div class="flex">
                         <Search_Btn />
                         <Add_Char_Btn />
                     </div> 

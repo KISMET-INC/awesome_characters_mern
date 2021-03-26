@@ -7,10 +7,11 @@ import Slider from 'infinite-react-carousel';
 
 
 
+
 const Honorable = props => {
     const settings = {
         dots: true,
-        slidesToShow: 4,
+        slidesToShow: 1,
         arrows:false,
     };
 

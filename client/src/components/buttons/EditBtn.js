@@ -3,15 +3,15 @@ import { navigate } from '@reach/router';
 import '../../App.css';
 
 
-const Edit_Btn = props => {
+const EditBtn = props => {
 
     const goto_edit = ()=> {
         navigate('/edit')
     }
 
     return (
-        <button onClick = 'goto_edit'>Edit</button>
+        <button onClick = {goto_edit}> Edit</button>
     )
 }
 
-export default Edit_Btn;
+export default EditBtn;

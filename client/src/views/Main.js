@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import Character_Card from '../components/Character_Card';
 import Featured from '../components/Featured';
 import Footer from '../components/Footer';
 import Honorable from '../components/Honorable';

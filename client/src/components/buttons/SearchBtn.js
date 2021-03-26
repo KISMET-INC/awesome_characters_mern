@@ -4,7 +4,7 @@ import {navigate} from '@reach/router';
 
 
 
-const Search_Btn = props => {
+const SearchBtn = props => {
 
     const goto_search = () =>{
         navigate('/search')
@@ -17,4 +17,4 @@ return (
 
 }
 
-export default Search_Btn;
+export default SearchBtn;

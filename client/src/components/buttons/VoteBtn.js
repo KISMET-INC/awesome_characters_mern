@@ -3,7 +3,7 @@ import '../../App.css'
 import { navigate } from '@reach/router'
 
 
-const Vote_Btn = props =>{
+const VoteBtn = props =>{
 
     const goto_vote =() =>{
         navigate('/vote')
@@ -14,4 +14,4 @@ const Vote_Btn = props =>{
     )
 }
 
-export default Vote_Btn;
+export default VoteBtn;

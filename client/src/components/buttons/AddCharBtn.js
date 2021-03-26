@@ -4,7 +4,7 @@ import {navigate} from '@reach/router';
 
 
 
-const Add_Char_Btn = props => {
+const AddCharBtn = props => {
 
     const to_search = () =>{
         navigate('/add_char')
@@ -17,4 +17,4 @@ return (
 
 }
 
-export default Add_Char_Btn;
+export default AddCharBtn;

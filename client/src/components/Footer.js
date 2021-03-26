@@ -10,14 +10,14 @@ const Footer = props => {
 
     return(
         <>
-        <aside class = 'footer_aside'>
+        <aside className = 'footer_aside'>
             <p>ksanmartin909@gmail.com</p>
             <p>© 2021 Kristen San Martin</p>
         </aside>
-        <div id = 'footer_wrapper' class= 'flex'>
-            <section class='footer_tech'>
+        <div id = 'footer_wrapper' className= 'flex'>
+            <section className='footer_tech'>
                 <h5>Technologies</h5>
-                <div class= 'tech_list flex'>
+                <div className= 'tech_list flex'>
                     <p>MongoDB</p>
                     <p>Express</p>
                     <p>React.js</p>
@@ -28,11 +28,11 @@ const Footer = props => {
                 </div>    
             </section>
 
-            <img class='footer_image' src ={MERN} alt= 'mern logo' /> 
+            <img className='footer_image' src ={MERN} alt= 'mern logo' /> 
 
-            <section class='footer_icons'>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-linkedin"></i>
+            <section className='footer_icons'>
+            <i className="fab fa-github"></i>
+            <i className="fab fa-linkedin"></i>
             </section>
         </div>
     </>

@@ -35,7 +35,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 10px;
-    height: 75px;
+    height: 99px;
+    margin-bottom: 15px;
     
 }
 .footer_aside {

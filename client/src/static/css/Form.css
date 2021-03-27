@@ -3,16 +3,16 @@
     margin: auto;
     margin-bottom: 100px;
     justify-content: space-between;
-    /* flex-direction: column; */
 }
 #add_form_wrapper form{
-    width: 50%;
-    flex-direction: column;
+    width: 60%;
     margin:auto;
+    height: 300px;
 }
 
 #add_form_wrapper img {
-    width: 400px;
+    width: 350px;
+    height: 100%;
     border-radius: 120px 20px 20px 120px;
     border: 2px dashed var(--orange);
     opacity:0.5;
@@ -34,4 +34,27 @@
     margin-bottom: 20px;
     border: 2px dashed var(--orange);
     background-color: transparent;
+}
+
+
+
+
+
+#add_form_wrapper label,
+#add_form_wrapper input {
+    width: 90%
+}
+
+
+
+#add_form_wrapper form .col_1, 
+#add_form_wrapper form .col_2  { 
+    flex-direction: column;
+
+}
+
+
+
+#add_form_wrapper form button {
+
 }

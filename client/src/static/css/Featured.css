@@ -15,18 +15,7 @@
 /******************** */
 /* POST 
 /******************** */
-.feature_post{
-    background-color: var(--transblack);
-    border-top: 5px dashed var(--orange);
-    border-bottom: 5px dashed var(--orange);
-    height: 350px;
-    margin: auto;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 30px;
-}
+
 
     .feature_post img {
         height: 100%;
@@ -85,6 +74,6 @@
 /******************** */
 /* OVERRIDE CAROUSEL-DOTS
 /******************** */
-.owl-carousel .owl-item img {
+/* .owl-carousel .owl-item img {
     width: 43%
-}
+} */

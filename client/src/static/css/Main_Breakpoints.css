@@ -26,9 +26,7 @@
         width: 80%;
     }
 
-    .carousel_item {
-        width:80%
-    }
+   
     
     /*************************** */
     /* FEATURE BUTTONS
@@ -72,20 +70,23 @@
         }
 }
 
-
-
-
 /*************************** */
-/* BREAK POINT 683px
+/* BREAK POINT 664px
 /*************************** */
-@media(max-width: 683px){
+@media(max-width: 664px){
+    .owl-carousel .owl-item img  {
+    width: 70%;
+}
 
-    /*************************** */
+  /*************************** */
     /* NAV
     /*************************** */
     nav {
-        height: 55px;   
+        margin-top:40px;
+        height: 70px;   
     }
+
+
     .inner_nav.flex {
         flex-direction: column;
         width: 100%;
@@ -96,15 +97,14 @@
 
     }
     .nav_left.flex {
-        margin-bottom: 20px;
-        width: 100%;
+        margin-bottom: 25px;
         justify-self: center;
         margin-top:0px;
     }
     
-   
+
     .nav_left .heading h1 {
-        font-size: 17px;
+        font-size: 25px;
         width:fit-content;
     }
     
@@ -114,12 +114,45 @@
     }
     
     .nav_left img {
-        height: 55px;
-        margin-left: 25px;
+        height: 70px;
+        margin-left: -25px;
     }
 
     .nav_right {
         width: 80%;
+    }
+
+
+    #feature_wrapper {
+        margin-top: 120px;
+       
+    }
+    
+    #footer_wrapper {
+        align-items: flex-start
+    }
+    #footer_wrapper img{
+        display:none;
+    }
+
+}
+
+
+/*************************** */
+/* BREAK POINT 664px
+/*************************** */
+@media(max-width: 664px){
+
+
+}
+
+/*************************** */
+/* BREAK POINT 563px
+/*************************** */
+@media(max-width: 563px){
+
+    .owl-carousel .owl-item img  {
+        width: 100%;
     }
 
     /*************************** */
@@ -181,6 +214,61 @@
     
 
     #footer_wrapper {
-        display: none;
+        /* display: none; */
     }
+}
+
+/*************************** */
+/* BREAK POINT 426px
+/*************************** */
+@media(max-width: 426px){
+
+   
+    .nav_left.flex {
+        width:69%;
+    }
+
+    .nav_left img {
+        margin-left: 0px;
+    }
+
+    .nav_left .heading h1 {
+
+        font-size: 23px;
+
+    }
+
+
+
+}
+
+
+/*************************** */
+/* BREAK POINT 326px
+/*************************** */
+@media(max-width: 280px){
+
+    #footer_wrapper {
+        flex-direction: column;
+    }
+
+    .nav_left .heading p {
+        display: none;
+
+    }
+
+
+    .feature_info {
+        right: 250px
+    }
+
+    .feature_btns {
+        right: 200px;
+    }
+
+
+
+
+   
+
 }

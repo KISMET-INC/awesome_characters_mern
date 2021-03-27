@@ -15,6 +15,22 @@ import axios from 'axios';
 
 const Honorable = props => {
     const [characterList, setCharacterList] = useState([])
+    const [resState] = useState({
+       
+            0: {
+                items: 2,
+            },
+            450: {
+                items: 2,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            },
+
+    })
 
     useEffect(()=> {
         axios.get('http://localhost:8000/api/characters/')
@@ -32,9 +48,10 @@ const Honorable = props => {
 
             <OwlCarousel 
             className='owl-theme' 
-            loop margin={10} 
-            items= {5} 
+            loop
             autoplayHoverPause = {true}
+            responsiveClass={true}
+            responsive = {resState}
             >
 
     

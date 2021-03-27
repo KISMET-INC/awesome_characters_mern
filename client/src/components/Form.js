@@ -5,13 +5,12 @@ import "../static/css/Form.css"
 
 
 const Form = props => {
-    const [charName, setCharName] = useState("")
-    const [movieTitle, setMovieTitle] = useState("")
-    const [movieYear, setMovieYear] = useState("")
-    const [actor, setActor] = useState("")
-    const [quote, setQuote] = useState("")
+    const [setCharName] = useState("")
+    const [ setMovieTitle] = useState("")
+    const [setMovieYear] = useState("")
+    const [ setActor] = useState("")
     const [voters, setVoters] = useState([])
-    const [imgUrl, setImgUrl] = useState("")
+    const [setImgUrl] = useState("")
 
 
 

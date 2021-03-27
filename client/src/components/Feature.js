@@ -30,7 +30,7 @@ return(
                 <div className = "bottom">
                     <h3>Votes:</h3>
                     {
-                        char.votes == undefined ? <p></p> : <p>{char.votes}</p>
+                        char.votes === undefined ? <p></p> : <p>{char.votes}</p>
                     }
                 </div>
         </div>

@@ -1,42 +1,46 @@
-import React from 'react';
-import Slider from 'infinite-react-carousel';
-
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import '../App.css';
 import '../static/css/Featured.css';
-import VoteBtn from './buttons/VoteBtn';
-import EditBtn from './buttons/EditBtn';
 import Feature from './Feature';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+
 
 
 const Featured = props => {
+    const [characterList, setCharacterList] = useState([])
 
-    const settings =  {
-        //autoplay: true,
-        arrows: false,
-        dots: true,
-        //fwheel: true,
-        gutter: 4,
-        slidesToShow: 1,
-        duration: 700,
-        autoplaySpeed: 8000,
+    useEffect(()=> {
+        axios.get('http://localhost:8000/api/characters/')
+        .then(response=>{
+            setCharacterList(response.data.characters)
+            console.log((response.data.characters[0].movie === undefined))
+        }).catch(err=>console.log(err))
 
-    };
+    },[]);
+
+
     return(
         <div id= "feature_wrapper">
             <h2 className= "feature_title">★ FEATURED  ★ Top 5</h2>
-            
-            {/*  */}
-    
-            {/* ?<Slider { ...settings }> */}
+
+            <OwlCarousel className='owl-theme' loop margin={10} nav>
+
             {
-                props.characterList.map((char,i)=>
-                        <Feature key = {i} char= {char} />
+                
+                characterList.map((char,i)=>
+                <div className='item'>
+                    <Feature key = {i} char = {char} />
+                </div>
                 )
             
             }
+
+            </OwlCarousel>
                 
-               
-            {/* </Slider> */}
+    
 
         </div>
         

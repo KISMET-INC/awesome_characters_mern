@@ -31,7 +31,7 @@ const Featured = props => {
             {
                 
                 characterList.map((char,i)=>
-                <div className='item'>
+                <div key = {i} className='item'>
                     <Feature key = {i} char = {char} />
                 </div>
                 )

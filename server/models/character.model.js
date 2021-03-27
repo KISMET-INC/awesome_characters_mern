@@ -11,7 +11,7 @@ const CharacterSchema = new mongoose.Schema({
         type: String
     },
 
-    movieTitle: {
+    title: {
         type: String,
         required: [true, "A Movie Title is required"]
     },

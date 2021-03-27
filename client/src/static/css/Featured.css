@@ -85,10 +85,6 @@
 /******************** */
 /* OVERRIDE CAROUSEL-DOTS
 /******************** */
-.carousel-dots li button:before {
-    color:white;
-}
-
-.carousel-dots li.carousel-dots-active button:before{
-    color: var(--orange);
+.owl-carousel .owl-item img {
+    width: 43%
 }

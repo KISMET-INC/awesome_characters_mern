@@ -1,5 +1,6 @@
 import React ,{ useState} from 'react';
 import "../App.css"
+import "../static/css/Featured.css"
 import "../static/css/Form.css"
 
 
@@ -21,11 +22,11 @@ const Form = props => {
     return (
         <div id = "add_form_wrapper">
             <h2>Add to the EPIC...</h2>
-            <p>Who do you think is an epic character?</p>
-            <div class= 'flex'>
+            <p>Who do you think is epic?</p>
+            <div className= 'feature_post flex'>
                 <img src="https://aatfweb.files.wordpress.com/2017/06/film.jpg" alt ="film icon"></img>
 
-                <form class='flex' onSubmit={add_character}>
+                <form className='flex' onSubmit={add_character}>
                     <label>Character Name:</label>
                     <input type ='text' onChange= {(e)=> setCharName(e.target.value)}></input>
 

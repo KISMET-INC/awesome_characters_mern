@@ -28,19 +28,20 @@ const Featured = props => {
 
             <OwlCarousel 
             className='owl-theme' 
-            loop margin={10} 
+            loop margin={1} 
             items= {1} 
             autoplay = {true} 
             autoplaySpeed = {1500}
             fallbackEasing = {100000}
             autoplayHoverPause = {true}
+            dots = {false}
             >
 
             {
                 
                 characterList.map((char,i)=>
                 <div key = {i} className='item'>
-                    <Feature key = {i} char = {char} />
+                    <Feature i = {i} char = {char} />
                 </div>
                 )
             

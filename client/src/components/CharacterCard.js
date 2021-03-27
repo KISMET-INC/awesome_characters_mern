@@ -16,7 +16,7 @@ const CharacterCard = props => {
             <img src = {char.url} alt={char.charName} />
             <button>Vote</button>
             <h4>{char.charName}</h4>
-            <p>Rank 2 | Votes: 12 </p>
+            <p>Rank {props.i+1} | Votes: 12 </p>
             <h5>{char.movieTitle}</h5>
         </div>
         </>

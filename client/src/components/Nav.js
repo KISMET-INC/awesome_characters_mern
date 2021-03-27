@@ -1,4 +1,5 @@
 import React from 'react';
+import {navigate} from '@reach/router'
 import '../App.css';
 import '../static/css/Nav.css'
 import clapper from '../static/img/clapper.png'; 
@@ -9,11 +10,15 @@ import Signature from './buttons/Signature';
 
 const Nav = props => {
 
+    const return_home = () =>{
+        navigate('/')
+    }
+    
     return (
         <nav className="flex">
             <div className = "inner_nav flex">
                 <section className="nav_left flex">
-                    <img src ={clapper} alt= "movie clapper icon" />
+                    <img onClick={return_home} src ={clapper} alt= "movie clapper icon" />
                     
                     <div className ="heading">
                         <p>Rate your favorite movie characters</p>

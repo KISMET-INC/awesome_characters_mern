@@ -40,7 +40,7 @@ const Honorable = props => {
     
                 {
                     characterList.map((char,i) => 
-                        <CharacterCard key={i} char={char} />
+                        <CharacterCard i = {i} key={i} char={char} />
                     )
                 }
             </OwlCarousel>

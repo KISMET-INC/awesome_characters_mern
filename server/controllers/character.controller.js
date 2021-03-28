@@ -6,9 +6,9 @@ module.exports.findAllCharacters = (req, res) => {
         .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 
-module.exports.findOneSinglePirate = (req, res) => {
+module.exports.findOneSingleCharacter = (req, res) => {
     Character.findOne({ _id: req.params.id })
-        .then((oneSinglePirate) => res.json({ pirate: oneSinglePirate }))
+        .then((oneSingleCharacter) => res.json(oneSingleCharacter ))
         .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 
@@ -18,9 +18,9 @@ module.exports.createNewCharacter = (req, res) => {
         .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 
-module.exports.updateExistingPirate = (req, res) => {
+module.exports.updateExistingCharacter = (req, res) => {
     Character.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-        .then((updatedPirate) => res.json({ pirate: updatedPirate }))
+        .then((updatedCharacter) => res.json({ character: updatedCharacter }))
         .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 

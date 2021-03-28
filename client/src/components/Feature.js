@@ -4,7 +4,6 @@ import '../App.css';
 import '../static/css/Featured.css';
 import VoteBtn from './buttons/VoteBtn';
 import EditBtn from './buttons/EditBtn';
-import { PromiseProvider } from 'mongoose';
 
 
 const Feature = props => {
@@ -38,7 +37,7 @@ return(
         <div className = "feature_btns flex">
             <h3>Rank {props.i+1} </h3>
             <VoteBtn />
-            <EditBtn />
+            <EditBtn char_id = {char._id} />
         </div>
 
     </div>

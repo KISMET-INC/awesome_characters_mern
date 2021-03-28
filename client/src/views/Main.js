@@ -10,13 +10,15 @@ import axios from 'axios';
 
 
 const Main = props => {
-    const [characterList, setCharacterList] = useState([])
+
+    const [characterList, setCharacterList] = useState()
+    const [listLoaded, setListLoaded] = useState(false)
     
-    useEffect(()=> {
+    useEffect(()=> {    
         axios.get('http://localhost:8000/api/characters/')
         .then(response=>{
             setCharacterList(response.data.characters)
-            console.log((response.data.characters[0].movie === undefined))
+            setListLoaded(true)
         }).catch(err=>console.log(err))
 
     },[]);
@@ -27,8 +29,17 @@ const Main = props => {
         <div>
 
         <Nav />
-        <Featured characterList ={characterList}/>
-        <Honorable characterList ={characterList} />
+        
+        {
+            listLoaded && <Featured characterList = { characterList }/>
+            
+        }
+
+{
+            listLoaded && <Honorable characterList = { characterList }/>
+            
+        }
+        
         <Footer />
        
         </div>

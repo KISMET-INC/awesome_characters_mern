@@ -6,25 +6,21 @@ import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import '../static/css/Featured.css';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, {useState} from 'react';
 
 
 
 
 
 const Honorable = props => {
-    const [characterList, setCharacterList] = useState([])
+
     const [resState] = useState({
-       
             0: {
-                items: 2,
-            },
-            450: {
-                items: 2,
-            },
-            600: {
                 items: 1,
+            
+            },
+            700: {
+                items: 2,
             },
             1000: {
                 items: 1,
@@ -32,14 +28,6 @@ const Honorable = props => {
 
     })
 
-    useEffect(()=> {
-        axios.get('http://localhost:8000/api/characters/')
-        .then(response=>{
-            setCharacterList(response.data.characters)
-            console.log((response.data.characters[0].movie === undefined))
-        }).catch(err=>console.log(err))
-
-    },[]);
 
 
     return(
@@ -54,16 +42,15 @@ const Honorable = props => {
             responsive = {resState}
             >
 
-    
                 {
-                    characterList.map((char,i) => 
+                    props.characterList.map((char,i) => 
                         <CharacterCard i = {i} key={i} char={char} />
                     )
                 }
+
             </OwlCarousel>
     
         </div>
-
 
     )
 }

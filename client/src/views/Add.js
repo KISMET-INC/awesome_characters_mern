@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {navigate} from '@reach/router';
 import '../App.css'
 import Form from '../components/Form';
@@ -10,7 +10,8 @@ import axios from 'axios';
 
 
 const Add = props => {
-
+    const [title] = useState("Add to the Epic...")
+    const [subtitle]= useState("Who do you think is an epic movie character?")
     const submitHandler = ( e, data) => {
         e.preventDefault();
 
@@ -28,7 +29,7 @@ const Add = props => {
     return(
         <>
         <Nav />
-        <Form submitHandler = {submitHandler} />
+        <Form title = {title} subtitle ={subtitle} submitHandler = {submitHandler} />
         <Footer />
         </>
     )

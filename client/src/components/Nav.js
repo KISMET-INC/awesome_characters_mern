@@ -10,7 +10,7 @@ import Signature from './buttons/Signature';
 
 const Nav = props => {
 
-    const return_home = () =>{
+    const go_home = () =>{
         navigate('/')
     }
     
@@ -18,7 +18,7 @@ const Nav = props => {
         <nav className="flex">
             <div className = "inner_nav flex">
                 <section className="nav_left flex">
-                    <img onClick={return_home} src ={clapper} alt= "movie clapper icon" />
+                    <img onClick={go_home} src ={clapper} alt= "movie clapper icon" />
                     
                     <div className ="heading">
                         <p>Rate your favorite movie characters</p>
@@ -29,6 +29,7 @@ const Nav = props => {
                 <section className ="nav_right">
                     <Signature />
                     <div className="flex">
+                        <button onClick ={ go_home }>Home</button>
                         <SearchBtn />
                         <AddCharBtn />
                     </div> 

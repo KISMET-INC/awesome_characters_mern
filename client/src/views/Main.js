@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useState } from 'react'
 import '../App.css';
 import Featured from '../components/Featured';
@@ -7,10 +7,11 @@ import Honorable from '../components/Honorable';
 import Nav from '../components/Nav.js';
 import '../static/css/Main_Breakpoints.css';
 import axios from 'axios';
+import Context from '../context/Context';
 
 
 const Main = props => {
-
+    const context = useContext(Context)
     const [characterList, setCharacterList] = useState()
     const [listLoaded, setListLoaded] = useState(false)
     

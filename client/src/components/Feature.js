@@ -12,7 +12,7 @@ console.log(char)
 
 return(
 <div className = 'carousel_item'>
-    <div className = "feature_post film_strip">
+    <div className = "feature_post film_strip flex">
         <img src = {char.url} alt = 'person' />
         
         <div className = "feature_info">

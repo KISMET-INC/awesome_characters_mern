@@ -4,6 +4,7 @@ import '../App.css'
 import Form from '../components/Form';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { navigate } from '@reach/router';
 
 
 
@@ -12,21 +13,32 @@ const Edit = props => {
     const [subtitle, setSubtitle] = useState("");
     const [character,setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
+    const [type] = useState('edit')
+    
 
     useEffect (()=> {
         axios.get(`http://localhost:8000/api/characters/${props.id}`)
             .then(response => {
-                console.log(response.data);
+
                 setSubtitle(response.data.charName)
                 setCharacter(response.data)
                 setCharacterLoaded(true)
             }).catch(errors => {
                 console.log(errors)
             })
-    },[])
-
+    },[props.id])
 
     const submitHandler = (e, data) => {
+        e.preventDefault();
+        console.log("SUBMIT")
+        axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, data)
+        .then(response => {
+            console.log(response)
+            navigate(`/view/${props.id}`)
+        }).catch (error => {
+            console.log(error)
+        })
+    
 
     }
 
@@ -34,7 +46,7 @@ const Edit = props => {
         <>
             <Nav />
             {
-                characterLoaded && <Form type ="edit" character = {character} title = {title}  subtitle = {character.charName} submitHandler = { submitHandler }/>
+                characterLoaded && <Form type ={type} character = {character} title = {title}  subtitle = {subtitle} submitHandler = { submitHandler }/>
 
             }
             <Footer />

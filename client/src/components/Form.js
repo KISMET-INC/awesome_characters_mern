@@ -1,45 +1,40 @@
-import React ,{ useState, useEffect} from 'react';
+import { navigate } from '@reach/router';
+import React ,{ useState} from 'react';
 import "../App.css"
 import "../static/css/Form.css"
-import SubmitBtn from './buttons/DeleteBtn';
 
 
 
 const Form = props => {
-    const {character, setCharacter} = useState(props.character)
-    const [charName,setCharName] = useState("")
-    const [title, setTitle] = useState("")
-    const [year, setYear] = useState("")
-    const [actor, setActor] = useState("")
-    const [votes, setVotes] = useState("kk")
-    const [url, setUrl] = useState("")
-    const [quote, setQuote] = useState("")
+    const [character] = useState(props.character)
+    const [charName,setCharName] = useState(character.charName)
+    const [title, setTitle] = useState(character.title)
+    const [year, setYear] = useState(character.year)
+    const [actor, setActor] = useState(character.actor)
+    const [votes, setVotes] = useState(character.votes)
+    const [url, setUrl] = useState(character.url)
+    const [quote, setQuote] = useState(character.quote)
 
-    useEffect (()=>{
+    const goto_view =() => {
+        navigate(`/view/${character._id}`)
+    }
 
-        if (props.character != undefined){
-            setCharName(props.character.charName)
-            setTitle(props.character.title)
-            setYear(props.character.year)
-            setActor(props.character.actor)
-            setQuote(props.character.quote)
-            setUrl(props.character.url)
+    const go_home =() => {
+        navigate(`/`)
+    }
 
-            console.log(character)
-
-        }
-
-
-    }, [])
 
 
     return (
         <div id = "add_form_wrapper">
             <h2>{props.title}</h2>
             <p>{props.subtitle}</p>
+            {
+                props.type === 'edit' ? <button onClick = {goto_view}>View</button> :<></>
+            }
             <div className= 'film_strip flex'>
             {
-                url != "" ? <img src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
+                charName !== "" ? <img style= {{opacity: 1}} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
             }
 
                 <form  className='flex' onSubmit={ (e) => props.submitHandler( e, { charName, title, year, actor,url, votes, quote } ) }>
@@ -76,9 +71,10 @@ const Form = props => {
 
                         <div>
                             <label htmlFor = 'votes'>Your Name -- be the first vote! </label>
-                            <input name = 'votes' value ="votes" type ='text' onChange= {(e)=> {setVotes(...votes,e.target.value)} }></input>
+                            <input name = 'votes' type ='text' onChange= {(e)=> {  setVotes([...character.votes,[e.target.value]] ) }}></input>
                         </div>
                         <button type='submit'>Submit</button>
+                        <button onClick = {go_home}>Cancel</button>
                     </div>
 
                 </form>

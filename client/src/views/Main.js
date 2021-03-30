@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import '../App.css';
-import Feature_Carousel from '../components/Feature_Carousel';
+import FeatureCarousel from '../components/FeatureCarousel';
 import Footer from '../components/Footer';
-import Honorable_Carousel from '../components/Honorable_Carousel';
+import HonorableCarousel from '../components/HonorableCarousel';
 import Nav from '../components/Nav.js';
 import '../static/css/Main_Breakpoints.css';
 import '../static/css/Main.css';
@@ -37,7 +37,7 @@ const Main = props => {
         
             <div className= 'featured film_strip carousel'>
                 {
-                    listLoaded && <Feature_Carousel characterList = { characterList }/>
+                    listLoaded && <FeatureCarousel characterList = { characterList }/>
                     
                 }
             </div>
@@ -46,7 +46,7 @@ const Main = props => {
 
             < div className = 'honorable carousel'>
                 {
-                    listLoaded && <Honorable_Carousel characterList = { characterList }/>
+                    listLoaded && <HonorableCarousel characterList = { characterList }/>
                     
                 }
             </div>

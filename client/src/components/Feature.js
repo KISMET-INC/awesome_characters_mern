@@ -13,13 +13,13 @@ const Feature = props => {
 const context = useContext(Context)
 const [character] = useState(props.char)
 const [votes, setVotes] = useState(props.char.votes)
+const [string] = useState('feature')
 
 
 
-const updateCharacter = (e,character)=> {
-    context.goto_vote(e,character);
-    setVotes([...votes,"Khalil"])
-    context.setVotedID(character._id)
+const updateCharacter = (e)=> {
+    setVotes([...votes,string])
+    context.goto_vote(e,character,votes,string);
 }
 
 

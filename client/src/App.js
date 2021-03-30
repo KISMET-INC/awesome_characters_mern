@@ -21,11 +21,12 @@ function App() {
 const [val, setVal] = useState('Anonymous')
 const [character, setCharacter] = useState({})
 const [characterList, setCharacterList] = useState()
-const [votedID, setVotedID] = useState()
 
-const goto_vote =(e,character) =>{
+const goto_vote =(e,character,votes,string) =>{
   e.preventDefault();
-  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...character.votes, "Khalil"]})
+  console.log(`votes: ${votes}`)
+  console.log(`votes: ${votes.length}`)
+  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,string] })
   .then(response => {
       console.log(response)
   }).catch ( error => {
@@ -34,23 +35,13 @@ const goto_vote =(e,character) =>{
   
 }
 
-  useEffect(()=> {    
-    console.log("getCharlist")
-    axios.get('http://localhost:8000/api/characters/')
-    .then(response=>{
-        setCharacterList(response.data.characters.sort((a, b) => a.votes.length > b.votes.length ? 1 : -1))
-
-    }).catch(err=>console.log(err))
-
-  },[votedID]);
-
 
 
 
 
   return (
     <div className="App">
-      <Context.Provider value= {{ setVotedID, val,setVal, goto_vote, character, setCharacter, characterList}}>
+      <Context.Provider value= {{ val,setVal, goto_vote, character, setCharacter, characterList}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

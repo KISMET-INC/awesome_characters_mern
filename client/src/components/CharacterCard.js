@@ -11,6 +11,7 @@ const CharacterCard = props => {
     const context = useContext(Context)
     const [character] = useState(props.char)
     const [votes, setVotes] = useState(props.char.votes)
+    const [string] = useState('CharCard')
 
 
     const clickHandler =(e) =>{
@@ -20,10 +21,12 @@ const CharacterCard = props => {
     }
     
 
-    const updateCharacter = (e,character)=> {
-        context.goto_vote(e,character);
-        setVotes([...votes,"Khalil"])
+    const updateCharacter = (e)=> {
+        setVotes([...votes,string])
+        context.goto_vote(e,character,votes,string);
     }
+    
+    
 
 
 

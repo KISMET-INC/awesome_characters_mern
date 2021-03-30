@@ -18,6 +18,7 @@ const [votes, setVotes] = useState(props.char.votes)
 const updateCharacter = (e,character)=> {
     context.goto_vote(e,character);
     setVotes([...votes,"Khalil"])
+    context.setVotedID(character._id)
 }
 
 

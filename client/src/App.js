@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Router} from '@reach/router';
 import Main from './views/Main';
 import Context from './context/Context'
@@ -19,10 +19,13 @@ import axios from 'axios'
 function App() {
 
 const [val, setVal] = useState('Anonymous')
+const [character, setCharacter] = useState({})
+const [characterList, setCharacterList] = useState()
+const [votedID, setVotedID] = useState()
 
-const goto_vote =(e,charcter) =>{
+const goto_vote =(e,character) =>{
   e.preventDefault();
-  axios.put(`http://localhost:8000/api/characters/edit/${charcter._id}`, { votes : [...charcter.votes, "Khalil"]})
+  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...character.votes, "Khalil"]})
   .then(response => {
       console.log(response)
   }).catch ( error => {
@@ -31,13 +34,23 @@ const goto_vote =(e,charcter) =>{
   
 }
 
-const [character, setCharacter] = useState({})
+  useEffect(()=> {    
+    console.log("getCharlist")
+    axios.get('http://localhost:8000/api/characters/')
+    .then(response=>{
+        setCharacterList(response.data.characters.sort((a, b) => a.votes.length > b.votes.length ? 1 : -1))
+
+    }).catch(err=>console.log(err))
+
+  },[votedID]);
+
+
 
 
 
   return (
     <div className="App">
-      <Context.Provider value= {{val,setVal, goto_vote, character, setCharacter}}>
+      <Context.Provider value= {{ setVotedID, val,setVal, goto_vote, character, setCharacter, characterList}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

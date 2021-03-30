@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {Router} from '@reach/router';
 import Main from './views/Main';
 import Context from './context/Context'
@@ -11,16 +11,13 @@ import axios from 'axios'
 
 
 
-// TRICKLE DOWN STATE
-
-
 
 
 function App() {
 
 const [val, setVal] = useState('Anonymous')
 const [character, setCharacter] = useState({})
-const [characterList, setCharacterList] = useState()
+const [characterList] = useState()
 
 const goto_vote =(e,character,votes,string) =>{
   e.preventDefault();

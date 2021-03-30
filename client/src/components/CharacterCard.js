@@ -1,4 +1,3 @@
-import { navigate } from '@reach/router';
 import React, { useState, useContext } from 'react';
 import '../App.css';
 import '../static/css/Character_Card.css';

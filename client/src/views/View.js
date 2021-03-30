@@ -6,7 +6,6 @@ import axios from 'axios';
 import Context from '../context/Context.js'
 import '../App.css'
 import '../static/css/View.css'
-import VoteBtn from '../components/buttons/VoteBtn';
 import EditBtn from '../components/buttons/EditBtn';
 
 
@@ -50,26 +49,23 @@ const View = props => {
             <Nav />
             
             <div id = 'view_wrapper' className = 'film_strip'>
+                {   
+                    characterLoaded && <Feature character = { character }/>
+                }
 
-            {   
+                <div className = 'view_info'>
+                    <p>{character.title}</p>
+                    
+                    <h3>Quote: </h3>
+                    <p>{character.quote}</p>
 
-                characterLoaded && <Feature character = { character }/>
-
-            }
-
-            <div className = 'view_info'>
-                <p>{character.title}</p>
-                <h3>Quote: </h3>
-                <p>{character.quote}</p>
-
-                <h3>Votes: {votes.length} </h3>
-                <EditBtn character_id= {character._id} />
-                <button onClick = {resetVotes}>Reset Votes</button>
-            </div>
+                    <h3>Votes: {votes.length} </h3>
+                    <EditBtn character_id= {character._id} />
+                    <button onClick = {resetVotes}>Reset Votes</button>
+                </div>
             </div>
             
             <Footer />
-
         
         </>
     )

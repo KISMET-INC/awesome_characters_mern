@@ -1,4 +1,3 @@
-import { Link } from '@reach/router';
 import '../App.css';
 import '../static/css/Honorable.css'
 import CharacterCard from './CharacterCard';

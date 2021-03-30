@@ -47,7 +47,7 @@ const All = props => {
                     {
                         listLoaded && search!== "" && characterList.filter(c => c.charName === search || c.year === search || c.title === search).map((char,i)=>
 
-                            <CharacterCard char = {char} key= {i} />
+                            <CharacterCard i = {i} char = {char} key= {i} />
                             
                         )   
                     }
@@ -55,7 +55,7 @@ const All = props => {
                     {
                         listLoaded && search === "" && characterList.map((char,i)=>
                         
-                            <CharacterCard char = {char} key= {i} />
+                            <CharacterCard i={i} char = {char} key= {i} />
                             
                         )   
                     }

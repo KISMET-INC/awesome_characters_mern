@@ -9,7 +9,7 @@ const Footer = props => {
 
 
     return(
-        <>
+        <footer>
         <aside className = 'footer_aside'>
             <p>ksanmartin909@gmail.com</p>
             <p>© 2021 Kristen San Martin</p>
@@ -35,7 +35,7 @@ const Footer = props => {
             <i className="fab fa-linkedin"></i>
             </section>
         </div>
-    </>
+    </footer>
     )
 
 }

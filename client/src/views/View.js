@@ -63,7 +63,8 @@ const View = props => {
     
             <Nav />
             
-            <div id = 'view_wrapper'>
+            <div id = 'view_wrapper' className = 'film_strip'>
+
             {   
 
                 characterLoaded && <Feature vote = {goto_vote} char = { character }/>

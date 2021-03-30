@@ -18,11 +18,12 @@
     width:185px;
     height:145px;
     border-radius: 20px 20px 45px 150px;
+    margin-bottom: -15px;
 }
 
 
 #character_wrapper h4 {
-    margin-top: -10px;
+    margin-top: 5px;
 }
 
 #character_wrapper h4, 
@@ -40,10 +41,7 @@
 }
 
 #character_wrapper button {
-    position: relative;
-    top: -40px;
-    left: -50px;
-    width: 60px;
+    margin-bottom: 5px;
 }
 
 

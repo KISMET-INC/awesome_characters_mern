@@ -3,6 +3,8 @@ import React ,{ useState} from 'react';
 import "../App.css"
 import "../static/css/Main_Breakpoints.css"
 import "../static/css/Form.css"
+import HomeBtn from './buttons/SearchBtn copy';
+import ViewBtn from './buttons/ViewBtn';
 
 
 
@@ -78,6 +80,8 @@ const Form = props => {
                         </div>
                         <button type='submit'>Submit</button>
                         <button onClick = {go_home}>Cancel</button>
+                        <HomeBtn />
+                        <ViewBtn character_id = {character._id} />
 
                     </div>
 

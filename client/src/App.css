@@ -2,7 +2,13 @@
     margin: 0px;
     padding: 0px;
     color:white;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 :root {
@@ -97,7 +103,7 @@ button {
     background-color: var(--transblack);
     border-top: 5px dashed var(--orange);
     border-bottom: 5px dashed var(--orange);
-    height: 350px;
+    min-height: 350px;
     margin: auto;
     width: 100%;
     display: flex;
@@ -105,4 +111,13 @@ button {
     justify-content: space-between;
     padding: 30px;
     margin-bottom: 50px;
+}
+
+.wrapper {
+    width: 70%;
+    margin:auto;
+}
+
+.edit_body {
+    min-height: 550px;
 }

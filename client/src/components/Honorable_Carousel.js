@@ -5,14 +5,13 @@ import CharacterCard from './CharacterCard';
 import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
-import '../static/css/Featured.css';
 import React, {useState} from 'react';
 
 
 
 
 
-const Honorable = props => {
+const Honorable_Carousel = props => {
 
     const [resState] = useState({
             0: {
@@ -47,8 +46,7 @@ const Honorable = props => {
 
 
     return(
-        <div id = "honorable_wrapper">
-            <h3> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
+        <div id = "honorable">
 
             <OwlCarousel 
             className='owl-theme' 
@@ -74,4 +72,4 @@ const Honorable = props => {
 }
 
 
-export default Honorable;
+export default Honorable_Carousel;

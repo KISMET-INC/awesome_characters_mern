@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Link } from '@reach/router';
 import '../App.css';
-import Featured from '../components/Featured';
+import Feature_Carousel from '../components/Feature_Carousel';
 import Footer from '../components/Footer';
-import Honorable from '../components/Honorable';
+import Honorable_Carousel from '../components/Honorable_Carousel';
 import Nav from '../components/Nav.js';
 import '../static/css/Main_Breakpoints.css';
+import '../static/css/Main.css';
 import axios from 'axios';
 import Context from '../context/Context.js'
+
 
 
 const Main = props => {
@@ -34,21 +36,33 @@ const Main = props => {
 
         <Nav />
 
+        <div id='main_body' className = 'wrapper'>
+        <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>
     
-
+        <div className= 'featured film_strip carousel'>
         
         {
-            listLoaded && <Featured characterList = { characterList }/>
+            listLoaded && <Feature_Carousel characterList = { characterList }/>
             
         }
 
-{
-            listLoaded && <Honorable characterList = { characterList }/>
-            
-        }
+        </div>
+
+        <h3 className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
+
+        < div className = 'honorable carousel'>
+
+            {
+                listLoaded && <Honorable_Carousel characterList = { characterList }/>
+                
+            }
+        </div>
+    
+
+        </div>
         
         <Footer />
-       
+
         </div>
     )
 

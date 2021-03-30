@@ -1,11 +1,12 @@
 
 import React, {useState, useContext, useEffect} from 'react';
 import '../App.css';
-import '../static/css/Featured.css';
+import '../static/css/Feature.css';
 import VoteBtn from './buttons/VoteBtn';
 import EditBtn from './buttons/EditBtn';
 import ViewBtn from './buttons/ViewBtn';
 import Context from '../context/Context';
+import HomeBtn from './buttons/SearchBtn copy';
 
 
 const Feature = props => {
@@ -23,8 +24,7 @@ const updateCharacter = (e,character)=> {
 
 
 return(
-<div className = 'carousel_item'>
-    <div className = "feature_post film_strip flex">
+    <div id = 'feature' className = "feature_post flex">
         <img src = {character.url} alt = 'character' />
         
         <div className = "feature_info">
@@ -39,23 +39,23 @@ return(
                         character.quote === undefined ? <p></p> : <p>"{character.quote}"</p>
                     }
                 </div>
-                <div className = "bottom">
+                <div className = "bottom flex">
                     <h3>Votes:  {votes.length} </h3>
                     {
-                        votes === undefined ? <p></p> : <p>{votes}</p>
+                        votes.map((vote,i)=>
+                        <li key={i}>{vote} </li>
+                        )
                     }
                 </div>
         </div>
         <div className = "feature_btns flex">
-            <h3>Rank N/A </h3>
+            <h3>Rank {props.i + 1} </h3>
+            <HomeBtn/>
+            <ViewBtn character_id = {character._id} />
             <VoteBtn character = {character} vote={updateCharacter} />
             <EditBtn character_id = {character._id} />
-            <ViewBtn character_id = {character._id} />
         </div>
-
     </div>
-</div>
-
 
 )
 }

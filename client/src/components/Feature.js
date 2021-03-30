@@ -11,8 +11,8 @@ import HomeBtn from './buttons/SearchBtn copy';
 
 const Feature = props => {
 const context = useContext(Context)
-const [character] = useState(props.char)
-const [votes, setVotes] = useState(props.char.votes)
+const [character] = useState(props.character)
+const [votes, setVotes] = useState(props.character.votes)
 const [string] = useState('feature')
 
 

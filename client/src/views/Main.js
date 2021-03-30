@@ -20,7 +20,7 @@ const Main = props => {
     useEffect(()=> {    
         axios.get('http://localhost:8000/api/characters/')
         .then(response=>{
-            setCharacterList(response.data.characters)
+            setCharacterList(response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1))
             setListLoaded(true)
         }).catch(err=>console.log(err))
 

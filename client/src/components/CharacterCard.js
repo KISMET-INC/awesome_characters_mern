@@ -14,22 +14,11 @@ const CharacterCard = props => {
     const [string] = useState('CharCard')
 
 
-    const clickHandler =(e) =>{
-        console.log(e)
-
-        e.target === 'button'? navigate(`/edit/${character._id}`) : navigate (`/view/${character._id}`)
-    }
-    
-
     const updateCharacter = (e)=> {
         setVotes([...votes,string])
         context.goto_vote(e,character,votes,string);
     }
     
-    
-
-
-
 
     return( 
         <>

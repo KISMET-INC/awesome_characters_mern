@@ -31,22 +31,8 @@ const View = props => {
     },[props.id])
 
 
-    const goto_vote =(e) =>{
-        console.log(character.votes)
-        console.log(context.val)
-        e.preventDefault();
-        axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, { votes : [...character.votes, "Kristen"]})
-        .then(response => {
-            setCharacter({...character, votes: [...character.votes, context.val]})
-            setVotes([ ...character.votes, context.val])
-            console.log(votes)
-        }).catch ( error => {
-            console.log(error)
-        })
-    }
-
     const resetVotes =() =>{
-        axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, { votes : ["Kristen"]})
+        axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, { votes : [context.val]})
         .then(response => {
             setCharacter({...character, votes: [context.val]})
             setVotes([context.val])
@@ -67,7 +53,7 @@ const View = props => {
 
             {   
 
-                characterLoaded && <Feature vote = {goto_vote} char = { character }/>
+                characterLoaded && <Feature character = { character }/>
 
             }
 
@@ -77,7 +63,6 @@ const View = props => {
                 <p>{character.quote}</p>
 
                 <h3>Votes: {votes.length} </h3>
-                <VoteBtn vote={goto_vote}/>
                 <EditBtn character_id= {character._id} />
                 <button onClick = {resetVotes}>Reset Votes</button>
             </div>

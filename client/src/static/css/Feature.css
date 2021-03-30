@@ -55,7 +55,7 @@
 }
 
 .feature_info .bottom {
-    height: 100px;
+    height: 100%;
     width: 150%;
     flex-wrap: wrap;
     overflow:hidden;

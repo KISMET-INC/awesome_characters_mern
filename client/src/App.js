@@ -7,7 +7,7 @@ import Add from './views/Add';
 import Edit from './views/Edit';
 import All from './views/All';
 import View from './views/View';
-import axios from 'axios';
+import axios from 'axios'
 
 
 
@@ -18,14 +18,26 @@ import axios from 'axios';
 
 function App() {
 
-
 const [val, setVal] = useState('Anonymous')
+
+const goto_vote =(e,charcter) =>{
+  e.preventDefault();
+  axios.put(`http://localhost:8000/api/characters/edit/${charcter._id}`, { votes : [...charcter.votes, "Khalil"]})
+  .then(response => {
+      console.log(response)
+  }).catch ( error => {
+      console.log(error)
+  })
+  
+}
+
+const [character, setCharacter] = useState({})
 
 
 
   return (
     <div className="App">
-      <Context.Provider value= {{val,setVal}}>
+      <Context.Provider value= {{val,setVal, goto_vote, character, setCharacter}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

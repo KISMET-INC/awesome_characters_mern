@@ -1,15 +1,24 @@
 
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import '../App.css';
 import '../static/css/Featured.css';
 import VoteBtn from './buttons/VoteBtn';
 import EditBtn from './buttons/EditBtn';
 import ViewBtn from './buttons/ViewBtn';
+import Context from '../context/Context';
 
 
 const Feature = props => {
-
+const context = useContext(Context)
 const [character] = useState(props.char)
+const [votes, setVotes] = useState(props.char.votes)
+
+
+
+const updateCharacter = (e,character)=> {
+    context.goto_vote(e,character);
+    setVotes([...votes,"Khalil"])
+}
 
 
 return(
@@ -30,15 +39,15 @@ return(
                     }
                 </div>
                 <div className = "bottom">
-                    <h3>Votes:  { character.votes.length} </h3>
+                    <h3>Votes:  {votes.length} </h3>
                     {
-                        character.votes === undefined ? <p></p> : <p>{character.votes}</p>
+                        votes === undefined ? <p></p> : <p>{votes}</p>
                     }
                 </div>
         </div>
         <div className = "feature_btns flex">
             <h3>Rank N/A </h3>
-            <VoteBtn vote={props.vote} />
+            <VoteBtn character = {character} vote={updateCharacter} />
             <EditBtn character_id = {character._id} />
             <ViewBtn character_id = {character._id} />
         </div>

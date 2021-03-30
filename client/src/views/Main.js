@@ -7,7 +7,7 @@ import Honorable from '../components/Honorable';
 import Nav from '../components/Nav.js';
 import '../static/css/Main_Breakpoints.css';
 import axios from 'axios';
-import Context from '../context/Context.js'
+
 
 
 const Main = props => {

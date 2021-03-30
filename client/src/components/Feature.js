@@ -21,6 +21,11 @@ const updateCharacter = (e)=> {
     setVotes([...votes,string])
     context.goto_vote(e,character,votes,string);
 }
+const resetVotes = (e)=> {
+    setVotes([string])
+    console.log(votes)
+    context.goto_vote(e,character,[],string);
+}
 
 
 return(
@@ -51,9 +56,12 @@ return(
         <div className = "feature_btns flex">
             <h3>Rank {props.i + 1} </h3>
             <HomeBtn/>
-            <ViewBtn character_id = {character._id} />
             <VoteBtn character = {character} vote={updateCharacter} />
+            <ViewBtn character_id = {character._id} />
             <EditBtn character_id = {character._id} />
+            <form onSubmit={resetVotes} >
+                <button type='submit'>Reset Votes</button>
+            </form>
         </div>
     </div>
 

@@ -13,7 +13,7 @@ import Context from '../context/Context.js'
 
 
 const Main = props => {
- 
+
     const [characterList, setCharacterList] = useState()
     const [listLoaded, setListLoaded] = useState(false)
     
@@ -27,9 +27,6 @@ const Main = props => {
     },[]);
 
 
-
-
-
     return (
         <div>
 
@@ -37,28 +34,23 @@ const Main = props => {
         <Nav />
 
         <div id='main_body' className = 'wrapper'>
-        <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>
-    
-        <div className= 'featured film_strip carousel'>
+            <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>
         
-        {
-            listLoaded && <Feature_Carousel characterList = { characterList }/>
-            
-        }
+            <div className= 'featured film_strip carousel'>
+                {
+                    listLoaded && <Feature_Carousel characterList = { characterList }/>
+                    
+                }
+            </div>
 
-        </div>
+            <h3 className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
 
-        <h3 className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
-
-        < div className = 'honorable carousel'>
-
-            {
-                listLoaded && <Honorable_Carousel characterList = { characterList }/>
-                
-            }
-        </div>
-    
-
+            < div className = 'honorable carousel'>
+                {
+                    listLoaded && <Honorable_Carousel characterList = { characterList }/>
+                    
+                }
+            </div>
         </div>
         
         <Footer />

@@ -11,6 +11,7 @@
     -webkit-box-shadow: 5px 5px 15px 5px #000000; 
     box-shadow: 3px 2px 15px 5px #000000;
     margin-left:20px;
+    margin-bottom: 20px;
 }
 
 #character_wrapper img {
@@ -44,3 +45,5 @@
     left: -50px;
     width: 60px;
 }
+
+

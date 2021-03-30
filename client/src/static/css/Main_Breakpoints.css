@@ -26,11 +26,8 @@
         width: 80%;
     }
 
-   
-    
-    /*************************** */
-    /* FEATURE BUTTONS
-    / *************************** */
+
+    /* FEATURE BUTTONS */
     .feature_post{
         justify-content: center;
     }
@@ -39,13 +36,7 @@
         margin-right:25px;
     }
 
-
-    /*************************** */
-    /* NAV
-    /*************************** */  
-    .nav_right {
-        width: 30%;
-    }
+    /* NAV */
 
     .inner_nav {
         width: 90%;
@@ -57,18 +48,24 @@
 }
 
 
-    /*************************** */
-    /* HONORABLE
-    / *************************** */
-    @media (max-width: 1024){
-        #honorable_wrapper {
-            width:100%
-        }
-        #honorable_wrapper h3 {
-            margin-left: 20px;
-            margin-top:50px;
-        }
+/*************************** */
+/* BREAK POINT 1025px
+/*************************** */
+@media (max-width: 1025px){
+    #add_form_wrapper .form_left img {
+        width: 275px
+    }
+
+    #add_form_wrapper button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
 }
+
+
+
+
 
 /*************************** */
 /* BREAK POINT 664px
@@ -85,6 +82,7 @@
         margin-top:40px;
         height: 70px;   
     }
+
 
 
     .inner_nav.flex {
@@ -127,6 +125,8 @@
         margin-top: 120px;
        
     }
+
+  
     
     #footer_wrapper {
         align-items: flex-start
@@ -138,13 +138,8 @@
 }
 
 
-/*************************** */
-/* BREAK POINT 664px
-/*************************** */
-@media(max-width: 664px){
 
 
-}
 
 /*************************** */
 /* BREAK POINT 563px
@@ -194,12 +189,12 @@
 
 
     .feature_btns h3 {
-        width:100px;
+        width:200px;
     }
 
     .feature_btns{
         position: relative;
-        right:232px;
+        right:181px;
         top:240px;
     }
 
@@ -211,11 +206,6 @@
     }
 
 
-    
-
-    #footer_wrapper {
-        /* display: none; */
-    }
 }
 
 /*************************** */
@@ -242,9 +232,55 @@
 
 }
 
+/*************************** */
+/* BREAK POINT 377px
+/*************************** */
+@media(max-width: 377px){
+    .owl-item {
+        margin:auto;
+        width: 200px;
+    }
+
+    #honorable_wrapper {
+        width: 100%;
+    
+    }
+
+    #honorable_wrapper h3 {
+        width: 250px;
+        margin:auto;
+        text-align: center;
+        margin-bottom: 50px;
+    
+    }
+
+}
 
 /*************************** */
-/* BREAK POINT 326px
+/* BREAK POINT 321px
+/*************************** */
+@media(max-width: 321px){
+    .owl-item {
+        margin:auto;
+        width: 200px;
+    }
+
+    #honorable_wrapper {
+        margin: auto;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+    
+    
+    }
+
+}
+
+
+
+
+/*************************** */
+/* BREAK POINT 280px
 /*************************** */
 @media(max-width: 280px){
 
@@ -266,9 +302,8 @@
         right: 200px;
     }
 
-
-
-
    
+
+
 
 }

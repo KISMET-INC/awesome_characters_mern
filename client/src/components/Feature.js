@@ -4,40 +4,43 @@ import '../App.css';
 import '../static/css/Featured.css';
 import VoteBtn from './buttons/VoteBtn';
 import EditBtn from './buttons/EditBtn';
+import ViewBtn from './buttons/ViewBtn';
 
 
 const Feature = props => {
-const [char] = useState(props.char)
-console.log(char)
+
+const [character] = useState(props.char)
+
 
 return(
 <div className = 'carousel_item'>
     <div className = "feature_post film_strip flex">
-        <img src = {char.url} alt = 'person' />
+        <img src = {character.url} alt = 'character' />
         
         <div className = "feature_info">
                 <div className ="top">
-                    <h3>{char.charName}</h3>
-                    <p>{char.year}</p>
-                    <p>{char.movieTitle}</p>
+                    <h3>{character.charName}</h3>
+                    <p>{character.year}</p>
+                    <p>{character.movieTitle}</p>
                 </div>
                 <div className = "middle">
                     <h3>Quote:</h3>
                     {
-                        char.quote === undefined ? <p></p> : <p>{char.quote}</p>
+                        character.quote === undefined ? <p></p> : <p>"{character.quote}"</p>
                     }
                 </div>
                 <div className = "bottom">
-                    <h3>Votes:</h3>
+                    <h3>Votes:  { character.votes.length} </h3>
                     {
-                        char.votes === undefined ? <p></p> : <p>{char.votes}</p>
+                        character.votes === undefined ? <p></p> : <p>{character.votes}</p>
                     }
                 </div>
         </div>
         <div className = "feature_btns flex">
-            <h3>Rank {props.i+1} </h3>
-            <VoteBtn />
-            <EditBtn char_id = {char._id} />
+            <h3>Rank N/A </h3>
+            <VoteBtn vote={props.vote} />
+            <EditBtn character_id = {character._id} />
+            <ViewBtn character_id = {character._id} />
         </div>
 
     </div>

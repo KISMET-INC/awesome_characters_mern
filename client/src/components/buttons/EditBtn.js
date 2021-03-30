@@ -6,7 +6,7 @@ import '../../App.css';
 const EditBtn = props => {
 
     const goto_edit = ()=> {
-        navigate(`/edit/${props.char_id}`)
+        navigate(`/edit/${props.character_id}`)
     }
 
     return (

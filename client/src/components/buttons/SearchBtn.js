@@ -12,7 +12,8 @@ const SearchBtn = props => {
 
 
 return (
-    <button onClick = { goto_search }>Search</button>
+
+    <i onClick = { goto_search } className="fas fa-search"></i>
 )
 
 }

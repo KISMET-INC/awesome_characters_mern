@@ -26,13 +26,13 @@ const Nav = props => {
                     </div>
                 </section>
 
-                <section className ="nav_right">
-                    <Signature />
+                <section className ="nav_right flex">
                     <div className="flex">
-                        <button onClick ={ go_home }>Home</button>
+                        <i  onClick ={ go_home }className="fas fa-home"></i>
                         <SearchBtn />
                         <AddCharBtn />
                     </div> 
+                    <Signature />
                 </section>
             </div>
         </nav>

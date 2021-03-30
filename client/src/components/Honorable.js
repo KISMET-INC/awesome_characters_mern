@@ -16,15 +16,31 @@ const Honorable = props => {
 
     const [resState] = useState({
             0: {
-                items: 1,
-            
+                items:1,
             },
-            700: {
+
+            321: {
+                items:2,
+        
+            },
+        
+            631: {
                 items: 2,
             },
-            1000: {
-                items: 1,
+            768: {
+                margin: 0,
             },
+            941: {
+                items: 3,
+            },
+            
+            1300: {
+                items: 3,
+            },
+            1400: {
+                items: 4,
+            },
+
 
     })
 
@@ -40,6 +56,8 @@ const Honorable = props => {
             autoplayHoverPause = {true}
             responsiveClass={true}
             responsive = {resState}
+            center = {true}
+            margin = {50}
             >
 
                 {

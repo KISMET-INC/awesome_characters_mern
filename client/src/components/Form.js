@@ -1,6 +1,7 @@
 import { navigate } from '@reach/router';
 import React ,{ useState} from 'react';
 import "../App.css"
+import "../static/css/Main_Breakpoints.css"
 import "../static/css/Form.css"
 
 
@@ -26,16 +27,18 @@ const Form = props => {
 
 
     return (
-        <div id = "add_form_wrapper">
+        <div id = "add_form_wrapper" className='flex'>
             <h2>{props.title}</h2>
             <p>{props.subtitle}</p>
-            {
-                props.type === 'edit' ? <button onClick = {goto_view}>View</button> :<></>
-            }
             <div className= 'film_strip flex'>
-            {
-                charName !== "" ? <img style= {{opacity: 1}} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
-            }
+            <div className ='form_left'>
+                {
+                    props.type === 'edit' ? <p onClick={goto_view} >View {props.subtitle} </p> : <></>
+                }
+                {
+                    charName !== "" ? <img style= {{opacity: 1}} onClick={goto_view} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
+                }
+            </div>
 
                 <form  className='flex' onSubmit={ (e) => props.submitHandler( e, { charName, title, year, actor,url, votes, quote } ) }>
                     <div className = 'col_1'>
@@ -66,7 +69,7 @@ const Form = props => {
 
                         <div>
                             <label htmlFor ='quote'>Quote:</label>
-                            <input name = 'quote' value = { quote } type ='text' onChange= {(e)=> {setQuote(e.target.value)} }></input>
+                            <textarea name = 'quote' value = { quote } type ='text' onChange= {(e)=> {setQuote(e.target.value)} }></textarea>
                         </div>
 
                         <div>
@@ -75,6 +78,7 @@ const Form = props => {
                         </div>
                         <button type='submit'>Submit</button>
                         <button onClick = {go_home}>Cancel</button>
+
                     </div>
 
                 </form>

@@ -30,7 +30,7 @@
 /* INFO
 /******************** */
 .feature_info {
-    width: 35%;
+    width: 30%;
 }
 
 .feature_info .top, .feature_info .middle {
@@ -74,6 +74,6 @@
 /******************** */
 /* OVERRIDE CAROUSEL-DOTS
 /******************** */
-/* .owl-carousel .owl-item img {
+.owl-carousel .owl-item img {
     width: 43%
-} */
+}

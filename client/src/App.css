@@ -29,9 +29,13 @@ body {
     background-image: url('./static/img/background2.jpg');
 }
 
-input {
+input , textarea {
     border-radius: 8px;
     height: 30px;
+}
+
+textarea {
+    overflow: scroll;
 }
 
 img {

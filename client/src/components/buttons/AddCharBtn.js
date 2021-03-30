@@ -12,7 +12,7 @@ const AddCharBtn = props => {
 
 
 return (
-    <button onClick = { to_add}>Add Character</button>
+    <i onClick = { to_add } className="fas fa-plus-square"></i>
 )
 
 }

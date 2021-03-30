@@ -1,3 +1,62 @@
-.film_strip {
+#view_wrapper {
     width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#view_wrapper .view_info {
+    display:none;
+}
+
+
+/*************************** */
+/* BREAK POINT 1300px
+/*************************** */
+@media (max-width: 1300px){
+
+    #view_wrapper .view_info {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #view_wrapper .view_info button {
+        display:block;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+}
+
+
+/*************************** */
+/* BREAK POINT 426px
+/*************************** */
+@media (max-width: 426px){
+
+    #view_wrapper {
+        margin-top: 150px;
+        width: 100%;
+    }
+
+    #view_wrapper .view_info {
+        text-align: center;
+        margin-top: -30px;
+    }
+
+
+
+
+}
+
+/*************************** */
+/* BREAK POINT 376px
+/*************************** */
+@media (max-width: 376px){
+
+    #view_wrapper {
+        width: 100%;
+    }
+
 }

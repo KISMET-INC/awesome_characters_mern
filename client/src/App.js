@@ -7,17 +7,25 @@ import Add from './views/Add';
 import Edit from './views/Edit';
 import All from './views/All';
 import View from './views/View';
+import axios from 'axios';
+
 
 
 // TRICKLE DOWN STATE
 
 
+
+
 function App() {
- const [val] = useState('Kristen')
+
+
+const [val, setVal] = useState('Anonymous')
+
+
 
   return (
     <div className="App">
-      <Context.Provider value= {val}>
+      <Context.Provider value= {{val,setVal}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />
@@ -26,6 +34,7 @@ function App() {
           <View path = '/view/:id' />
         </Router>
       </Context.Provider>
+  
       </div>
   );
 }

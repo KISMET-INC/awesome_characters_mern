@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../context/Context'
 import "../../App.css";
 
 const Signature = props => {
-
+const context = useContext(Context)
 
     return (
-        <input type = "text" name = "signature" placeholder = "Add Your Name to Vote"></input>
+        <input type = "text"  onChange = {(e)=> {context.setVal(e.target.value)}} name = "signature" value = {context.val} ></input>
     )
 }
 

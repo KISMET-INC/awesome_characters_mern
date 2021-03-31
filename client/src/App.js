@@ -18,14 +18,13 @@ function App() {
 const [val, setVal] = useState('Anonymous')
 const [character, setCharacter] = useState({})
 const [characterList] = useState()
+const [reload,setReload] = useState(0)
 
 const goto_vote =(e,character,votes,string) =>{
   e.preventDefault();
-  console.log(`votes: ${votes}`)
-  console.log(`votes: ${votes.length}`)
-  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,string] })
+  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,val] })
   .then(response => {
-      console.log(response)
+      console.log('update')
   }).catch ( error => {
       console.log(error)
   })
@@ -38,7 +37,7 @@ const goto_vote =(e,character,votes,string) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{ val,setVal, goto_vote, character, setCharacter, characterList}}>
+      <Context.Provider value= {{ reload, val,setVal, goto_vote, character, setCharacter, characterList}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

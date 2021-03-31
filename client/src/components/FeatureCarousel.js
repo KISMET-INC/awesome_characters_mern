@@ -19,9 +19,9 @@ const Featured_Carousel = props => {
             items= {1} 
             autoplay = {true} 
             autoplaySpeed = {1500}
-            fallbackEasing = {100000}
             autoplayHoverPause = {true}
             dots = {false}
+            startPosition= {0}
             >
 
             {

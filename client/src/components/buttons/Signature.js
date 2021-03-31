@@ -1,12 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState} from 'react';
 import Context from '../../context/Context'
 import "../../App.css";
 
 const Signature = props => {
 const context = useContext(Context)
+const [string, setString] = useState('')
+
+    const update_signature= (e)=>{
+        e.preventDefault();
+        context.setVal(string)
+    }
 
     return (
-        <input type = "text"  onChange = {(e)=> {context.setVal(e.target.value)}} name = "signature" value = {context.val} ></input>
+        <form onSubmit ={update_signature} >
+        <input type = "text"  onChange = {(e)=> {setString(e.target.value)}} name = "signature" value = {string} ></input>
+        <button type= 'submit'>Ok</button>
+        </form>
     )
 }
 

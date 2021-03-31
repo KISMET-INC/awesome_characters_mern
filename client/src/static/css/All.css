@@ -4,19 +4,19 @@
     flex-wrap: wrap;
     margin-bottom: 50px;
 }
-
+.search_body {
+    min-height: 400px;
+}
 input {
     color:black;
     width: 100%;
     padding-left: 10px;
-    text-align: center;
 }
 
 #all_search .search_grp {
     margin-bottom: 30px;
-    width: 100%;
+    width: 260px;
     flex-direction: column;
-    align-items: center;
     
 }
 

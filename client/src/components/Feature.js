@@ -1,5 +1,5 @@
 
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import '../App.css';
 import '../static/css/Feature.css';
 import VoteBtn from './buttons/VoteBtn';
@@ -13,19 +13,19 @@ const Feature = props => {
 const context = useContext(Context)
 const [character] = useState(props.character)
 const [votes, setVotes] = useState(props.character.votes)
-const [string] = useState('feature')
+const [string,setString] = useState(context.val)
 const [rank] = useState(props.rank)
 
 
-const updateCharacter = (e)=> {
+const updateCharacter = (e,string)=> {
     setVotes([...votes,string])
     context.goto_vote(e,character,votes,string);
 }
 const resetVotes = (e)=> {
     setVotes([string])
-    console.log(votes)
     context.goto_vote(e,character,[],string);
 }
+
 
 
 return(

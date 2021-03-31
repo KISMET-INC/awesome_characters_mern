@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import CharacterCard from '../components/CharacterCard';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import axios from 'axios';
 import '../App.css';
 import '../static/css/All.css'
+import Context from '../context/Context'
 
 const All = props => {
+    const context = useContext(Context)
     const [characterList, setCharacterList] = useState([]);
     const [listLoaded, setListLoaded] = useState(false);
     const [search, setSearch] = useState("")
     const [rankTable, setRankTable] = useState({})
+    const [signature, setSignature] = useState()
 
 
 
     useEffect (()=>{
+        console.log('useEffect')
+        setListLoaded(false);
         axios.get('http://localhost:8000/api/characters')
             .then(response => {
                 const ranks = {}
@@ -35,6 +40,7 @@ const All = props => {
             })
     },[])
 
+   
 
 
 
@@ -45,7 +51,7 @@ const All = props => {
 
         <Nav / >
         
-
+            <div className='search_body'>
             <div id =  'all_search' className = 'flex'>
 
                 <div className = 'search_grp flex'>
@@ -55,7 +61,7 @@ const All = props => {
 
                 <section className = 'results flex'>   
                     {
-                        listLoaded && search!== "" && characterList.filter(c => c.charName === search || c.year === search || c.title === search).map((char,i)=>
+                        listLoaded && search!== "" && characterList.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()) || c.year === search || c.title === search).map((char,i)=>
 
                             <CharacterCard i = {rankTable[char.charName]}  char = {char} key = {i} />
                             
@@ -72,6 +78,7 @@ const All = props => {
                 </section>
         
             </div>
+        </div>
         
         <Footer />
 

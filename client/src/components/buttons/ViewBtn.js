@@ -6,7 +6,7 @@ import '../../App.css';
 const ViewBtn = props => {
 
     const goto_view = ()=> {
-        navigate(`/view/${props.character_id}`)
+        navigate(`/view/${props.character_id}/${props.rank}`)
     }
 
     return (

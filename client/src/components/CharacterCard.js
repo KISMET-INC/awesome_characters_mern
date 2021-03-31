@@ -11,6 +11,7 @@ const CharacterCard = props => {
     const [character] = useState(props.char)
     const [votes, setVotes] = useState(props.char.votes)
     const [string] = useState('CharCard')
+    const [rank] = useState(props.i+1)
 
 
     const updateCharacter = (e)=> {
@@ -24,9 +25,9 @@ const CharacterCard = props => {
         <div  id = "character_wrapper" className = 'flex'>
             <img src = {character.url} alt={character.charName} />
             <VoteBtn character ={character} vote ={updateCharacter} />
-            <ViewBtn character_id={character._id} />
+            <ViewBtn rank = {rank} character_id={character._id} />
             <h4>{character.charName}</h4>
-            <p>Rank {props.i+1} | Votes: {votes.length}</p>
+            <p>Rank {rank} | Votes: {votes.length} </p>
             <h5>{character.movieTitle}</h5>
         </div>
         </>

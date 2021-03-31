@@ -14,7 +14,7 @@ const context = useContext(Context)
 const [character] = useState(props.character)
 const [votes, setVotes] = useState(props.character.votes)
 const [string] = useState('feature')
-
+const [rank] = useState(props.rank)
 
 
 const updateCharacter = (e)=> {
@@ -54,10 +54,10 @@ return(
                 </div>
         </div>
         <div className = "feature_btns flex">
-            <h3>Rank {props.i + 1} </h3>
+            <h3>Rank {rank} </h3>
             <HomeBtn/>
             <VoteBtn character = {character} vote={updateCharacter} />
-            <ViewBtn character_id = {character._id} />
+            <ViewBtn rank = {rank} character_id = {character._id} />
             <EditBtn character_id = {character._id} />
             <form onSubmit={resetVotes} >
                 <button type='submit'>Reset Votes</button>

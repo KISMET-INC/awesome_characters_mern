@@ -26,7 +26,7 @@ const Featured_Carousel = props => {
 
             {
                 props.characterList.map((character,i)=>
-                    <Feature key= {i} i = {i} character = {character} />
+                    <Feature key= {i} rank = {i+1} character = {character} />
                 )  
             }
 

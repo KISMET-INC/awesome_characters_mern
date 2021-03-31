@@ -15,6 +15,7 @@ const View = props => {
     const [character, setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [votes, setVotes] = useState([])
+    const [rank] = useState(props.rank)
 
 
     useEffect (()=>{
@@ -50,7 +51,7 @@ const View = props => {
             
             <div id = 'view_wrapper' className = 'film_strip'>
                 {   
-                    characterLoaded && <Feature character = { character }/>
+                    characterLoaded && <Feature rank = { rank } character = { character }/>
                 }
 
                 <div className = 'view_info'>

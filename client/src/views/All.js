@@ -10,13 +10,23 @@ const All = props => {
     const [characterList, setCharacterList] = useState([]);
     const [listLoaded, setListLoaded] = useState(false);
     const [search, setSearch] = useState("")
+    const [rankTable, setRankTable] = useState({})
 
 
 
     useEffect (()=>{
         axios.get('http://localhost:8000/api/characters')
             .then(response => {
-                setCharacterList(response.data.characters)
+                const ranks = {}
+                const sorted_list =[]
+
+                response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1).map((char,i)=> {
+                    ranks[char.charName] = i+1
+                    sorted_list[i] = char
+                })
+
+                setRankTable(ranks)
+                setCharacterList(sorted_list)
                 setListLoaded(true)
                 console.log(response)
 
@@ -47,15 +57,15 @@ const All = props => {
                     {
                         listLoaded && search!== "" && characterList.filter(c => c.charName === search || c.year === search || c.title === search).map((char,i)=>
 
-                            <CharacterCard i = {i} char = {char} key= {i} />
+                            <CharacterCard i = {rankTable[char.charName]}  char = {char} key = {i} />
                             
                         )   
                     }
 
                     {
-                        listLoaded && search === "" && characterList.map((char,i)=>
-                        
-                            <CharacterCard i={i} char = {char} key= {i} />
+                        listLoaded && search === "" && characterList.map((char,index)=>
+        
+                            <CharacterCard i={rankTable[char.charName]} char = {char} key = {index} />
                             
                         )   
                     }

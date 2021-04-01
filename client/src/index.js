@@ -3,22 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Nav from './components/Nav';
 import QueueAnim from 'rc-queue-anim';
-import Featured_Carousel from './components/FeatureCarousel';
 import Footer from './components/Footer';
 
 ReactDOM.render(
-<>
-  <QueueAnim >
-    <div key = '1' style ={{minHeight: '800px'}}>
-    <App key = '2'/>
-    </div>
-    <Footer key = '3'/>
+  <>
+    <QueueAnim>
 
-  </QueueAnim>
-    </>,
-  
+      <div key = '1' style ={{minHeight: '800px'}}>
+        <App />
+      </div>
+
+      <div key = '2'>
+        <Footer />
+      </div>
+
+    </QueueAnim>
+  </>,
+    
   document.getElementById('root')
 );
 

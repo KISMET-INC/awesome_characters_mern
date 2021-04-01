@@ -1,12 +1,10 @@
 
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import '../App.css';
 import '../static/css/Feature.css';
 import VoteBtn from './buttons/VoteBtn';
-import EditBtn from './buttons/EditBtn';
-import ViewBtn from './buttons/ViewBtn';
 import Context from '../context/Context';
-import HomeBtn from './buttons/SearchBtn copy';
+import HomeBtn from './buttons/HomeBtn';
 import { navigate } from '@reach/router';
 
 
@@ -14,7 +12,6 @@ const Feature = props => {
 const context = useContext(Context)
 const [character] = useState(props.character)
 const [votes, setVotes] = useState(props.character.votes)
-const [signature,setSignature] = useState(context.signature)
 const [rank] = useState(props.rank)
 const [location] = useState(props.location)
 
@@ -68,7 +65,7 @@ return(
             <div className = 'feature buttons_info'>
                     <h3>{character.charName}</h3>
                     {
-                        location != 'view' ? <h4 onClick={goto_view}>Click to View</h4> : <></>
+                        location !== 'view' ? <h4 onClick={goto_view}>Click to View</h4> : <></>
                     }
                     <h4 onClick={goto_edit}>Click to Edit</h4>
                     <h4>Votes: {votes.length}</h4>
@@ -78,7 +75,7 @@ return(
                 <button type='submit'>Reset Votes</button>
             </form>
             {
-                location != 'carousel' ?  <HomeBtn/> : <></>
+                location !== 'carousel' ?  <HomeBtn/> : <></>
             }
         </div>
     </div>

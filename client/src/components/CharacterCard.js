@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import '../App.css';
 import '../static/css/Character_Card.css';
 import VoteBtn from './buttons/VoteBtn';
@@ -10,7 +10,6 @@ const CharacterCard = props => {
     const context = useContext(Context)
     const [character] = useState(props.char)
     const [votes, setVotes] = useState(props.char.votes)
-    const [string,setString] = useState(context.val)
     const [rank] = useState(props.i+1)
 
 
@@ -19,11 +18,6 @@ const CharacterCard = props => {
         context.goto_vote(e,character,votes,context.val);
     }
 
-    useEffect(()=>{
-        console.log('get')
-        setString(context.val)
-        console.log(context.val)
-    },[context.val])
 
     return( 
         <>

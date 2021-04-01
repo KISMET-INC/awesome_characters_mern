@@ -18,9 +18,9 @@ function App() {
 const [signature, setSignature] = useState('Anonymous')
 const [character, setCharacter] = useState({})
 const [characterList] = useState()
-const [reload,setReload] = useState(0)
+const [reload] = useState(0)
 
-const goto_vote =(e,character,votes,string) =>{
+const goto_vote =(e,character,votes) =>{
   e.preventDefault();
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,signature] })
   .then(response => {

@@ -1,20 +1,16 @@
-import React, { useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
 import CharacterCard from '../components/CharacterCard';
-import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import axios from 'axios';
 import '../App.css';
 import '../static/css/All.css'
-import Context from '../context/Context'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const All = props => {
-    const context = useContext(Context)
     const [characterList, setCharacterList] = useState([]);
     const [listLoaded, setListLoaded] = useState(false);
     const [search, setSearch] = useState("")
     const [rankTable, setRankTable] = useState({})
-    const [signature, setSignature] = useState()
 
 
 

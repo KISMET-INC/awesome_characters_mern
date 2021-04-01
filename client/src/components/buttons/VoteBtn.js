@@ -5,14 +5,11 @@ import Context from '../../context/Context';
 
 
 const VoteBtn = props =>{
-    const [character] = useState(props.character)
     const  context = useContext(Context)
     const [signature, setSignature] = useState(context.signature)
 
     useEffect(()=>{
-        console.log('get')
         setSignature(context.signature)
-        console.log(context.signature)
     },[context.signature])
 
 

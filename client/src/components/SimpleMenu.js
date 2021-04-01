@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import '../static/css/SimpleMenu.css'
 import TransitionsModal from './TransitionalModal';
+import HomeBtn from './buttons/HomeBtn';
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -46,7 +46,7 @@ export default function SimpleMenu() {
 
   return (
     <div id ='simple_menu'>
-      <i style ={menuIcon} onClick = {handleClick} class="fas fa-ellipsis-v"></i>
+      <i style ={menuIcon} onClick = {handleClick} className="fas fa-ellipsis-v"></i>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -54,7 +54,7 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem style={menuItem} onClick={handleClose}>Home<i style={icon} className="fas fa-home"></i></MenuItem>
+        <MenuItem style={menuItem} onClick={handleClose}><HomeBtn type = 'link'/><i style={icon} className="fas fa-home"></i></MenuItem>
         <MenuItem style={menuItem} onClick={handleClose}>Search <i style={icon} className="fas fa-search"></i> </MenuItem>
         <MenuItem style={menuItem} onClick={handleClose}>Add <i style={icon2} className="fas fa-plus-square"></i></MenuItem>
         <MenuItem style={menuItem} onClick={handleClose}><TransitionsModal location={ location } /></MenuItem>

@@ -3,7 +3,6 @@ import axios from 'axios'
 import '../App.css'
 import Form from '../components/Form';
 import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import { navigate } from '@reach/router';
 
 

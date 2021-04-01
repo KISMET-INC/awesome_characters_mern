@@ -1,19 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import {navigate} from '@reach/router'
 import '../App.css';
 import '../static/css/Nav.css'
 import clapper from '../static/img/clapper.png'; 
-import AddCharBtn from './buttons/AddCharBtn';
+import AddCharIcon from './buttons/AddCharIcon';
 import SearchBtn from './buttons/SearchBtn';
-import Signature from './buttons/Signature';
 import SimpleMenu from './SimpleMenu';
-import { Modal } from '@material-ui/core';
 import TransitionsModal from './TransitionalModal';
-import Context from '../context/Context';
+import HomeBtn from './buttons/HomeBtn';
 
 
 const Nav = props => {
-    const context = useContext(Context)
 
     const go_home = () =>{
         navigate('/')
@@ -33,9 +30,9 @@ const Nav = props => {
 
                 <section className ="nav_right flex">
                     <div className="flex">
-                        <i  onClick ={ go_home }className="fas fa-home"></i>
+                        <HomeBtn type = 'icon'/>
                         <SearchBtn />
-                        <AddCharBtn />
+                        <AddCharIcon />
                     </div>
                         <TransitionsModal />
                 </section>

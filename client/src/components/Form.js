@@ -2,7 +2,7 @@ import { navigate } from '@reach/router';
 import React ,{ useState} from 'react';
 import "../App.css"
 import "../static/css/Form.css"
-import HomeBtn from './buttons/SearchBtn copy';
+import HomeBtn from './buttons/HomeBtn';
 import ViewBtn from './buttons/ViewBtn';
 
 
@@ -13,7 +13,7 @@ const Form = props => {
     const [title, setTitle] = useState(character.title)
     const [year, setYear] = useState(character.year)
     const [actor, setActor] = useState(character.actor)
-    const [votes, setVotes] = useState(character.votes)
+    const [votes] = useState(character.votes)
     const [url, setUrl] = useState(character.url)
     const [quote, setQuote] = useState(character.quote)
     const [rank] = useState(props.rank)

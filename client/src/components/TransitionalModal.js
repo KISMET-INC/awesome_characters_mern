@@ -45,7 +45,7 @@ export default function TransitionsModal(props) {
   return (
     <div>
       {
-      location != 'dropdown' ? <button type="button" onClick={handleOpen}> Set your vote name</button> : < div onClick={handleOpen}>Set Name <i style={icon2} className="fas fa-signature"></i></div>
+      location !== 'dropdown' ? <button type="button" onClick={handleOpen}> Set your vote name</button> : < div onClick={handleOpen}>Set Name <i style={icon2} className="fas fa-signature"></i></div>
       }
       <Modal
         aria-labelledby="transition-modal-title"

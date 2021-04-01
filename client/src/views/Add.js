@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {navigate} from '@reach/router';
 import '../App.css'
 import Form from '../components/Form';
-import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import axios from 'axios';
 

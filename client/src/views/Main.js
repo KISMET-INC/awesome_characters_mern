@@ -36,20 +36,20 @@ const Main = props => {
         <>
         <div id='main_body' className = 'wrapper'>
         
-            <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>
+            <QueueAnim ease={[[0.42, 0, 0.58, 1], [0.42, 0, 0.58, 1]]} >
+            <h3 key ='1' className ='main_title'>★ FEATURED  ★ Top 5</h3>
         
-            <QueueAnim ease={[[0, 10, 1, 0]]} >
             
-            <div key = '1' className= 'featured film_strip carousel'>
+            <div key = '2' className= 'featured film_strip carousel'>
                 {
                     listLoaded && <FeatureCarousel characterList = { characterList }/>
                     
                 }
             </div>
 
-            <h3 className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
+            <h3 key='3' className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
 
-            < div key= '2' className = 'honorable carousel'>
+            < div key= '4' className = 'honorable carousel'>
                 {
                     listLoaded && <HonorableCarousel characterList = { characterList }/>
                     

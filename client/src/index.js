@@ -10,10 +10,13 @@ import Footer from './components/Footer';
 
 ReactDOM.render(
 <>
-  <QueueAnim ease={[[0.8, 1, 0.58, 1]]}>
+  <QueueAnim >
     <Nav key ='1' />
-    <App key = '2'/>
-    <Footer key = '3'/>
+    <div key = '2' style ={{minHeight: '800px'}}>
+    <App key = '3'/>
+    </div>
+    <Footer key = '4'/>
+
   </QueueAnim>
     </>,
   

@@ -51,7 +51,6 @@ const Edit = props => {
 
             }
             </div>
-            <Footer />
         </>
     )
 }

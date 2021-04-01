@@ -16,6 +16,7 @@ const View = props => {
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [votes, setVotes] = useState([])
     const [rank] = useState(props.rank)
+    const [location] = useState('view')
 
 
     useEffect (()=>{
@@ -46,10 +47,12 @@ const View = props => {
     return (
 
         <> 
+            <h2>Epic Performance!</h2>
+            <p>Tyler</p>
             
             <div id = 'view_wrapper' className = 'film_strip'>
                 {   
-                    characterLoaded && <Feature rank = { rank } character = { character }/>
+                    characterLoaded && <Feature location ={ location } rank = { rank } character = { character }/>
                 }
 
                 <div className = 'view_info'>
@@ -58,12 +61,9 @@ const View = props => {
                         <div>
                             <h3>Movie: </h3>
                             <p>{character.title}</p>
-                        </div>
-
-                        <div>
-                            <h3>Year: </h3>
                             <p>{character.year} </p>
                         </div>
+
                         <div>
                             <h3>Actor: </h3>
                             <p>{character.actor}</p>
@@ -72,14 +72,24 @@ const View = props => {
                     </section>
 
                     <div className='quote'>
-                        
                         <h3 >Quote: </h3>
                         <p>{character.quote}</p>
+                    </div>
+
+                    <div className ='voters'>
+                    <h3 >Voters: </h3>
+                    <ul>
+                    {
+                        characterLoaded && character.votes.map((voter, i)=>
+                        <li> {voter} </li>
+                        )
+                    }
+                    </ul>
+                    
 
                     </div>
 
 
-\
                 </div>
             </div>
             

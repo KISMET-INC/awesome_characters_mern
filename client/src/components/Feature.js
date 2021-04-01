@@ -16,7 +16,7 @@ const [character] = useState(props.character)
 const [votes, setVotes] = useState(props.character.votes)
 const [string,setString] = useState(context.val)
 const [rank] = useState(props.rank)
-
+const [location] = useState(props.location)
 
 const updateCharacter = (e,string)=> {
     setVotes([...votes,string])
@@ -46,6 +46,7 @@ return(
                     <h3>{character.charName}</h3>
                     <p>{character.year}</p>
                     <p>{character.movieTitle}</p>
+                    <p>{character.actor}</p>
                 </div>
                 <div className = "middle">
                     <h3>Quote:</h3>
@@ -66,18 +67,19 @@ return(
             <h3>Rank {rank} </h3>
             <div className = 'feature buttons_info'>
                     <h3>{character.charName}</h3>
-                    <h4 onClick={goto_view}>Click to View</h4>
+                    {
+                        location != 'view' ? <h4 onClick={goto_view}>Click to View</h4> : <></>
+                    }
                     <h4 onClick={goto_edit}>Click to Edit</h4>
                     <h4>Votes: {votes.length}</h4>
             </div>
             <VoteBtn character = {character} vote={updateCharacter} />
-            <ViewBtn rank = {rank} character_id = {character._id} />
-            <EditBtn rank = {rank} character_id = {character._id} />
             <form onSubmit={resetVotes} >
                 <button type='submit'>Reset Votes</button>
             </form>
-            <HomeBtn/>
-
+            {
+                location != 'carousel' ?  <HomeBtn/> : <></>
+            }
         </div>
     </div>
 

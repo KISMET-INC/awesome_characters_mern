@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }from 'react';
 import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
@@ -9,6 +9,7 @@ import OwlCarousel from 'react-owl-carousel';
 
 
 const Featured_Carousel = props => {
+    const [location] = useState('carousel')
 
     return(
         <div id= "feature_carousel" >
@@ -26,7 +27,7 @@ const Featured_Carousel = props => {
 
             {
                 props.characterList.map((character,i)=>
-                    <Feature key= {i} rank = {i+1} character = {character} />
+                    <Feature location = {location} key= {i} rank = {i+1} character = {character} />
                 )  
             }
 

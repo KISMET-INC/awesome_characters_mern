@@ -7,6 +7,7 @@ import EditBtn from './buttons/EditBtn';
 import ViewBtn from './buttons/ViewBtn';
 import Context from '../context/Context';
 import HomeBtn from './buttons/SearchBtn copy';
+import { navigate } from '@reach/router';
 
 
 const Feature = props => {
@@ -26,11 +27,19 @@ const resetVotes = (e)=> {
     context.goto_vote(e,character,[],string);
 }
 
+const goto_view =()=> {
+    navigate(`/view/${character._id}/${rank}`)
+}
+
+const goto_edit =()=> {
+    navigate(`/edit/${character._id}/${rank}`)
+}
 
 
 return(
     <div id = 'feature' className = "feature_post flex">
-        <img src = {character.url} alt = 'character' />
+            <img onClick ={goto_view} src = {character.url} alt = 'character' />
+        
         
         <div className = "feature_info">
                 <div className ="top">
@@ -55,13 +64,20 @@ return(
         </div>
         <div className = "feature_btns flex">
             <h3>Rank {rank} </h3>
-            <HomeBtn/>
+            <div className = 'feature buttons_info'>
+                    <h3>{character.charName}</h3>
+                    <h4 onClick={goto_view}>Click to View</h4>
+                    <h4 onClick={goto_edit}>Click to Edit</h4>
+                    <h4>Votes: {votes.length}</h4>
+            </div>
             <VoteBtn character = {character} vote={updateCharacter} />
             <ViewBtn rank = {rank} character_id = {character._id} />
-            <EditBtn character_id = {character._id} />
+            <EditBtn rank = {rank} character_id = {character._id} />
             <form onSubmit={resetVotes} >
                 <button type='submit'>Reset Votes</button>
             </form>
+            <HomeBtn/>
+
         </div>
     </div>
 

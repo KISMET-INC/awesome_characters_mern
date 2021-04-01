@@ -41,7 +41,7 @@ const goto_vote =(e,character,votes,string) =>{
         <Router>
           <Main path="/" />
           <Add path="/add" />
-          <Edit path= '/edit/:id/' />
+          <Edit path= '/edit/:id/:rank' />
           <All path= '/search' />
           <View path = '/view/:id/:rank' />
         </Router>

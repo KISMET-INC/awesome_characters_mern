@@ -108,6 +108,80 @@
 
 }
 
+
+
+
+/*************************** */
+/* BREAK POINT 1150px
+/*************************** */
+@media(max-width: 1150px){
+    #add_form_wrapper .film_strip {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #add_form_wrapper .form_left {
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    #add_form_wrapper .form_left img {
+        margin:auto;
+    }
+
+    #add_form_wrapper form.flex {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    #add_form_wrapper img {
+        width: 500px;
+    }
+
+    #add_form_wrapper  form input,
+    #add_form_wrapper  form textarea {
+        border: 1px solid var(--orange);
+    }
+}
+
+/*************************** */
+/* BREAKPOINT 586px
+/ *************************** */
+@media (max-width: 586px){
+    #add_form_wrapper form {
+        flex-direction: column;
+    }
+
+    
+    #add_form_wrapper .form_left {
+        width:100%;
+    }
+
+    #add_form_wrapper .form_left img{
+        width:100%;
+    }
+    #add_form_wrapper .col_2 button,
+    #add_form_wrapper .col_2  div{
+        width: 100%;
+    }
+
+    #add_form_wrapper .col_2 button {
+        margin-bottom: 10px;
+    }
+
+
+
+
+    #add_form_wrapper .col_2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
 /*************************** */
 /* BREAKPOINT 901px
 / *************************** */
@@ -121,43 +195,11 @@
     }
 }
 
-
-/*************************** */
-/* BREAK POINT 769px
-/*************************** */
-@media(max-width: 769px){
-    #add_form_wrapper .film_strip {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #add_form_wrapper .form_left {
-        width: 100%;
-    }
-
-    #add_form_wrapper .form_left img {
-        width: 100%;
-    }
-
-    #add_form_wrapper form.flex {
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    #add_form_wrapper  form input,
-    #add_form_wrapper  form textarea {
-        border: 1px solid var(--orange);
-    }
-}
-
-
-
 /*************************** */
 /* BREAK POINT 426px
 /*************************** */
 @media(max-width: 426px){
     #add_form_wrapper  {
-        margin-top: 120px;
         width: 100%;
     }
 
@@ -179,8 +221,16 @@
 /* BREAK POINT 321pz
 /*************************** */
 @media(max-width: 321px){
-    #add_form_wrapper .film_strip {
-        padding: 0px;
+
+    #add_form_wrapper {
+        width: 100%;
+    }
+    #add_form_wrapper .film_strip.flex {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     #add_form_wrapper .form_left img {
         width: 100%;

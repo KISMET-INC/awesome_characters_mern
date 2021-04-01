@@ -14,6 +14,7 @@ const Edit = props => {
     const [character,setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [type] = useState('edit')
+    const [rank] = useState(props.rank)
     
 
     useEffect (()=> {
@@ -34,7 +35,7 @@ const Edit = props => {
         axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, data)
         .then(response => {
             console.log(response)
-            navigate(`/view/${props.id}`)
+            navigate(`/view/${props.id}/${rank}`)
         }).catch (error => {
             console.log(error)
         })
@@ -47,7 +48,7 @@ const Edit = props => {
             <Nav />
             <div className='edit_body wrapper'>
             {
-                characterLoaded && <Form type ={type} character = {character} title = {title}  subtitle = {subtitle} submitHandler = { submitHandler }/>
+                characterLoaded && <Form rank= {rank} type ={type} character = {character} title = {title}  subtitle = {subtitle} submitHandler = { submitHandler }/>
 
             }
             </div>

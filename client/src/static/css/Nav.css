@@ -49,3 +49,17 @@ nav {
     align-items: center;
 
 }
+
+@media (max-width:655px) {
+
+    .nav_right div {
+        display:none;
+    }
+}
+
+@media (max-width:530px) {
+
+    #footer_wrapper img {
+        display:none;
+    }
+}

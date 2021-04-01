@@ -32,7 +32,6 @@ const Nav = props => {
                         <SearchBtn />
                         <AddCharBtn />
                     </div> 
-                    <Signature />
                 </section>
             </div>
         </nav>

@@ -55,14 +55,34 @@ const View = props => {
                 }
 
                 <div className = 'view_info'>
-                    <p>{character.title}</p>
-                    
-                    <h3>Quote: </h3>
-                    <p>{character.quote}</p>
 
-                    <h3>Votes: {votes.length} </h3>
-                    <EditBtn character_id= {character._id} />
-                    <button onClick = {resetVotes}>Reset Votes</button>
+                    <section className='left flex'>
+                        <div>
+                            <h3>Movie: </h3>
+                            <p>{character.title}</p>
+                        </div>
+
+                        <div>
+                            <h3>Year: </h3>
+                            <p>{character.year} </p>
+                        </div>
+                        <div>
+                            <h3>Actor: </h3>
+                            <p>{character.actor}</p>
+                        </div>
+
+                    </section>
+
+                    <div className='quote'>
+                        
+                        <h3 >Quote: </h3>
+                        <p>{character.quote}</p>
+
+                    </div>
+
+
+
+                  
                 </div>
             </div>
             

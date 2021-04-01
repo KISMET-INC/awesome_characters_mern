@@ -1,7 +1,6 @@
 import { navigate } from '@reach/router';
 import React ,{ useState} from 'react';
 import "../App.css"
-import "../static/css/Main_Breakpoints.css"
 import "../static/css/Form.css"
 import HomeBtn from './buttons/SearchBtn copy';
 import ViewBtn from './buttons/ViewBtn';
@@ -17,6 +16,7 @@ const Form = props => {
     const [votes, setVotes] = useState(character.votes)
     const [url, setUrl] = useState(character.url)
     const [quote, setQuote] = useState(character.quote)
+    const [rank] = useState(props.rank)
 
     const goto_view =() => {
         navigate(`/view/${character._id}`)
@@ -35,14 +35,11 @@ const Form = props => {
             <div className= 'film_strip flex'>
             <div className ='form_left'>
                 {
-                    props.type === 'edit' ? <p onClick={goto_view} >View {props.subtitle} </p> : <></>
-                }
-                {
                     charName !== "" ? <img style= {{opacity: 1}} onClick={goto_view} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
                 }
             </div>
 
-                <form  className='flex' onSubmit={ (e) => props.submitHandler( e, { charName, title, year, actor,url, votes, quote } ) }>
+                <form  className='flex' onSubmit={ (e) => props.submitHandler( e, { charName, title, year, actor,url, votes, quote,rank } ) }>
                     <div className = 'col_1'>
                         <div>
                             <label htmlFor = 'charName' >Character Name:</label>
@@ -75,13 +72,14 @@ const Form = props => {
                         </div>
 
                         <div>
-                            <label htmlFor = 'votes'>Your Name -- be the first vote! </label>
-                            <input name = 'votes' type ='text' onChange= {(e)=> {  setVotes([...character.votes,[e.target.value]] ) }}></input>
+                            
+                            <input name = 'votes' type ='hidden' value='Anonymous'></input>
+                            <input name = 'rank' type ='hidden' value={rank}></input>
                         </div>
                         <button type='submit'>Submit</button>
                         <button onClick = {go_home}>Cancel</button>
                         <HomeBtn />
-                        <ViewBtn character_id = {character._id} />
+                        <ViewBtn rank = {rank} character_id = {character._id} />
 
                     </div>
 

@@ -48,8 +48,6 @@ const All = props => {
     return (
 
         <>
-
-        <Nav / >
         
             <div className='search_body'>
             <div id =  'all_search' className = 'flex'>
@@ -86,8 +84,7 @@ const All = props => {
 
             </div>
         </div>
-        
-        <Footer />
+    
 
         </>    
     )

@@ -46,8 +46,6 @@ const View = props => {
     return (
 
         <> 
-    
-            <Nav />
             
             <div id = 'view_wrapper' className = 'film_strip'>
                 {   
@@ -81,12 +79,10 @@ const View = props => {
                     </div>
 
 
-
-                  
+\
                 </div>
             </div>
             
-            <Footer />
         
         </>
     )

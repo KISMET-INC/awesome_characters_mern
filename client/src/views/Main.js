@@ -10,7 +10,7 @@ import Context from '../context/Context'
 import SimpleMenu from '../components/SimpleMenu';
 import Nav from '../components/Nav.js';
 import SimpleModal from '../components/Modal';
-
+import QueueAnim from 'rc-queue-anim';
 
 
 const Main = props => {
@@ -32,16 +32,15 @@ const Main = props => {
 
 
     return (
-        <div>
-
-        <Nav />
         
-        
-
+        <>
         <div id='main_body' className = 'wrapper'>
+        
             <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>
         
-            <div className= 'featured film_strip carousel'>
+            <QueueAnim ease={[[0, 10, 1, 0]]} >
+            
+            <div key = '1' className= 'featured film_strip carousel'>
                 {
                     listLoaded && <FeatureCarousel characterList = { characterList }/>
                     
@@ -50,17 +49,18 @@ const Main = props => {
 
             <h3 className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
 
-            < div className = 'honorable carousel'>
+            < div key= '2' className = 'honorable carousel'>
                 {
                     listLoaded && <HonorableCarousel characterList = { characterList }/>
                     
                 }
             </div>
+        </QueueAnim>
         </div>
-        
-        <Footer />
 
-        </div>
+
+        </>
+
     )
 
 }

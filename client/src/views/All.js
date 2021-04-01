@@ -6,6 +6,7 @@ import axios from 'axios';
 import '../App.css';
 import '../static/css/All.css'
 import Context from '../context/Context'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const All = props => {
     const context = useContext(Context)
@@ -40,7 +41,6 @@ const All = props => {
             })
     },[])
 
-   
 
 
 
@@ -59,24 +59,31 @@ const All = props => {
                     <input value = {search}  type = 'text' onChange = {(e)=> {setSearch(e.target.value)}}></input>
                 </div>
 
-                <section className = 'results flex'>   
+                
+                <section className = 'results flex'>
                     {
                         listLoaded && search!== "" && characterList.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()) || c.year === search || c.title === search).map((char,i)=>
 
+                        <ScrollAnimation animateIn="fadeIn">
                             <CharacterCard i = {rankTable[char.charName]}  char = {char} key = {i} />
+                        </ScrollAnimation>
+    
                             
                         )   
                     }
 
                     {
                         listLoaded && search === "" && characterList.map((char,index)=>
-        
+
+                        <ScrollAnimation animateIn="fadeIn">
                             <CharacterCard i={rankTable[char.charName]} char = {char} key = {index} />
-                            
+                        </ScrollAnimation>
                         )   
                     }
                 </section>
-        
+
+                
+
             </div>
         </div>
         

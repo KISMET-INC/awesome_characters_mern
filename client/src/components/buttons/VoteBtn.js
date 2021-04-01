@@ -7,17 +7,17 @@ import Context from '../../context/Context';
 const VoteBtn = props =>{
     const [character] = useState(props.character)
     const  context = useContext(Context)
-    const [string, setString] = useState(context.val)
+    const [signature, setSignature] = useState(context.signature)
 
     useEffect(()=>{
         console.log('get')
-        setString(context.val)
-        console.log(context.val)
-    },[context.val])
+        setSignature(context.signature)
+        console.log(context.signature)
+    },[context.signature])
 
 
     return (
-        <form onSubmit={(e) => props.vote(e,string)}>
+        <form onSubmit={(e) => props.vote(e,signature)}>
         <button type ='submit'>Vote</button>
         </form>
     )

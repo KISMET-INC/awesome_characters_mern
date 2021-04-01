@@ -4,18 +4,22 @@ import "../../App.css";
 
 const Signature = props => {
 const context = useContext(Context)
-const [string, setString] = useState('')
+const [signature, setSignature] = useState(context.signature)
 
     const update_signature= (e)=>{
         e.preventDefault();
-        context.setVal(string)
+        props.handleClose();
+        context.setSignature(signature)
+
     }
+
+
 
     return (
         <form onSubmit ={update_signature} >
-        <input type = "text"  onChange = {(e)=> {setString(e.target.value)}} name = "signature" value = {string} ></input>
-        <button type= 'submit'>Set</button>
-        <button type= 'submit'>Stay Anonoymous</button>
+        <input type = "text"  onChange = {(e)=> {setSignature(e.target.value)}} name = "signature" value = {signature} ></input>
+        <button onClick= {update_signature}>Set Name</button>
+        <button onClick= {props.handleClose}>Stay Anonymous</button>
         </form>
     )
 }

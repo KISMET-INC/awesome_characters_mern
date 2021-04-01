@@ -9,7 +9,7 @@ import axios from 'axios';
 import Context from '../context/Context'
 import SimpleMenu from '../components/SimpleMenu';
 import Nav from '../components/Nav.js';
-import SimpleModal from '../components/Modal';
+import SimpleModal from '../components/TransitionalModal';
 import QueueAnim from 'rc-queue-anim';
 
 
@@ -34,29 +34,31 @@ const Main = props => {
     return (
         
         <>
-        <div id='main_body' className = 'wrapper'>
-        
             <QueueAnim ease={[[0.42, 0, 0.58, 1], [0.42, 0, 0.58, 1]]} >
-            <h3 key ='1' className ='main_title'>★ FEATURED  ★ Top 5</h3>
+                <Nav key = '1' />
+        
+            <div id='main_body' className = 'wrapper'>
+        
+            <h3 key ='2' className ='main_title'>★ FEATURED  ★ Top 5</h3>
         
             
-            <div key = '2' className= 'featured film_strip carousel'>
+            <div key = '3' className= 'featured film_strip carousel'>
                 {
                     listLoaded && <FeatureCarousel characterList = { characterList }/>
                     
                 }
             </div>
 
-            <h3 key='3' className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
+            <h3 key='4' className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
 
-            < div key= '4' className = 'honorable carousel'>
+            < div key= '5' className = 'honorable carousel'>
                 {
                     listLoaded && <HonorableCarousel characterList = { characterList }/>
                     
                 }
             </div>
-        </QueueAnim>
         </div>
+        </QueueAnim>
 
 
         </>

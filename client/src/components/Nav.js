@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import {navigate} from '@reach/router'
 import '../App.css';
 import '../static/css/Nav.css'
@@ -8,10 +8,12 @@ import SearchBtn from './buttons/SearchBtn';
 import Signature from './buttons/Signature';
 import SimpleMenu from './SimpleMenu';
 import { Modal } from '@material-ui/core';
-import TransitionsModal from './Modal';
+import TransitionsModal from './TransitionalModal';
+import Context from '../context/Context';
 
 
 const Nav = props => {
+    const context = useContext(Context)
 
     const go_home = () =>{
         navigate('/')

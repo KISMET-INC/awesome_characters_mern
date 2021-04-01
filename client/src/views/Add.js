@@ -38,6 +38,7 @@ const Add = props => {
 
     return(
         <>
+        <Nav />
         <Form type = {type} character = {character } title = {title} subtitle ={subtitle} submitHandler = {submitHandler} />
         </>
     )

@@ -46,7 +46,8 @@ const View = props => {
 
     return (
 
-        <> 
+        <>
+        <Nav />
             <h2>Epic Performance!</h2>
             <p>Tyler</p>
             

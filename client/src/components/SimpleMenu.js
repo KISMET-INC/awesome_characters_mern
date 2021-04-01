@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import '../static/css/SimpleMenu.css'
+import TransitionsModal from './TransitionalModal';
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [location] = useState('dropdown')
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -55,7 +57,7 @@ export default function SimpleMenu() {
         <MenuItem style={menuItem} onClick={handleClose}>Home<i style={icon} className="fas fa-home"></i></MenuItem>
         <MenuItem style={menuItem} onClick={handleClose}>Search <i style={icon} className="fas fa-search"></i> </MenuItem>
         <MenuItem style={menuItem} onClick={handleClose}>Add <i style={icon2} className="fas fa-plus-square"></i></MenuItem>
-        <MenuItem style={menuItem} onClick={handleClose}>Voter Name <i style={icon} className="fas fa-signature"></i></MenuItem>
+        <MenuItem style={menuItem} onClick={handleClose}><TransitionsModal location={ location } /></MenuItem>
 
       </Menu>
     </div>

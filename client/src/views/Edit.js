@@ -45,6 +45,7 @@ const Edit = props => {
 
     return (
         <>
+        <Nav />
             <div className='edit_body wrapper'>
             {
                 characterLoaded && <Form rank= {rank} type ={type} character = {character} title = {title}  subtitle = {subtitle} submitHandler = { submitHandler }/>

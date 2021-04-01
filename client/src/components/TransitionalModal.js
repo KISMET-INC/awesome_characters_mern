@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -24,7 +24,8 @@ const fontColor = {
     color: 'black',
 }
 
-export default function TransitionsModal() {
+export default function TransitionsModal(props) {
+  const [location] = useState(props.location)
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -36,11 +37,16 @@ export default function TransitionsModal() {
     setOpen(false);
   };
 
+  const icon2 = {
+    marginLeft:  '10px',
+    textAlign: 'right',
+  }
+
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Set your vote name
-      </button>
+      {
+      location != 'dropdown' ? <button type="button" onClick={handleOpen}> Set your vote name</button> : < div onClick={handleOpen}>Set Name <i style={icon2} className="fas fa-signature"></i></div>
+      }
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -57,7 +63,7 @@ export default function TransitionsModal() {
           <div className={classes.paper}>
             <h2 style={fontColor} id="transition-modal-title">Set Your Voter Name</h2>
             <p  style={fontColor} id="transition-modal-description">You can set the name you use to vote or stay anonymous.</p>
-            <Signature />
+            <Signature handleClose= { handleClose }/>
           </div>
         </Fade>
       </Modal>

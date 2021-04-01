@@ -14,17 +14,17 @@ const Feature = props => {
 const context = useContext(Context)
 const [character] = useState(props.character)
 const [votes, setVotes] = useState(props.character.votes)
-const [string,setString] = useState(context.val)
+const [signature,setSignature] = useState(context.signature)
 const [rank] = useState(props.rank)
 const [location] = useState(props.location)
 
-const updateCharacter = (e,string)=> {
-    setVotes([...votes,string])
-    context.goto_vote(e,character,votes,string);
+const updateCharacter = (e,signature)=> {
+    setVotes([...votes,signature])
+    context.goto_vote(e,character,votes,signature);
 }
 const resetVotes = (e)=> {
-    setVotes([string])
-    context.goto_vote(e,character,[],string);
+    setVotes([context.signature])
+    context.goto_vote(e,character,[],context.signature);
 }
 
 const goto_view =()=> {

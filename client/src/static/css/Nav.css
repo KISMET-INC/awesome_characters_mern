@@ -33,6 +33,11 @@ nav {
     border:none;
 }
 
+#simple_menu {
+    display:none;
+}  
+
+
 .nav_right div {
     margin-bottom: 10px;
     justify-content: space-between;
@@ -54,6 +59,10 @@ nav {
 
     .nav_right div {
         display:none;
+    }
+
+    #simple_menu {
+        display:unset;
     }
 }
 

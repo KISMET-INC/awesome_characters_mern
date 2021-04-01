@@ -14,7 +14,8 @@ const [string, setString] = useState('')
     return (
         <form onSubmit ={update_signature} >
         <input type = "text"  onChange = {(e)=> {setString(e.target.value)}} name = "signature" value = {string} ></input>
-        <button type= 'submit'>Ok</button>
+        <button type= 'submit'>Set</button>
+        <button type= 'submit'>Stay Anonoymous</button>
         </form>
     )
 }

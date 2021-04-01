@@ -4,10 +4,12 @@ import '../App.css';
 import FeatureCarousel from '../components/FeatureCarousel';
 import Footer from '../components/Footer';
 import HonorableCarousel from '../components/HonorableCarousel';
-import Nav from '../components/Nav.js';
 import '../static/css/Main.css';
 import axios from 'axios';
 import Context from '../context/Context'
+import SimpleMenu from '../components/SimpleMenu';
+import Nav from '../components/Nav.js';
+import SimpleModal from '../components/Modal';
 
 
 
@@ -32,8 +34,9 @@ const Main = props => {
     return (
         <div>
 
-
         <Nav />
+        
+        
 
         <div id='main_body' className = 'wrapper'>
             <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>

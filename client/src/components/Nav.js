@@ -6,6 +6,9 @@ import clapper from '../static/img/clapper.png';
 import AddCharBtn from './buttons/AddCharBtn';
 import SearchBtn from './buttons/SearchBtn';
 import Signature from './buttons/Signature';
+import SimpleMenu from './SimpleMenu';
+import { Modal } from '@material-ui/core';
+import TransitionsModal from './Modal';
 
 
 const Nav = props => {
@@ -31,8 +34,10 @@ const Nav = props => {
                         <i  onClick ={ go_home }className="fas fa-home"></i>
                         <SearchBtn />
                         <AddCharBtn />
-                    </div> 
+                    </div>
+                        <TransitionsModal />
                 </section>
+                <SimpleMenu />
             </div>
         </nav>
     )

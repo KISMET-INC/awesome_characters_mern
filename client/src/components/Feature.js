@@ -6,6 +6,8 @@ import Context from '../context/Context';
 import { navigate } from '@reach/router';
 import FeatureInfo from './FeatureInfo';
 import FeatureOptions from './FeatureOptions';
+import FeatureImage from './FeatureImage';
+import VotesMapper from './VotesMapper';
 
 
 const Feature = props => {
@@ -58,9 +60,14 @@ const featureOptionsPkg = {
 
 return(
     <div id = 'feature' className = "feature_post flex">
-        <img onClick ={goto_view} src = {character.url} alt = 'character' />
-        <FeatureInfo  votes ={votes} character={character} />
-        <FeatureOptions pkg = {featureOptionsPkg} />
+        <FeatureImage goto_view = {goto_view} url = {character.url} alt ={character.charName} />
+        <div className = 'feature_right'>
+            <div className = 'flex'>
+                <FeatureInfo  votes ={votes} character={character} />
+                <FeatureOptions pkg = {featureOptionsPkg} />
+            </div>
+            <VotesMapper votes = {votes} />
+        </div>
     </div>
 
 )

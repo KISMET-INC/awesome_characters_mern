@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import axios from 'axios';
 import '../App.css'
 import '../static/css/View.css'
+import Title from '../components/Title';
 
 
 
@@ -12,6 +13,7 @@ const View = props => {
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [rank] = useState(props.rank)
     const [location] = useState('view')
+    const [title] = useState("Epic Performance!")
 
 
     useEffect (()=>{
@@ -19,6 +21,7 @@ const View = props => {
             .then(response => {
                 setCharacter(response.data)
                 setCharacterLoaded(true)
+                
 
             }).catch(error => {
                 console.log(error)
@@ -42,8 +45,10 @@ const View = props => {
 
         <>
         <Nav />
-            <h2>Epic Performance!</h2>
-            <p>Tyler</p>
+            {
+
+                characterLoaded && <Title title = {title} subtitle = {character.charName}/>
+            }
             
             <div id = 'view_wrapper' className = 'film_strip'>
                 {   

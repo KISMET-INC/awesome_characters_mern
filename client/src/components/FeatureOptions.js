@@ -13,11 +13,11 @@ import HomeBtn from '../components/buttons/HomeBtn';
 //     updateCharacter: updateCharacter
 // }
 
-const FeatureOptions = (props) => {
-    const [rank] = useState(props.pkg.rank)
-    const [character] = useState(props.pkg.character)
-    const [location] = useState(props.pkg.location)
-    const [votes] = useState(props.pkg.votes)
+const FeatureOptions = ({pkg}) => {
+    const [rank] = useState(pkg.rank)
+    const [character] = useState(pkg.character)
+    const [location] = useState(pkg.location)
+    const [votes] = useState(pkg.votes)
 
     
 
@@ -30,13 +30,13 @@ const FeatureOptions = (props) => {
                 <div className = 'feature buttons_info'>
                         <h3>{character.charName}</h3>
                         {
-                            location !== 'view' ? <h4 onClick={props.pkg.goto_view}>Click to View</h4> : <></>
+                            location !== 'view' ? <h4 onClick={pkg.goto_view}>Click to View</h4> : <></>
                         }
-                        <h4 onClick={props.pkg.goto_edit}>Click to Edit</h4>
+                        <h4 onClick={pkg.goto_edit}>Click to Edit</h4>
                         <h4>Votes: {votes.length}</h4>
                 </div>
-                <VoteBtn character = {character} vote={props.pkg.updateCharacter} />
-                <form onSubmit={props.pkg.resetVotes} >
+                <VoteBtn character = {character} vote={pkg.updateCharacter} />
+                <form onSubmit={pkg.resetVotes} >
                     <button type='submit'>Reset Votes</button>
                 </form>
                 {

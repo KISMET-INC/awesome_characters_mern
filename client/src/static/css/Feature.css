@@ -2,7 +2,7 @@
     margin-bottom:10px;
 }
 .feature_post {
-    width: 90%;
+    width: 99%;
     justify-content: space-between;
     margin:auto;
     align-items: flex-start;
@@ -17,6 +17,10 @@
 }
 
 
+
+.feature_right .flex{
+    align-items: flex-start;
+}
 /******************** */
 /* POST 
 /******************** */
@@ -33,7 +37,7 @@
 /******************** */
 /* INFO
 /******************** */
-.feature_info {
+/* .feature_info {
     width: 30%;
 }
 
@@ -64,7 +68,7 @@
 .feature_info li {
     width: 100px;
 }
-
+ */
 
 /******************** */
 /* BUTTONS

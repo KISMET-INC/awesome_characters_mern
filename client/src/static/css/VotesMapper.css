@@ -1,0 +1,29 @@
+#Votes_Mapper {
+    width: 320px;
+}
+#Votes_Mapper li {
+    width: 120px;
+}
+#Votes_Mapper .votes {
+    flex-wrap: wrap;
+    height: 55px;
+}
+
+#Votes_Mapper p {
+    text-align: right;
+}
+
+#Votes_Mapper h3 {
+    display: block;
+}
+
+#Votes_Mapper li:nth-child(10) {
+    list-style: none;
+    margin-left: 20px;
+    color: var(--orange)
+}
+
+#Votes_Mapper li {
+    list-style-position: inside;
+    font-family: var(--comforta);
+}

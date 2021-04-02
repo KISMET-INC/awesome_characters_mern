@@ -16,7 +16,7 @@ const Featured_Carousel = props => {
             
             <OwlCarousel 
             className='owl-theme' 
-            margin={1} 
+            margin={50} 
             items= {1} 
             autoplay = {true} 
             autoplaySpeed = {1500}

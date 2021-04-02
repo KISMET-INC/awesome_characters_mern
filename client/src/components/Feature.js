@@ -1,13 +1,15 @@
 
 import React, {useState, useContext,useRef,useEffect} from 'react';
 import '../App.css';
-import '../static/css/Feature.css';
 import Context from '../context/Context';
 import { navigate } from '@reach/router';
 import FeatureInfo from './FeatureInfo';
 import FeatureOptions from './FeatureOptions';
 import FeatureImage from './FeatureImage';
 import VotesMapper from './VotesMapper';
+import Quote from './Quote';
+import BasicInfo from './BasicInfo';
+import '../static/css/Feature.css';
 
 
 const Feature = props => {
@@ -59,14 +61,15 @@ const featureOptionsPkg = {
 
 
 return(
-    <div id = 'feature' className = "feature_post flex">
+    <div id = 'Feature' className = "feature_post flex">
         <FeatureImage goto_view = {goto_view} url = {character.url} alt ={character.charName} />
-        <div className = 'feature_right'>
+        <div id = 'info'>
             <div className = 'flex'>
-                <FeatureInfo  votes ={votes} character={character} />
+                <BasicInfo character = {character} />
                 <FeatureOptions pkg = {featureOptionsPkg} />
             </div>
-            <VotesMapper votes = {votes} />
+                <Quote character = {character} />
+                <VotesMapper votes = {votes} resultNum = {6} />
         </div>
     </div>
 

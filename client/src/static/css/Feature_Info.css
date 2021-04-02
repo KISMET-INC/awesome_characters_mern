@@ -1,34 +1,36 @@
 
-#Feature_Info.flex {
-    width: 100%;
-    flex-direction: column;
-}
 
-#Feature_Info .top, #Feature_Info .middle {
-    margin-bottom: 20px;
-    width: 80%;
-}
-
-
-#Feature_Info h3 {
+#Basic_Info h3,
+#Quote h3,
+#VotesMapper h3 {
     font-family: var(--monst);
     font-size: 22px;
     margin-bottom: 5px;
-    width: 100%;
-}
-
-#Feature_Info p {
-    font-family: var(--comforta);
-    margin-bottom: 10px;
-}
-
-#Feature_Info .votes {
-    flex-wrap: wrap;
-    width: 100%;
+    text-align: left;
 }
 
 
+#Basic_Info,
+#Quote {
+    margin-bottom:20px;
 
-#Feature_Info li {
-    width: 150px;
 }
+
+#Basic_Info,
+#Quote {
+    width:100%;
+}
+
+
+#Quote {
+    width: 100%
+}
+
+
+#Basic_Info p,
+#Quote p,
+#VotesMapper p {
+    font-family: var(--comforta)
+}
+
+

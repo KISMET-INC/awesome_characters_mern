@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import VoteBtn from '../components/buttons/VoteBtn';
 import HomeBtn from '../components/buttons/HomeBtn';
-
+import '../static/css/FeatureOptions.css'
 
 // const featureOptionsPkg = {
 //     rank: rank,
@@ -25,15 +25,14 @@ const FeatureOptions = ({pkg}) => {
 
         <>
 
-            <div id='FeatureOptions' className = "feature_btns flex">
+            <div id='Feature_Options' className = "feature_btns flex">
                 <h3>Rank {rank} </h3>
-                <div className = 'feature buttons_info'>
+                <div className = 'feature_links'>
                         <h3>{character.charName}</h3>
                         {
                             location !== 'view' ? <h4 onClick={pkg.goto_view}>Click to View</h4> : <></>
                         }
                         <h4 onClick={pkg.goto_edit}>Click to Edit</h4>
-                        <h4>Votes: {votes.length}</h4>
                 </div>
                 <VoteBtn character = {character} vote={pkg.updateCharacter} />
                 <form onSubmit={pkg.resetVotes} >

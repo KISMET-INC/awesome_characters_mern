@@ -6,18 +6,14 @@
 }
 #Votes_Mapper .votes {
     flex-wrap: wrap;
-    height: 55px;
 }
 
 #Votes_Mapper p {
     text-align: right;
 }
 
-#Votes_Mapper h3 {
-    display: block;
-}
 
-#Votes_Mapper li:nth-child(10) {
+#Votes_Mapper li:nth-child(9) {
     list-style: none;
     margin-left: 20px;
     color: var(--orange)
@@ -27,3 +23,9 @@
     list-style-position: inside;
     font-family: var(--comforta);
 }
+
+#Votes_Mapper h3,
+#Votes_Mapper li {
+    text-align: left;
+}
+

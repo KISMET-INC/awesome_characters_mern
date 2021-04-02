@@ -1,12 +1,14 @@
 #Feature_Image {
     width: 100%;
-    
+}
+* {
+    /* outline: 2px dotted red;  */
 }
 
 
 .owl-carousel .owl-item img,
 #Feature_Image img {
-    width: 90%;
+    width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 80px 10px 100px 10px;

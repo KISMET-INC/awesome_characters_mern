@@ -1,113 +1,28 @@
 #view_wrapper {
     width: 70%;
     margin: auto;
-    margin-bottom: 50px;
 }
 
-#view_wrapper .view_info {
-}
-
-
-/*************************** */
-/* BREAK POINT 1300px
-/*************************** */
-@media (max-width: 1300px){
-
-    #view_wrapper {
-        width: 90%;
-        flex-direction:column;
-        align-items: center;
-    }
-
-    #view_wrapper .view_info div{
-        margin-right: 30px;
-    }
-
-    #view_wrapper .view_info button {
-        display:block;
-        margin: auto;
-        margin-bottom: 10px;
-        margin-top: 20px;
-    }
-
-
-    #view_wrapper .view_info p {
-    
-        font-size: 15px;
-        font-family: var(--comforta);
-    }
-
-}
-/*************************** */
-/* BREAK POINT 950px
-/*************************** */
-@media (max-width: 950px){
-
-    #view_wrapper .view_info {
-        display: flex; 
-        width: 100%;
-        margin-top: 20px;
-        justify-content:  center;
-
-    }
-    #view_wrapper .view_info .quote {
-        width: 50%;
-        margin-right: 0px;
-    }
-
-    #view_wrapper .view_info h3{
-        margin-bottom: 10px;
-    }
-
+#view_wrapper.film_strip {
+    min-height: 400px;
 }
 
 
-/*************************** */
-/* BREAK POINT 650pc
-/*************************** */
-@media (max-width: 650px){
-
-    #view_wrapper .view_info {
-        margin-top: 70px;
-    }
+#view_wrapper .bottom #Feature_Info,
+#view_wrapper .bottom #Votes_Mapper {
+    margin-top: 60px;
+    display: none;
 }
 
-
-/*************************** */
-/* BREAK POINT 650pc
-/*************************** */
-@media (max-width: 700px){
-
-    #view_wrapper .view_info  {
-        flex-direction: column;
-    }
-    #view_wrapper .view_info h3 {
-        margin-top: 10px;
-    }
-}
-/*************************** */
-/* BREAK POINT 426px
-/*************************** */
-@media (max-width: 426px){
-
-    
-
-    #view_wrapper .view_info {
-        text-align: center;
-    }
-
-   
-
-
+#view_wrapper .bottom #Votes_Mapper {
+    width:70%px;
 }
 
-/*************************** */
-/* BREAK POINT 376px
-/*************************** */
-@media (max-width: 376px){
-
-    #view_wrapper {
-        width: 100%;
-    }
-
+#view_wrapper .bottom #Votes_Mapper h3{
+    width:500px;
 }
+
+#view_wrapper #Votes_Mapper {
+    margin-bottom: 35px;
+}
+

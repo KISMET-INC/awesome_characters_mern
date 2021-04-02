@@ -1,14 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import Feature from '../components/Feature';
 import Nav from '../components/Nav';
 import axios from 'axios';
 import '../App.css'
 import '../static/css/View.css'
 import Title from '../components/Title';
+import FeatureInfo from '../components/FeatureInfo';
+import VotesMapper from '../components/VotesMapper';
+import Context from '../context/Context'
 
 
 
 const View = props => {
+    const context = useContext(Context)
     const [character, setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [rank] = useState(props.rank)
@@ -29,17 +33,6 @@ const View = props => {
     },[props.id])
 
 
-    // const resetVotes =() =>{
-    //     axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, { votes : [context.val]})
-    //     .then(response => {
-    //         setCharacter({...character, votes: [context.val]})
-    //         setVotes([context.val])
-    //         console.log(votes)
-    //     }).catch ( error => {
-    //         console.log(error)
-    //     })
-    // }
-
 
     return (
 
@@ -50,49 +43,21 @@ const View = props => {
                 characterLoaded && <Title title = {title} subtitle = {character.charName}/>
             }
             
-            <div id = 'view_wrapper' className = 'film_strip'>
+            <div id = 'View' className = 'film_strip'>
                 {   
                     characterLoaded && <Feature location ={ location } rank = { rank } character = { character }/>
                 }
-
-                <div className = 'view_info'>
-
-                    <section className='left flex'>
-                        <div>
-                            <h3>Movie: </h3>
-                            <p>{character.title}</p>
-                            <p>{character.year} </p>
-                        </div>
-
-                        <div>
-                            <h3>Actor: </h3>
-                            <p>{character.actor}</p>
-                        </div>
-
-                    </section>
-
-                    <div className='quote'>
-                        <h3 >Quote: </h3>
-                        <p>{character.quote}</p>
-                    </div>
-
-                    <div className ='voters'>
-                    <h3 >Voters: </h3>
-                    <ul>
-                    {
-                        characterLoaded && character.votes.map((voter, i)=>
-                        <li> {voter} </li>
-                        )
-                    }
-                    </ul>
-                    
-
-                    </div>
-
-
-                </div>
+            <div className = 'bottom flex'>
+                {
+                    characterLoaded && <FeatureInfo character = {character} />
+                }
+                {
+                    characterLoaded && <VotesMapper votes = {character.votes} />
+                }
             </div>
-            
+                { character.quote}
+            </div>
+
         
         </>
     )

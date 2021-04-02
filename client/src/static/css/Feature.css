@@ -1,5 +1,5 @@
-#feature h3 {
-    margin-bottom:10px;
+* {
+     /* outline: 2px dotted red;  */
 }
 .feature_post {
     width: 99%;
@@ -7,6 +7,11 @@
     margin:auto;
     align-items: flex-start;
 
+}
+
+
+.feature_right {
+    padding-left: 40px;
 }
 
 .feature_title {
@@ -17,21 +22,123 @@
 }
 
 
-
-.feature_right .flex{
-    align-items: flex-start;
+#Feature_Info {
+    margin-right:20px;
 }
+
+#Feature_Image {
+    width: 50%;
+}
+
+#Quote {
+    width: 50%;
+}
+
+#Feature_Options {
+    padding-left: 20px;
+}
+
+#Feature_Options .feature_links{
+    display:none;
+}
+
+#Votes_Mapper {
+    width: 400px;
+    height: 100px;
+}
+
+.feature_btns{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .feature_btns button {
+        margin-bottom: 20px;
+    }
+
+    #Feature_Options h3 {
+        font-family: var(--monst);
+        margin-bottom: 10px;
+    }
+
+    #Feature_Options h4 {
+        margin-bottom: 10px;
+        color: var(--orange);
+    }
+
+
+/************************/
+/* BREAKPOINT 1000px    
+/************************/
+@media (max-width: 1000px){
+    #Basic_Info,
+    #Quote {
+        display:none;
+    }
+
+    #Feature_Options .feature_links{
+        display:unset;
+    }
+
+    #Votes_Mapper {
+        width: 250px;
+    }
+
+    #Votes_Mapper h3 {
+        text-align: center;
+    }
+
+    
+    #Feature #info .flex {
+        justify-content: center;
+    }
+    #Votes_Mapper .votes.flex {
+        justify-content: left;
+        align-items: flex-start;
+    }
+    #Feature_Options {
+        padding: 0px;
+    }
+}
+
+
+/************************/
+/* BREAKPOINT 800px    
+/************************/
+@media (max-width: 800px){
+
+    #Feature {
+        width: 100%;
+    }
+
+}
+
+/************************/
+/* BREAKPOINT 700px    
+/************************/
+@media (max-width: 700px){
+
+    #Feature_Options,
+    #Votes_Mapper {
+        display:none;
+    }
+
+    #Feature_Image {
+        width: 100%;
+    }
+
+
+}
+
+
+
+
+
+
 /******************** */
 /* POST 
 /******************** */
-
-
-    .feature_post img {
-
-        object-fit: cover;
-        border-radius: 80px 10px 100px 10px;
-        border: 2px solid var(--orange);
-    }
 
 
 /******************** */
@@ -73,142 +180,5 @@
 /******************** */
 /* BUTTONS
 /******************** */
-.feature_btns{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-    .feature_btns button {
-        margin-bottom: 20px;
-    }
-
-    .feature_btns h3 {
-        font-family: var(--monst);
-        margin-bottom: 10px;
-    }
-    .feature.buttons_info {
-        display: none;
-    }
-
-
-
-/******************** */
-/* OVERRIDE CAROUSEL-DOTS
-/******************** */
-.owl-carousel .owl-item img,
-.feature_post img {
-    width: 45%;
-    height: 300px;
-    
-}
-
-/******************** */
-/* OVERRIDE CAROUSEL-DOTS
-************************/
-
-@media (max-width:1300px) {
-
-    .wrapper {
-        width: 90%;
-    }
-}
-
-@media (max-width:1050px) {
-
-    #feature .bottom li {
-        display: none;
-        
-    }
-}
-
-
-@media (max-width:950px) {
-
-    .feature_info  {
-        display:none;
-    }
-
-    .feature.buttons_info {
-        display:flex;
-        flex-direction: column;
-        justify-content : center;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    #feature .feature.buttons_info h3 {
-        margin-bottom:0px;
-    }
-
-    #feature .feature.buttons_info h4 {
-        margin-bottom:0px;
-        margin-top:6px;
-        color: var(--orange)
-    }
-
-    .owl-carousel .owl-item img, .feature_post img{
-        width:65%;
-    }
-
-}
-
-
-@media (max-width:725px) {
-    .feature_btns button,
-    .feature_btns form {
-        width: 150px;
-    }
-
-    .featured.film_strip {
-        padding: 10px 0px;
-    }
-}
-
-
-@media (max-width:650px) {
-
-    .feature_btns button,
-    .feature_btns form {
-        display:none;
-    }
-
-
-    .feature_info {
-        width: 100%;
-    }
-
-    .feature_btns {
-        position: relative;
-        width: fit-content;
-        right: 370px;
-        top:205px;
-        justify-content: left;
-        align-items: flex-start;
-        background-color: rgba(0,0,0,0.5);
-        padding: 5px 50px;
-        border-radius: 200px;
-        height: 100px;
-    }
-
-    .feature_btns h3 {
-        width: 200px;
-    }
-
-    .feature.buttons_info {
-        text-align: left;
-    }
-    .owl-carousel .owl-item img, .feature_post img {
-        width: 100%;
-    }
-    
-}
-
-@media (max-width:425px) {
-
-    .feature_btns {
-        position: relative;
-        right: 290px;
-        top:205px;
-    }
-}
+  

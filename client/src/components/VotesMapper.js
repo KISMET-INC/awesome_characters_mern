@@ -1,21 +1,22 @@
 import React from 'react';
+import '../static/css/Feature_Info.css'
 import '../static/css/VotesMapper.css'
 
 
-const VotesMapper = (props) => {
+const VotesMapper = ({votes, resultNum}) => {
 
     return (
 
         <div id = 'Votes_Mapper'>
-        <h3>Votes:  {props.votes.length} </h3>
+        <h3>Votes:  {votes.length} </h3>
             <ul className = 'votes flex'>
             {
-                props.votes.map((vote,i)=>
-                i < 9 ?  <li key={i}>{vote} </li> : <></>
+                votes.map((vote,i)=>
+                i < resultNum ?  <li key={i}>{vote} </li> : <></>
                 )
             }
             {
-                props.votes.length > 9 ? <li>Plus {props.votes.length - 9 } More ... 
+                votes.length > resultNum ? <li>Plus {votes.length - resultNum } More ... 
                 </li> : <></>
             }
             </ul>

@@ -34,7 +34,7 @@ input {
 /*************************** */
 /* BREAK POINT 426px
 /*************************** */
-@media (max-width: 426px){
+/* @media (max-width: 426px){
     #all_search.flex {
         margin-top: 100px;
     }
@@ -51,4 +51,4 @@ input {
     }
     
 
-}
+} */

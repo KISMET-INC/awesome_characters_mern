@@ -20,3 +20,35 @@
     font-family: var(--comforta);
     text-align:center;
 }
+
+#Feature_Image .image_info {
+    visibility:collapse;
+    position: relative;
+    top: -100px;
+    height: 26px;
+
+}
+
+#Feature_Image .image_info h4{
+    margin-top: 10px;
+}
+#Feature_Image .image_info h5{
+    margin-top: 20px;
+    color: var(--orange)
+}
+
+
+/*********************************************/
+/* Breakpoint 700px
+/*********************************************/
+@media (max-width: 700px){
+
+    #Feature_Image .image_info {
+        visibility:visible;
+    }
+    #Feature_Image .background {
+        background-color: var(--transblack);
+        padding: 10px 20px;
+    
+    }
+}

@@ -132,6 +132,23 @@
 }
 
 
+/************************/
+/* BREAKPOINT 700px    
+/************************/
+@media (max-width: 450px){
+    .film_strip {
+        padding: 40px 0px;
+        width: 100%;
+    }
+
+    .wrapper {
+        
+        width: 100%;
+    }
+
+}
+
+
 
 
 

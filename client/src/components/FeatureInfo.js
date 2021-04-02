@@ -4,15 +4,9 @@ import Context from '../context/Context';
 
 const FeatureInfo = (props) => {
     const [character] = useState(props.character)
-    const votes = useRef(props.votes)
-    const context = useContext(Context)
-    const [v,setV] = useState(props.votes)
-    const [signature] = useState(context.signature)
 
     useEffect(()=>{
-        
         console.log('propsvotes changed')
-        console.log(`propsvotes ${props.votes}`)
     },[props.votes])
 
 
@@ -34,7 +28,7 @@ const FeatureInfo = (props) => {
             }
         </div>
         <div className = "bottom flex">
-            <h3>Votes:  {v.length} </h3>
+            <h3>Votes:  {props.votes.length} </h3>
             {
                 props.votes.map((vote,i)=>
                 <li key={i}>{vote} </li>

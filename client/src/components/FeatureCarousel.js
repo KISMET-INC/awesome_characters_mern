@@ -16,13 +16,15 @@ const Featured_Carousel = props => {
             
             <OwlCarousel 
             className='owl-theme' 
-            loop margin={1} 
+            margin={1} 
             items= {1} 
             autoplay = {true} 
             autoplaySpeed = {1500}
             autoplayHoverPause = {true}
             dots = {false}
-            startPosition= {0}
+            center = {true}
+            loop
+
             >
 
             {

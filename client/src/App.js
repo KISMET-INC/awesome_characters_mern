@@ -18,10 +18,11 @@ function App() {
 const [signature, setSignature] = useState('Anonymous')
 const [character, setCharacter] = useState({})
 const [characterList] = useState()
-const [reload] = useState(0)
+const [reload,setReload] = useState(0)
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
+  console.log(`votes ${votes}`)
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,signature] })
   .then(response => {
       console.log('update')
@@ -37,7 +38,7 @@ const goto_vote =(e,character,votes) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{ reload, signature,setSignature, goto_vote, character, setCharacter, characterList}}>
+      <Context.Provider value= {{ reload,setReload, signature,setSignature, goto_vote, character, setCharacter, characterList}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

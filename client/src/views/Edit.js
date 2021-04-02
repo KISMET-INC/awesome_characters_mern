@@ -4,29 +4,30 @@ import '../App.css'
 import Form from '../components/Form';
 import Nav from '../components/Nav';
 import { navigate } from '@reach/router';
+import Title from '../components/Title';
 
 
 
 const Edit = props => {
     const [title] = useState("Edit the EPIC...")
-    const [subtitle, setSubtitle] = useState("");
+    // const [subtitle, setSubtitle] = useState("");
     const [character,setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [type] = useState('edit')
     const [rank] = useState(props.rank)
     
-
     useEffect (()=> {
         axios.get(`http://localhost:8000/api/characters/${props.id}`)
             .then(response => {
 
-                setSubtitle(response.data.charName)
+                // setSubtitle(response.data.charName)
                 setCharacter(response.data)
                 setCharacterLoaded(true)
             }).catch(errors => {
                 console.log(errors)
             })
     },[props.id])
+
 
     const submitHandler = (e, data) => {
         e.preventDefault();
@@ -38,8 +39,14 @@ const Edit = props => {
         }).catch (error => {
             console.log(error)
         })
-    
 
+    }
+
+    const formPkg = {
+        rank: rank,
+        type: type,
+        character: character,
+        submitHandler: submitHandler,
     }
 
     return (
@@ -47,7 +54,12 @@ const Edit = props => {
         <Nav />
             <div className='edit_body wrapper'>
             {
-                characterLoaded && <Form rank= {rank} type ={type} character = {character} title = {title}  subtitle = {subtitle} submitHandler = { submitHandler }/>
+                characterLoaded && <Title subtitle={character.charName} title={title} />
+
+            }
+            
+            {
+                characterLoaded && <Form pkg = {formPkg} />
 
             }
             </div>

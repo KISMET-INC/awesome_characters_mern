@@ -5,10 +5,15 @@ import "../static/css/Form.css"
 import HomeBtn from './buttons/HomeBtn';
 import ViewBtn from './buttons/ViewBtn';
 
-
+// const formPkg = {
+//     rank: rank,
+//     type: type,
+//     character: character,
+//     submitHandler: submitHandler,
+// }
 
 const Form = props => {
-    const [character] = useState(props.character)
+    const [character] = useState(props.pkg.character)
     const [charName,setCharName] = useState(character.charName)
     const [title, setTitle] = useState(character.title)
     const [year, setYear] = useState(character.year)
@@ -16,7 +21,7 @@ const Form = props => {
     const [votes] = useState(character.votes)
     const [url, setUrl] = useState(character.url)
     const [quote, setQuote] = useState(character.quote)
-    const [rank] = useState(props.rank)
+    const [rank] = useState(props.pkg.rank)
 
     const goto_view =() => {
         navigate(`/view/${character._id}`)
@@ -30,8 +35,6 @@ const Form = props => {
 
     return (
         <div id = "add_form_wrapper" className='flex'>
-            <h2>{props.title}</h2>
-            <p>{props.subtitle}</p>
             <div className= 'film_strip flex'>
             <div className ='form_left'>
                 {
@@ -39,7 +42,7 @@ const Form = props => {
                 }
             </div>
 
-                <form  className='flex' onSubmit={ (e) => props.submitHandler( e, { charName, title, year, actor,url, votes, quote,rank } ) }>
+                <form  className='flex' onSubmit={ (e) => props.pkg.submitHandler( e, { charName, title, year, actor,url, votes, quote,rank } ) }>
                     <div className = 'col_1'>
                         <div>
                             <label htmlFor = 'charName' >Character Name:</label>

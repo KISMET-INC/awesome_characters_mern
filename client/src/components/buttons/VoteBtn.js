@@ -14,8 +14,8 @@ const VoteBtn = props =>{
 
 
     return (
-        <form onSubmit={(e) => props.vote(e,signature)}>
-        <button type ='submit'>Vote</button>
+        <form onSubmit={(e) => props.vote(e,signature,props.character)}>
+            <button type ='submit'>Vote</button>
         </form>
     )
 }

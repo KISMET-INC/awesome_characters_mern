@@ -1,0 +1,17 @@
+
+.title h2{
+    
+    margin: 0px;
+    color: white;
+    font-family: var(--monst);
+    font-size: 30px;
+    text-align: center;
+}
+
+.title p {
+    margin: 0px;
+    text-align: center;
+    font-family: var(--comforta);
+    color: var(--orange);
+    margin-bottom: 30px;
+}

@@ -9,6 +9,7 @@ import Nav from '../components/Nav.js';
 import QueueAnim from 'rc-queue-anim';
 
 
+
 const Main = props => {
     const [characterList, setCharacterList] = useState()
     const [listLoaded, setListLoaded] = useState(false)
@@ -27,25 +28,22 @@ const Main = props => {
     return (
         
         <>
+
             <QueueAnim ease={[[0.42, 0, 0.58, 1], [0.42, 0, 0.58, 1]]} >
-                <div key = '1'>
-                    <Nav /> 
-                </div>
+            <div key = '1'>
+                <Nav />
+            </div>
         
             <div id='main_body' className = 'wrapper'>
         
             <h3 key ='2' className ='main_title'>★ FEATURED  ★ Top 5</h3>
-        
-            
             <div key = '3' className= 'featured film_strip carousel'>
                 {
                     listLoaded && <FeatureCarousel characterList = { characterList }/>
                     
                 }
             </div>
-
             <h3 key='4' className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
-
             < div key= '5' className = 'honorable carousel'>
                 {
                     listLoaded && <HonorableCarousel characterList = { characterList }/>
@@ -54,7 +52,6 @@ const Main = props => {
             </div>
         </div>
         </QueueAnim>
-
 
         </>
 

@@ -14,9 +14,9 @@
 
 
 #Votes_Mapper li:nth-child(9) {
-    list-style: none;
+    /* list-style: none;
     margin-left: 20px;
-    color: var(--orange)
+    color: var(--orange) */
 }
 
 #Votes_Mapper li {

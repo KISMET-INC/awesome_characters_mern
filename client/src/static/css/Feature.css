@@ -1,15 +1,17 @@
 * {
-     /* outline: 2px dotted red;  */
+    /* outline: 2px dotted red;   */
 }
 .feature_post {
     width: 99%;
-    justify-content: space-between;
     margin:auto;
     align-items: flex-start;
+    justify-content: center;
 
 }
 
-
+#Feature #info {
+    margin-left: 20px;
+}
 .feature_right {
     padding-left: 40px;
 }
@@ -72,8 +74,8 @@
 /* BREAKPOINT 1000px    
 /************************/
 @media (max-width: 1000px){
-    #Basic_Info,
-    #Quote {
+    #Feature #Basic_Info,
+    #Feature #Quote {
         display:none;
     }
 
@@ -131,22 +133,34 @@
 
 }
 
+/************************/
+/* BREAKPOINT 426px    
+/************************/
+@media (max-width: 426px){
 
-/************************/
-/* BREAKPOINT 700px    
-/************************/
-@media (max-width: 450px){
-    .film_strip {
-        padding: 40px 0px;
-        width: 100%;
+    #View .bottom {
+        flex-direction: column;
     }
 
-    .wrapper {
-        
+    #View #Votes_Mapper {
         width: 100%;
     }
 
 }
+
+/************************/
+/* BREAKPOINT 450px    
+/************************/
+@media (max-width: 450px){
+
+    #Feature_Image {
+        margin-left: 20px;
+    }
+
+}
+
+
+
 
 
 

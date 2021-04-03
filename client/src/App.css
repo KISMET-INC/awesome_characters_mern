@@ -121,3 +121,33 @@ button {
 .edit_body {
     min-height: 550px;
 }
+
+@media (max-width: 1300px){
+
+    .wrapper{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+
+    .wrapper{
+        width: 90%;
+    }
+}
+
+/************************/
+/* BREAKPOINT 700px    
+/************************/
+@media (max-width: 450px){
+    .film_strip {
+        padding: 40px 0px;
+        width: 100%;
+    }
+
+    .wrapper {
+        
+        width: 100%;
+    }
+
+}

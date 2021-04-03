@@ -19,6 +19,7 @@ const [votes, setVotes] = useState(props.character.votes)
 const votesRef = useRef(props.character.votes)
 const [rank] = useState(props.rank)
 const [location] = useState(props.location)
+const [resultNum] = useState(props.resultNum)
 
 
 // useEffect(()=>{
@@ -69,7 +70,7 @@ return(
                 <FeatureOptions pkg = {featureOptionsPkg} />
             </div>
                 <Quote character = {character} />
-                <VotesMapper votes = {votes} resultNum = {6} />
+                <VotesMapper votes = {votes} resultNum = {resultNum} />
         </div>
     </div>
 

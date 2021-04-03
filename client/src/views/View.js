@@ -18,6 +18,7 @@ const View = props => {
     const [rank] = useState(props.rank)
     const [location] = useState('view')
     const [title] = useState("Epic Performance!")
+    const [resultNum] = useState(12)
 
 
     useEffect (()=>{
@@ -35,30 +36,31 @@ const View = props => {
 
 
     return (
-
         <>
         <Nav />
+        <div id = 'View' className = 'wrapper'>
             {
 
                 characterLoaded && <Title title = {title} subtitle = {character.charName}/>
             }
             
-            <div id = 'View' className = 'film_strip'>
+            <div  className = 'film_strip'>
                 {   
-                    characterLoaded && <Feature location ={ location } rank = { rank } character = { character }/>
+                    characterLoaded && <Feature resultNum= {resultNum} location ={ location } rank = { rank } character = { character }/>
                 }
-            <div className = 'bottom flex'>
+                
+            </div>
+
+            <section className = 'bottom flex'>
                 {
                     characterLoaded && <FeatureInfo character = {character} />
                 }
                 {
-                    characterLoaded && <VotesMapper votes = {character.votes} />
+                    characterLoaded && <VotesMapper resultNum ={resultNum} votes = {character.votes} />
                 }
-            </div>
-                { character.quote}
-            </div>
-
+            </section>
         
+        </div>
         </>
     )
 }

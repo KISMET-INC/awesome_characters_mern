@@ -10,6 +10,7 @@ import OwlCarousel from 'react-owl-carousel';
 
 const Featured_Carousel = props => {
     const [location] = useState('carousel')
+    const [resultNum] = useState(6)
 
     return(
         <div id= "feature_carousel" >
@@ -29,7 +30,7 @@ const Featured_Carousel = props => {
 
             {
                 props.characterList.map((character,i)=>
-                    <Feature location = {location} key= {i} rank = {i+1} character = {character} />
+                    <Feature resultNum = {resultNum} location = {location} key= {i} rank = {i+1} character = {character} />
                 )  
             }
 

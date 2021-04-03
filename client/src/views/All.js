@@ -46,8 +46,7 @@ const All = props => {
         <>
         <Nav />
         
-            <div className='search_body'>
-            <div id =  'all_search' className = 'flex'>
+            <div id =  'Search' className = 'wrapper flex'>
 
                 <div className = 'search_grp flex'>
                     <p>Search by: name, year, movie title</p>
@@ -80,8 +79,6 @@ const All = props => {
                 
 
             </div>
-        </div>
-    
 
         </>    
     )

@@ -27,7 +27,7 @@ const Main = props => {
 
     return (
         
-        <>
+        <div id ='Main'>
 
             <QueueAnim ease={[[0.42, 0, 0.58, 1], [0.42, 0, 0.58, 1]]} >
             <div key = '1'>
@@ -53,7 +53,7 @@ const Main = props => {
         </div>
         </QueueAnim>
 
-        </>
+        </div>
 
     )
 

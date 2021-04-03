@@ -1,5 +1,5 @@
 *{
-    /* outline: 2px dotted red;   */
+  /* outline: 2px dotted red;     */
 }
 #View #Feature_Options .feature_links {
     display: unset;
@@ -19,16 +19,21 @@
 
 #View .bottom #Basic_Info,
 #View .bottom #Quote {
-    width: 50%;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
-#View .bottom #Quote {
-    padding-left: 20px;
+
+#View .bottom #Basic_Info .movie_details {
+    display: flex;
+    justify-content: space-between;
 }
 
 
 #View .bottom #Feature_Info {
     display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 0px;
     justify-content: space-around;
@@ -86,26 +91,12 @@
 
     #View #Votes_Mapper {
         width: 100%;
-        margin-top: 30px;
+
     } 
 
     
 }
 
 
-/************************/
-/* BREAKPOINT 426px    
-/************************/
-@media (max-width: 426px){
-/* 
-    #View .bottom {
-        flex-direction: column;
-    }
-
-    #View #Votes_Mapper {
-        width: 100%;
-    } */
-
-}
 
 

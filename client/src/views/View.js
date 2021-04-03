@@ -49,12 +49,6 @@ const View = props => {
         context.goto_vote(e,character,[],context.signature);
     }
 
-    const featurePkg = {
-        resultNum : resultNum,
-        location: location,
-        rank: rank,
-        character: character
-    }
 
 
     return (
@@ -68,17 +62,26 @@ const View = props => {
             
             <div  className = 'film_strip'>
                 {   
-                    characterLoaded && <Feature reset_votes = {reset_votes} update_character ={update_character} pkg = {featurePkg} />
+                    characterLoaded && 
+                    <Feature 
+                    resultNum = {resultNum} 
+                    character={character} 
+                    location ={location} 
+                    rank= {rank} 
+                    update_character ={update_character} reset_votes={reset_votes} 
+                    />
                 }
                 
             </div>
 
             <section className = 'bottom flex'>
                 {
-                    characterLoaded && <FeatureInfo character = {character} />
+                    characterLoaded && 
+                    <FeatureInfo character = {character} />
                 }
                 {
-                    characterLoaded && <VotesMapper resultNum ={resultNum} votes = {votes} />
+                    characterLoaded && 
+                    <VotesMapper resultNum ={resultNum} votes = {votes} />
                 }
             </section>
         

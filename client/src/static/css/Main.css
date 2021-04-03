@@ -14,3 +14,14 @@
 
 
 
+/************************/
+/* BREAKPOINT 426px    
+/************************/
+@media (max-width: 450px){
+    #Main .main_title {
+        padding: 0px 20px;
+        font-size: 21px;
+        text-align: center;
+    }
+
+}

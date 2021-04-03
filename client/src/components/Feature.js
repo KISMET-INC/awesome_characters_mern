@@ -11,17 +11,23 @@ import BasicInfo from './BasicInfo';
 import '../static/css/Feature.css';
 
 
-const Feature = ({pkg,update_character, reset_votes}) => {
+// const featurePkg = {
+//     resultNum : resultNum,
+//     location: location,
+//     rank: rank,
+//     character: character
+// }
+// const votingPkg = {
+//     update_character: update_character,
+//     reset_votes: reset_votes,
+// }
+
+const Feature = ({character, location, rank, update_character, reset_votes, resultNum}) => {
 const context = useContext(Context)
-const  [character] = useState(pkg.character)
 const [votes, setVotes] = useState(character.votes)
 
 
 
-// useEffect(()=>{
-//     console.log("hi")
-
-// })
 
 const local_update_character = (e,signature,character)=> {
     e.preventDefault()
@@ -38,18 +44,18 @@ const local_reset_votes = (e)=> {
 }
 
 const goto_view =()=> {
-    navigate(`/view/${character._id}/${pkg.rank}`)
+    navigate(`/view/${character._id}/${rank}`)
 }
 
 const goto_edit =()=> {
-    navigate(`/edit/${character._id}/${pkg.rank}`)
+    navigate(`/edit/${character._id}/${rank}`)
 }
 
 const featureOptionsPkg = {
-    rank: pkg.rank,
+    rank: rank,
     character: character,
     votes: character.votes,
-    location : pkg.location,
+    location : location,
     goto_view: goto_view,
     goto_edit: goto_edit,
 }
@@ -57,6 +63,7 @@ const featureOptionsPkg = {
 
 
 return(
+
     <div id = 'Feature' className = "feature_post flex">
         <FeatureImage reset_votes = {reset_votes} update_character = {update_character} pkg ={featureOptionsPkg} />
         <div id = 'info'>
@@ -65,7 +72,7 @@ return(
                 <FeatureOptions voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {local_reset_votes} update_character = {local_update_character} pkg = {featureOptionsPkg} />
             </div>
                 <Quote character = {character} />
-                <VotesMapper votes = {votes} resultNum = {pkg.resultNum} />
+                <VotesMapper votes = {votes} resultNum = {resultNum} />
         </div>
     </div>
 

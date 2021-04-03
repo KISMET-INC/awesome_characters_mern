@@ -6,9 +6,11 @@ const BasicInfo = ({character}) => {
     return (
         <section id = 'Basic_Info'>
                 <h3>{character.charName}</h3>
-                <p>{character.year}</p>
-                <p>{character.movieTitle}</p>
-                <p>{character.actor}</p>
+                <div className ="movie_details">
+                    <p>Movie: &nbsp; {character.movieTitle}</p>
+                    <p>Year:  &nbsp; {character.year}</p>
+                    <p>Actor:  &nbsp; {character.actor}</p>
+                </div>
         </section>
     )
 

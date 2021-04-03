@@ -1,9 +1,6 @@
 #Feature_Image {
     width: 100%;
 }
-* {
-     /* outline: 2px dotted red;    */
-}
 
 
 .owl-carousel .owl-item img,
@@ -43,7 +40,7 @@
     background-color: transparent;
     color: var(--orange);
     border:none;
-    font-size: 20px;
+    font-size: 19px;
     text-align: left;
     width: 75px;
 

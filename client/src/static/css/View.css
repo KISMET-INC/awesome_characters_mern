@@ -1,5 +1,5 @@
 *{
-    /* outline: 2px dotted red; */
+    /* outline: 2px dotted red;   */
 }
 #View #Feature_Options .feature_links {
     display: unset;
@@ -19,7 +19,11 @@
 
 #View .bottom #Basic_Info,
 #View .bottom #Quote {
-    width: fit-content;
+    width: 50%;
+}
+
+#View .bottom #Quote {
+    padding-left: 20px;
 }
 
 
@@ -33,9 +37,12 @@
 
 
 @media (max-width: 1300px){
-    .wrapper{
+    #View.wrapper{
         width: 90%;
     }
+
+
+    
 }
 
 
@@ -63,12 +70,42 @@
     }
 
     #View .bottom #Votes_Mapper .votes {
-       height: 100px;
-       display: flex;
-       flex-wrap: wrap;
-       overflow:hidden;
-       justify-content: center;
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow:hidden;
+        justify-content: center;
     }
+
+
+    #View .bottom  {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #View #Votes_Mapper {
+        width: 100%;
+        margin-top: 30px;
+    } 
+
+    
+}
+
+
+/************************/
+/* BREAKPOINT 426px    
+/************************/
+@media (max-width: 426px){
+/* 
+    #View .bottom {
+        flex-direction: column;
+    }
+
+    #View #Votes_Mapper {
+        width: 100%;
+    } */
+
 }
 
 

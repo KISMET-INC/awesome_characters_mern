@@ -13,7 +13,7 @@ import '../static/css/FeatureOptions.css'
 //     updateCharacter: updateCharacter
 // }
 
-const FeatureOptions = ({pkg}) => {
+const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
     const [rank] = useState(pkg.rank)
     const [character] = useState(pkg.character)
     const [location] = useState(pkg.location)
@@ -23,28 +23,29 @@ const FeatureOptions = ({pkg}) => {
 
     return (
 
-        <>
+        
 
             <div id='Feature_Options' className = "feature_btns flex">
                 <h3>Rank {rank} </h3>
-                <div className = 'feature_links'>
-                        <h3>{character.charName}</h3>
+                <section className = 'feature_links'>
+                        <h3>{character.charName}</h3> 
                         {
                             location !== 'view' ? <h4 onClick={pkg.goto_view}>Click to View</h4> : <></>
                         }
                         <h4 onClick={pkg.goto_edit}>Click to Edit</h4>
-                </div>
-                <VoteBtn character = {character} vote={pkg.updateCharacter} />
-                <form onSubmit={pkg.resetVotes} >
-                    <button type='submit'>Reset Votes</button>
-                </form>
-                {
-                    location !== 'carousel' ?  <HomeBtn/> : <></>
-                }
+                </section>
+
+                <section className ='feature_buttons'>
+                    <VoteBtn label ={voteLabel} character = {character} vote={update_character} />
+                   <VoteBtn label = {resetLabel} character={character} vote ={reset_votes} />
+                    {
+                        location !== 'carousel' ?  <HomeBtn/> : <></>
+                    }
+                </section>
             </div>
             
         
-        </>
+    
 
     )
 }

@@ -3,7 +3,6 @@ import React, {useState, useContext,useRef,useEffect} from 'react';
 import '../App.css';
 import Context from '../context/Context';
 import { navigate } from '@reach/router';
-import FeatureInfo from './FeatureInfo';
 import FeatureOptions from './FeatureOptions';
 import FeatureImage from './FeatureImage';
 import VotesMapper from './VotesMapper';
@@ -12,14 +11,11 @@ import BasicInfo from './BasicInfo';
 import '../static/css/Feature.css';
 
 
-const Feature = props => {
+const Feature = ({pkg,update_character, reset_votes}) => {
 const context = useContext(Context)
-const [character] = useState(props.character)
-const [votes, setVotes] = useState(props.character.votes)
-const votesRef = useRef(props.character.votes)
-const [rank] = useState(props.rank)
-const [location] = useState(props.location)
-const [resultNum] = useState(props.resultNum)
+const  [character] = useState(pkg.character)
+const [votes, setVotes] = useState(character.votes)
+
 
 
 // useEffect(()=>{
@@ -27,7 +23,7 @@ const [resultNum] = useState(props.resultNum)
 
 // })
 
-const updateCharacter = (e,signature,character)=> {
+const local_update_character = (e,signature,character)=> {
     e.preventDefault()
     setVotes([...votes,signature])
     context.goto_vote(e,character,votes,signature);
@@ -35,42 +31,41 @@ const updateCharacter = (e,signature,character)=> {
 
 
 
-const resetVotes = (e)=> {
+const local_reset_votes = (e)=> {
     e.preventDefault()
     setVotes([context.signature])
     context.goto_vote(e,character,[],context.signature);
 }
 
 const goto_view =()=> {
-    navigate(`/view/${character._id}/${rank}`)
+    navigate(`/view/${character._id}/${pkg.rank}`)
 }
 
 const goto_edit =()=> {
-    navigate(`/edit/${character._id}/${rank}`)
+    navigate(`/edit/${character._id}/${pkg.rank}`)
 }
 
 const featureOptionsPkg = {
-    rank: rank,
+    rank: pkg.rank,
     character: character,
     votes: character.votes,
-    location : location,
+    location : pkg.location,
     goto_view: goto_view,
     goto_edit: goto_edit,
-    updateCharacter: updateCharacter,
-    resetVotes: resetVotes,
 }
+
 
 
 return(
     <div id = 'Feature' className = "feature_post flex">
-        <FeatureImage goto_view = {goto_view} url = {character.url} alt ={character.charName} />
+        <FeatureImage reset_votes = {reset_votes} update_character = {update_character} pkg ={featureOptionsPkg} />
         <div id = 'info'>
             <div className = 'flex'>
                 <BasicInfo character = {character} />
-                <FeatureOptions pkg = {featureOptionsPkg} />
+                <FeatureOptions voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {local_reset_votes} update_character = {local_update_character} pkg = {featureOptionsPkg} />
             </div>
                 <Quote character = {character} />
-                <VotesMapper votes = {votes} resultNum = {resultNum} />
+                <VotesMapper votes = {votes} resultNum = {pkg.resultNum} />
         </div>
     </div>
 

@@ -1,74 +1,120 @@
-nav {
-
+#Nav {
     margin-bottom: 40px;
-}
-.nav_left {
-    align-items: center;
-    margin-top: -5px;  
-}
-    .nav_left img {
-        height: 95px;
-        margin-right: 15px;
-        transform: rotate(-10deg);
-    }
-
-    .nav_left .heading  p {
-        color:var(--orange);
-        font-family: var(--comforta);
-        height: 50%;
-    }
-    .nav_left .heading  h1{
-        font-size: 25px;
-        height:50%;    
-        font-family: var(--monst)
-    }
-
-.nav_right {
-    flex-direction: column;
-    align-items: center;
-}
-.nav_right input {
-    width: 100%;
-    text-align: center;
-    border:none;
 }
 
 #simple_menu {
     display:none;
 }  
 
+#Nav .wrapper {
+    justify-content: space-between;
+}
 
-.nav_right div {
+/*********************************************/
+
+#Nav .logo {
+    align-items: center;
+    margin-top: -5px;  
+}
+    #Nav .logo img {
+        height: 95px;
+        margin-right: 15px;
+        transform: rotate(-10deg);
+    }
+
+    #Nav .logo .titles  p {
+        color:var(--orange);
+        font-family: var(--comforta);
+        height: 50%;
+    }
+    #Nav .logo .titles  h1{
+        font-size: 25px;
+        height:50%;    
+        font-family: var(--monst)
+    }
+
+
+
+#Nav .links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#Nav .links .buttons {
     margin-bottom: 10px;
     justify-content: space-between;
     width: 124px;
     align-items: center;
 }
-.nav_right i {
+#Nav .links i {
     font-size: 25px;
 }
-.inner_nav {
-    width: 80%;
-    justify-content: space-between;
-    margin: auto;
-    align-items: center;
 
+#Nav .links #Modal {
+    width: 100%;
 }
+
+
+
 
 @media (max-width:655px) {
 
-    .nav_right div {
+    #Nav .links {
         display:none;
     }
 
     #simple_menu {
-        display:unset;
+        display: flex;
+        align-items: center;
     }
+
+    #Nav .wrapper {
+        justify-content: space-around;
+    }
+
 }
 
-@media (max-width:530px) {
+@media (max-width:500px) {
 
-    #footer_wrapper img {
-        display:none;
+    #Nav .wrapper { 
+        width:90%;
     }
+    
+    #Nav .logo .titles h1 {
+        font-size: 20px;
+    }
+    #Nav .logo .titles p {
+        font-size: 12px;
+    }
+
+    #Nav .logo img {
+        
+    }
+
+}
+
+@media (max-width:360px) {
+    #Nav .logo {
+        flex-direction: column;
+    }
+
+
+    #Nav .logo img {
+     display: none;
+        
+    }
+
+    #Nav .wrapper {
+        width: 100%;
+        height: 45px;
+
+        justify-content: space-around;
+    
+    }
+
+    #Nav i.fa-ellipsis-v::before {
+        font-size: 25px;
+    }
+
 }

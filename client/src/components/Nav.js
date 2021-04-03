@@ -17,19 +17,19 @@ const Nav = props => {
     }
     
     return (
-        <nav className="flex">
-            <div className = "inner_nav flex">
-                <section className="nav_left flex">
+        <nav id= 'Nav' className="bar flex">
+            <div className = "wrapper flex">
+                <section className="left logo flex">
                     <img onClick={go_home} src ={clapper} alt= "movie clapper icon" />
                     
-                    <div className ="heading">
+                    <div className ="titles">
                         <p>Rate your favorite movie characters</p>
                         <h1>Epic Movie Characters</h1>
                     </div>
                 </section>
 
-                <section className ="nav_right flex">
-                    <div className="flex">
+                <section className ="right links flex">
+                    <div className="buttons flex">
                         <HomeBtn type = 'icon'/>
                         <SearchBtn />
                         <AddCharIcon />

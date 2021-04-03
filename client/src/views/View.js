@@ -18,13 +18,15 @@ const View = props => {
     const [rank] = useState(props.rank)
     const [location] = useState('view')
     const [title] = useState("Epic Performance!")
-    const [resultNum] = useState(12)
-
-
+    const [resultNum] = useState(8)
+    const [votes, setVotes] = useState('')
+    
+    
     useEffect (()=>{
         axios.get(`http://localhost:8000/api/characters/${props.id}`)
-            .then(response => {
+        .then(response => {
                 setCharacter(response.data)
+                setVotes(response.data.votes)
                 setCharacterLoaded(true)
                 
 
@@ -33,6 +35,26 @@ const View = props => {
             })
     },[props.id])
 
+    const update_character = (e,signature,character)=> {
+        e.preventDefault()
+        setVotes([...votes,signature])
+        context.goto_vote(e,character,votes,signature);
+        console.log('here')
+
+    }
+
+    const reset_votes = (e)=> {
+        e.preventDefault()
+        setVotes([context.signature])
+        context.goto_vote(e,character,[],context.signature);
+    }
+
+    const featurePkg = {
+        resultNum : resultNum,
+        location: location,
+        rank: rank,
+        character: character
+    }
 
 
     return (
@@ -46,7 +68,7 @@ const View = props => {
             
             <div  className = 'film_strip'>
                 {   
-                    characterLoaded && <Feature resultNum= {resultNum} location ={ location } rank = { rank } character = { character }/>
+                    characterLoaded && <Feature reset_votes = {reset_votes} update_character ={update_character} pkg = {featurePkg} />
                 }
                 
             </div>
@@ -56,7 +78,7 @@ const View = props => {
                     characterLoaded && <FeatureInfo character = {character} />
                 }
                 {
-                    characterLoaded && <VotesMapper resultNum ={resultNum} votes = {character.votes} />
+                    characterLoaded && <VotesMapper resultNum ={resultNum} votes = {votes} />
                 }
             </section>
         

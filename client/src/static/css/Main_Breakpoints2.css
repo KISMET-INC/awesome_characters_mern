@@ -123,10 +123,10 @@
 
     #feature_wrapper {
         margin-top: 120px;
-       
+    
     }
 
-  
+
     
     #footer_wrapper {
         align-items: flex-start
@@ -293,7 +293,6 @@
 
     }
 
-
     .feature_info {
         right: 250px
     }
@@ -301,9 +300,6 @@
     .feature_btns {
         right: 200px;
     }
-
-   
-
 
 
 }

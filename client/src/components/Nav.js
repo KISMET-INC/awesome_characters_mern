@@ -6,7 +6,7 @@ import clapper from '../static/img/clapper.png';
 import AddBtn from './buttons/AddBtn';
 import SearchBtn from './buttons/SearchBtn';
 import SimpleMenu from './SimpleMenu';
-import TransitionsModal from './TransitionalModal';
+import NameModal from './NameModal';
 import HomeBtn from './buttons/HomeBtn';
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -42,7 +42,7 @@ const Nav = props => {
                         <SearchBtn type = 'icon' />
                         <AddBtn type = 'icon' />
                     </div>
-                        <TransitionsModal />
+                        <NameModal />
                 </section>
                 <SimpleMenu />
             </div>

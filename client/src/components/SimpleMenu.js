@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import '../static/css/SimpleMenu.css'
-import TransitionsModal from './TransitionalModal';
+import TransitionsModal from './NameModal';
 import HomeBtn from './buttons/HomeBtn';
 import SearchBtn from './buttons/SearchBtn';
 import AddCharIcon from './buttons/AddBtn';

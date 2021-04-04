@@ -23,7 +23,7 @@ const [reload,setReload] = useState(0)
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
   console.log(`votes ${votes}`)
-  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,signature] })
+  axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {
       console.log(response)
   }).catch ( error => {

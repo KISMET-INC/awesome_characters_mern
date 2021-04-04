@@ -31,10 +31,7 @@ const Main = props => {
         
         <div id ='Main'>
 
-                   
-            
         <Nav />
-                   
         
             <div id='main_body' className = 'wrapper'>
         
@@ -54,9 +51,7 @@ const Main = props => {
                     
                 }
             </div>
-           
         </div>
-      
 
         </div>
 

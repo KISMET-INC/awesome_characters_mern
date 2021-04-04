@@ -37,7 +37,7 @@ const View = props => {
 
     const update_character = (e,signature,character)=> {
         e.preventDefault()
-        setVotes([...votes,signature])
+        setVotes([signature,...votes])
         context.goto_vote(e,character,votes,signature);
         console.log('here')
 

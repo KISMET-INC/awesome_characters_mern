@@ -20,7 +20,7 @@ const [votes, setVotes] = useState(character.votes)
 
 const local_update_character = (e,signature,character)=> {
     e.preventDefault()
-    setVotes([...votes,signature])
+    setVotes([signature,...votes])
     context.goto_vote(e,character,votes,signature);
 }
 

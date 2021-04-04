@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../static/css/Feature_Info.css'
 import '../static/css/VotesMapper.css'
 
 
+
 const VotesMapper = ({votes, resultNum}) => {
+    
+
 
     return (
 

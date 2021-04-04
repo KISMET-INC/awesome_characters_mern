@@ -17,7 +17,7 @@ const [signature, setSignature] = useState(context.signature)
 
     return (
         <form onSubmit ={update_signature} >
-        <input type = "text"  onChange = {(e)=> {setSignature(e.target.value)}} name = "signature" value = {signature} ></input>
+        <input style = {{color: 'black'}} type = "text"  onChange = {(e)=> {setSignature(e.target.value)}} name = "signature" value = {signature} ></input>
         <button onClick= {update_signature}>Set Name</button>
         <button onClick= {props.handleClose}>Stay Anonymous</button>
         </form>

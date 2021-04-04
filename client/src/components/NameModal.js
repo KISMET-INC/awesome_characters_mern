@@ -24,7 +24,7 @@ const fontColor = {
     color: 'black',
 }
 
-export default function TransitionsModal(props) {
+export default function NameModal(props) {
   const [location] = useState(props.location)
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);

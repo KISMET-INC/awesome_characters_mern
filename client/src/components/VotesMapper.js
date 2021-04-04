@@ -16,7 +16,7 @@ const VotesMapper = ({votes, resultNum}) => {
                 )
             }
             {
-                votes.length > resultNum ? <li>Plus {votes.length - resultNum } More ... 
+                votes.length > resultNum ? <li className="plus_votes">Plus {votes.length - resultNum } More ... 
                 </li> : <></>
             }
             </ul>

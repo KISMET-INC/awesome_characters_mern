@@ -7,7 +7,7 @@ const BasicInfo = ({character}) => {
         <section id = 'Basic_Info'>
                 <h3>{character.charName}</h3>
                 <div className ="movie_details">
-                    <p>Movie: &nbsp; {character.movieTitle}</p>
+                    <p>Movie: &nbsp; {character.title}</p>
                     <p>Year:  &nbsp; {character.year}</p>
                     <p>Actor:  &nbsp; {character.actor}</p>
                 </div>

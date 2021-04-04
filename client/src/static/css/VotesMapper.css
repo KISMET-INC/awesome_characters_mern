@@ -13,10 +13,10 @@
 }
 
 
-#Votes_Mapper li:nth-child(9) {
-    /* list-style: none;
+#Votes_Mapper li.plus_votes {
+    list-style: none;
     margin-left: 20px;
-    color: var(--orange) */
+    color: var(--orange)
 }
 
 #Votes_Mapper li {

@@ -27,7 +27,7 @@ const CharacterCard = props => {
             <ViewBtn rank = {rank} character_id={character._id} />
             <h4>{character.charName}</h4>
             <p>Rank {rank} | Votes: {votes.length} </p>
-            <h5>{character.movieTitle}</h5>
+            <h5>{character.title}</h5>
         </div>
         </>
     )

@@ -15,12 +15,13 @@ const Edit = props => {
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [type] = useState('edit')
     const [rank] = useState(props.rank)
+    const [errors, setErrors] = useState({})
     
     useEffect (()=> {
         axios.get(`http://localhost:8000/api/characters/${props.id}`)
             .then(response => {
 
-                // setSubtitle(response.data.charName)
+              
                 setCharacter(response.data)
                 setCharacterLoaded(true)
             }).catch(errors => {
@@ -34,9 +35,21 @@ const Edit = props => {
         console.log("SUBMIT")
         axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, data)
         .then(response => {
+
+            console.log(response)
+
+            if(response.data.hasOwnProperty('error')){
+                console.log(response.data)
+                setErrors(response.data.error.errors)
+
+                navigate(`/edit/${character._id}/${rank}`);
+                
+            } else {
+
+                navigate(`/view/${props.id}/${rank}`)
+            }
     
             console.log(response)
-            navigate(`/view/${props.id}/${rank}`)
         }).catch (error => {
             console.log(error)
         })
@@ -60,7 +73,7 @@ const Edit = props => {
             }
             
             {
-                characterLoaded && <Form pkg = {formPkg} />
+                characterLoaded && <Form errors = {errors} pkg = {formPkg} />
 
             }
             </div>

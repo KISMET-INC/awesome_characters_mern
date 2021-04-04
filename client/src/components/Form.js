@@ -38,12 +38,12 @@ const Form = props => {
 
     return (
         <div id = "add_form_wrapper" className='flex'>
+            <h5>Intergration with The Movie Database API coming soon..</h5>
             <div className= 'film_strip flex'>
             <div className ='form_left'>
                 {
                     charName !== undefined ? <img style= {{opacity: 1}} onClick={goto_view} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
                 }
-               
             </div>
 
                 <form  className='flex' onSubmit={ (e) => props.pkg.submitHandler( e, { charName, title, year, actor,url, votes, quote,rank } ) }>
@@ -111,7 +111,7 @@ const Form = props => {
                         <button onClick = {go_home}>Cancel</button>
                         <HomeBtn />
                         {
-                              charName !== undefined ? <ViewBtn rank = {rank} character_id = {character._id} /> : <></>
+                            charName !== undefined ? <ViewBtn rank = {rank} character_id = {character._id} /> : <></>
                         }
                     </div>
 

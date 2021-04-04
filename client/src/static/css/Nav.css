@@ -2,8 +2,8 @@
     margin-bottom: 40px;
 }
 
-#Dropdown_Menu {
-    display:none;
+#Nav #Dropdown_Menu {
+    display:none; 
 }  
 
 #Nav .wrapper {
@@ -69,7 +69,7 @@
         display:none;
     }
 
-    #simple_menu {
+    #Nav #Dropdown_Menu {
         display: flex;
         align-items: center;
     }

@@ -21,7 +21,6 @@ const Nav = props => {
         <ScrollAnimation 
         animatePreScroll ={true}
         initiallyVisible ={true}
-        offset
         animateOnce = {true}
         duration={1}
         animateIn="slideInDown">

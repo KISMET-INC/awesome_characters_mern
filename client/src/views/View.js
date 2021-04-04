@@ -21,6 +21,7 @@ const View = props => {
     const [title] = useState("Epic Performance!")
     const [resultNum] = useState(8)
     const [votes, setVotes] = useState('')
+
     
     
     useEffect (()=>{

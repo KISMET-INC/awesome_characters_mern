@@ -19,9 +19,9 @@ module.exports.createNewCharacter = (req, res) => {
 };
 
 module.exports.updateExistingCharacter = (req, res) => {
-    Character.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+    Character.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true , runValidators: true })
         .then((updatedCharacter) => res.json({ character: updatedCharacter }))
-        .catch((err) => res.json({ message: "Something went wrong", error: err }));
+        .catch((err) => res.json({ error: err }));
 };
 
 module.exports.deleteAnExistingCharacter = (req, res) => {

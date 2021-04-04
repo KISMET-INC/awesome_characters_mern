@@ -18,7 +18,6 @@ const Featured_Carousel = ({characterList}) => {
         <div id= "feature_carousel" >
         <ScrollAnimation 
         animatePreScroll ={true}
-        offset
         animateOnce = {true}
         duration={1}
         animateIn="fadeIn">

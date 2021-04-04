@@ -23,7 +23,9 @@ const Add = props => {
 
                 navigate('/add');
                 
-            };
+            } else {
+                navigate(`/view/${response.data.character._id}/${0}`)
+            }
             console.log(response)
         }).catch ( error => {
             console.log(error)

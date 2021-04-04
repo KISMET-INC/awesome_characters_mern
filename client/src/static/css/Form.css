@@ -6,7 +6,9 @@
 #add_form_wrapper  .flex {
     height: fit-content;
 }
-
+#add_form_wrapper h5 {
+    margin-bottom: 15px;
+}
 
 #add_form_wrapper .form_left p{
     margin: 0px;
@@ -111,7 +113,8 @@
 
 
 #add_form_wrapper form button:first-of-type {
-    margin-right: 20px; 
+    margin-right: 20px;
+    margin-bottom: 20px;
 
 }
 

@@ -1,5 +1,5 @@
 
-import React, {useState, useContext,useRef,useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import '../App.css';
 import Context from '../context/Context';
 import { navigate } from '@reach/router';
@@ -10,17 +10,6 @@ import Quote from './Quote';
 import BasicInfo from './BasicInfo';
 import '../static/css/Feature.css';
 
-
-// const featurePkg = {
-//     resultNum : resultNum,
-//     location: location,
-//     rank: rank,
-//     character: character
-// }
-// const votingPkg = {
-//     update_character: update_character,
-//     reset_votes: reset_votes,
-// }
 
 const Feature = ({character, location, rank, update_character, reset_votes, resultNum}) => {
 const context = useContext(Context)

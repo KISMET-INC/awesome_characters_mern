@@ -10,14 +10,12 @@ import '../static/css/FeatureOptions.css'
 //     goto_view: goto_view,
 //     goto_edit: goto_edit,
 //     votes: votes,
-//     updateCharacter: updateCharacter
 // }
 
 const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
     const [rank] = useState(pkg.rank)
     const [character] = useState(pkg.character)
     const [location] = useState(pkg.location)
-    const [votes] = useState(pkg.votes)
 
     
 

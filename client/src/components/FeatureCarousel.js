@@ -2,7 +2,6 @@ import React, { useState }from 'react';
 import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
-import e from 'cors';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
 //import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 

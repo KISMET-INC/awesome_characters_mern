@@ -22,7 +22,7 @@ const All = props => {
                 const ranks = {}
                 const sorted_list =[]
 
-                response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1).map((char,i)=> {
+                response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1).foreach((char,i)=> {
                     ranks[char.charName] = i+1
                     sorted_list[i] = char
                 })

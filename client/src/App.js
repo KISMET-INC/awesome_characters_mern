@@ -25,8 +25,7 @@ const goto_vote =(e,character,votes) =>{
   console.log(`votes ${votes}`)
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [...votes,signature] })
   .then(response => {
-      console.log('update')
-      // setReload((prev)=> prev + 1)
+      console.log(response)
   }).catch ( error => {
       console.log(error)
   })

@@ -12,27 +12,8 @@ import React, {useState} from 'react';
 
 const Honorable_Carousel = props => {
 
-    const [resState] = useState({
-            // 0: {
-            //     items:1,
-            // },
+    const [items] = useState({
 
-            // 321: {
-            //     items:2,
-
-        
-            // },
-        
-            // 631: {
-            //     items: 2,
-            // },
-            // 768: {
-            //     margin: 0,
-            // },
-            // 941: {
-            //     items: 3,
-            // },
-            
             0: {
                 items: 1,
                 margin:-100,
@@ -45,7 +26,6 @@ const Honorable_Carousel = props => {
             600: {
                 items: 3,
                 margin: 70,
-               
             },
             771 : {
                 items: 4,
@@ -72,8 +52,7 @@ const Honorable_Carousel = props => {
             responsiveClass={true}
             items ={5}
             margin={50}
-            responsive = {resState}
-           
+            responsive = {items}
             >
 
                 {

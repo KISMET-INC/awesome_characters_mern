@@ -34,6 +34,7 @@ const Edit = props => {
         console.log("SUBMIT")
         axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, data)
         .then(response => {
+    
             console.log(response)
             navigate(`/view/${props.id}/${rank}`)
         }).catch (error => {

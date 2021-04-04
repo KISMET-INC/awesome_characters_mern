@@ -24,12 +24,12 @@ const CharacterSchema = new mongoose.Schema({
 
     url: {
         type: String,
-        required: [true, "A character name is required"]
+        required: [true, "An image URL name is required"]
     },
 
     quote: {
         type: String,
-        required: [true, "A picture URL is required"]
+        required: [true, "A quote is required"]
     },
     
     votes: []

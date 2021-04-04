@@ -28,7 +28,7 @@ const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_characte
                 <section className = 'feature_links'>
                         <h3>{character.charName}</h3> 
                         {
-                            location !== 'view' ? <h4 onClick={pkg.goto_view}>Click to View</h4> : <></>
+                            location !== 'view' ? <h4 className="view" onClick={pkg.goto_view}>Click to View</h4> : <></>
                         }
                         <h4 onClick={pkg.goto_edit}>Click to Edit</h4>
                 </section>

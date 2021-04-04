@@ -2,7 +2,7 @@
 #Title h2{
     
     margin: 0px;
-    color: white;
+    color: var(--orange);
     font-family: var(--monst);
     font-size: 30px;
     text-align: center;
@@ -15,3 +15,7 @@
     color: var(--orange);
     margin-bottom: 30px;
 }
+    
+    *{
+        /* outline: 1px dotted red; */
+    }

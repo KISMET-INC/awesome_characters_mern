@@ -5,11 +5,20 @@ const BasicInfo = ({character}) => {
 
     return (
         <section id = 'Basic_Info'>
-                <h3>{character.charName}</h3>
                 <div className ="movie_details">
-                    <p>Movie: &nbsp; {character.title}</p>
-                    <p>Year:  &nbsp; {character.year}</p>
-                    <p>Actor:  &nbsp; {character.actor}</p>
+                    <div>
+                        <h5>Actor:</h5>
+                        <p>{character.actor}</p>
+                    </div>
+                    <div>
+                        <h5>Movie:</h5>
+                        <p>{character.title}</p>
+                    </div>
+                    <div>
+                        <h5>Year:</h5>
+                        <p>{character.year}</p>
+                    </div>
+                    
                 </div>
         </section>
     )

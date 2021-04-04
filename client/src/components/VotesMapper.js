@@ -11,7 +11,7 @@ const VotesMapper = ({votes, resultNum}) => {
     return (
 
         <div id = 'Votes_Mapper'>
-        <h3>Votes:  {votes.length} </h3>
+        <h4>Votes:  {votes.length} </h4>
             <ul className = 'votes flex'>
             {
                 votes.map((vote,i)=>

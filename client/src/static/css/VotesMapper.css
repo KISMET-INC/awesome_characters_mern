@@ -1,8 +1,13 @@
 #Votes_Mapper {
-    width: 320px;
+    background-color: var(--transblack);
+    padding: 20px;
+    border-radius: 20px;
 }
 #Votes_Mapper li {
-    width: 120px;
+    width: 100px;
+    font-size: 13px;
+    list-style: none;
+    font-family: var(--comforta);
 }
 #Votes_Mapper .votes {
     flex-wrap: wrap;
@@ -14,18 +19,14 @@
 
 
 #Votes_Mapper li.plus_votes {
-    list-style: none;
-    margin-left: 20px;
     color: var(--orange)
 }
 
-#Votes_Mapper li {
-    list-style-position: inside;
-    font-family: var(--comforta);
+#Votes_Mapper h4 {
+    margin-bottom: 10px;
 }
 
-#Votes_Mapper h3,
-#Votes_Mapper li {
-    text-align: left;
-}
+
+
+
 

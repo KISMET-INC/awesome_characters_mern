@@ -1,12 +1,9 @@
 
 
-#Basic_Info h3,
-#Quote h3,
-#VotesMapper h3 {
-    font-family: var(--monst);
-    font-size: 22px;
-    margin-bottom: 5px;
-    text-align: left;
+#Basic_Info h5,
+#Quote h5,
+#VotesMapper h5 {
+   margin-bottom: 3px
 }
 
 
@@ -32,5 +29,6 @@
 #VotesMapper p {
     font-family: var(--comforta)
 }
+
 
 

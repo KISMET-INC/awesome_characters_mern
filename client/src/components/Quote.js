@@ -5,7 +5,7 @@ const Quote = ({character}) => {
 
     return (
         <section id = 'Quote'>
-                <h3>Quote:</h3>
+                <h5>Quote:</h5>
                 <p>{character.quote}</p>
         </section>
     )

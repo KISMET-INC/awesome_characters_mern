@@ -1,5 +1,5 @@
 
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import '../App.css';
 import Context from '../context/Context';
 import { navigate } from '@reach/router';
@@ -22,8 +22,12 @@ const local_update_character = (e,signature,character)=> {
     e.preventDefault()
     setVotes([signature,...votes])
     context.goto_vote(e,character,votes,signature);
+    context.setReloadedLocal((prev)=> prev + 1)
 }
 
+useEffect(()=> {
+    setVotes([context.signature,...votes])
+},[context.reloadedBase])
 
 
 const local_reset_votes = (e)=> {

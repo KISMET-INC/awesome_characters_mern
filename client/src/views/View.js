@@ -28,18 +28,21 @@ const View = props => {
                 setCharacter(response.data)
                 setVotes(response.data.votes)
                 setCharacterLoaded(true)
-                
-
             }).catch(error => {
                 console.log(error)
             })
-    },[props.id])
-
-    const update_character = (e,signature,character)=> {
-        e.preventDefault()
-        setVotes([signature,...votes])
-        context.goto_vote(e,character,votes,signature);
-        console.log('here')
+        },[props.id])
+        
+        useEffect(()=> {
+            setVotes([context.signature,...votes])
+        },[context.reloadedLocal])
+        
+        const update_character = (e,signature,character)=> {
+            e.preventDefault()
+            context.setReloadedBase((prev)=> prev + 1)
+            setVotes([signature,...votes])
+            context.goto_vote(e,character,votes,signature);
+            console.log('here')
 
     }
 

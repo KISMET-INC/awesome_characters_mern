@@ -16,9 +16,8 @@ import axios from 'axios'
 function App() {
 
 const [signature, setSignature] = useState('Anonymous')
-const [character, setCharacter] = useState({})
-const [characterList] = useState()
-const [reload,setReload] = useState(0)
+const [reloadedLocal,setReloadedLocal] = useState(0)
+const [reloadedBase,setReloadedBase] = useState(0)
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
@@ -38,7 +37,7 @@ const goto_vote =(e,character,votes) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{ reload,setReload, signature,setSignature, goto_vote, character, setCharacter, characterList}}>
+      <Context.Provider value= {{ reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

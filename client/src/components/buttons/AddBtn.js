@@ -27,6 +27,9 @@ return (
         {
             type === 'link'?  <p onClick ={ go_add }> Add </p> : <></>
         }
+        {
+            type === 'link_icon'?  <div    className = 'link_icon' onClick ={ go_add } ><p> Add  </p> <i className="fas fa-plus-square"></i></div>: <></>
+        }
 
     </div>
 )

@@ -2,12 +2,13 @@
     margin-bottom: 40px;
 }
 
-#simple_menu {
+#Dropdown_Menu {
     display:none;
 }  
 
 #Nav .wrapper {
     justify-content: space-between;
+    align-items: center;
 }
 
 /*********************************************/

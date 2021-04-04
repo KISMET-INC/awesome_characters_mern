@@ -24,6 +24,13 @@ const fontColor = {
     color: 'black',
 }
 
+const icon2 = {
+  marginLeft:  '10px',
+  textAlign: 'right',
+}
+
+
+
 export default function NameModal(props) {
   const [location] = useState(props.location)
   const classes = useStyles();
@@ -37,10 +44,7 @@ export default function NameModal(props) {
     setOpen(false);
   };
 
-  const icon2 = {
-    marginLeft:  '10px',
-    textAlign: 'right',
-  }
+  
 
   return (
     <div id = 'Modal'>
@@ -62,7 +66,7 @@ export default function NameModal(props) {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 style={fontColor} id="transition-modal-title">Set Your Voter Name</h2>
-            <p  style={fontColor} id="transition-modal-description">You can set the name you use to vote or stay anonymous.</p>
+            <p  style={fontColor} id="transition-modal-description">Set your voter name, or stay anonymous</p>
             <Signature handleClose= { handleClose }/>
           </div>
         </Fade>

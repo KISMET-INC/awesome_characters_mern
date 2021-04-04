@@ -8,6 +8,7 @@ import Title from '../components/Title';
 import FeatureInfo from '../components/FeatureInfo';
 import VotesMapper from '../components/VotesMapper';
 import Context from '../context/Context'
+import BasicInfo from '../components/BasicInfo';
 
 
 
@@ -33,13 +34,13 @@ const View = props => {
             })
         },[props.id])
         
-        useEffect(()=> {
-            setVotes([context.signature,...votes])
-        },[context.reloadedLocal])
+        // useEffect(()=> {
+        //     setVotes([context.signature,...votes])
+        // },[context.reloadedLocal])
         
         const update_character = (e,signature,character)=> {
             e.preventDefault()
-            context.setReloadedBase((prev)=> prev + 1)
+            // context.setReloadedBase((prev)=> prev + 1)
             setVotes([signature,...votes])
             context.goto_vote(e,character,votes,signature);
             console.log('here')
@@ -80,13 +81,15 @@ const View = props => {
             <section className = 'bottom flex'>
                 {
                     characterLoaded && 
-                    <FeatureInfo character = {character} />
+                    <BasicInfo character ={character}/>
                 }
                 {
                     characterLoaded && 
                     <VotesMapper resultNum ={resultNum} votes = {votes} />
                 }
+                <h5>Visit "{character.title}" on The Movie Database...</h5>
             </section>
+
         
         </div>
         </>

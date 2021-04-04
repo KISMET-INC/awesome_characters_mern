@@ -6,7 +6,9 @@
    margin-bottom: 3px
 }
 
-
+#Basic_Info div {
+    margin-bottom: 20px;
+}
 #Basic_Info,
 #Quote {
     margin-bottom:20px;

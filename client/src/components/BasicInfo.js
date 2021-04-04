@@ -1,5 +1,6 @@
 import React from 'react';
 import '../static/css/Feature_Info.css'
+import Quote from './Quote';
 
 const BasicInfo = ({character}) => {
 
@@ -18,8 +19,8 @@ const BasicInfo = ({character}) => {
                         <h5>Year:</h5>
                         <p>{character.year}</p>
                     </div>
-                    
                 </div>
+                <Quote character = {character} />
         </section>
     )
 

@@ -55,13 +55,26 @@
 @media (max-width: 1000px){
     #View .bottom {
         display: flex;
-        margin-left: 20px
+        margin-left: 20px;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    }
+
+    #View .bottom #Basic_Info #Quote {
+        margin: 0px;
+    }
+
+    #View .bottom #Votes_Mapper {
+        width: 100%;
+        padding: 20px;
     }
 
 
 
 
-    #View #Votes_Mapper:nth-child(2) {
+
+    #View #Feature #Votes_Mapper {
         display:none;
     }
 }

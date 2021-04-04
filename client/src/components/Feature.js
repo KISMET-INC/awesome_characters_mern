@@ -22,12 +22,12 @@ const local_update_character = (e,signature,character)=> {
     e.preventDefault()
     setVotes([signature,...votes])
     context.goto_vote(e,character,votes,signature);
-    context.setReloadedLocal((prev)=> prev + 1)
+    // context.setReloadedLocal((prev)=> prev + 1)
 }
 
-useEffect(()=> {
-    setVotes([context.signature,...votes])
-},[context.reloadedBase])
+// useEffect(()=> {
+//     setVotes([context.signature,...votes])
+// },[context.reloadedBase])
 
 
 const local_reset_votes = (e)=> {
@@ -64,7 +64,7 @@ return(
                 <BasicInfo character = {character} />
                 <FeatureOptions voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {local_reset_votes} update_character = {local_update_character} pkg = {featureOptionsPkg} />
             </div>
-                <Quote character = {character} />
+                
                 <VotesMapper votes = {votes} resultNum = {resultNum} />
         </div>
     </div>

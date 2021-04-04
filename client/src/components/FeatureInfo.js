@@ -13,7 +13,6 @@ const FeatureInfo = ({character}) => {
 
         <div id = "Feature_Info">
             <BasicInfo character = { character } />
-            <Quote character = { character } />
         </div>
 
     )

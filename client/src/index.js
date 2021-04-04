@@ -10,7 +10,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 ReactDOM.render(
   <>
   
-      <div key = '1' style ={{minHeight: '800px'}}>
+      <div key = '1' style ={{minHeight: '700px'}}>
         <App />
       </div>
 

@@ -41,11 +41,12 @@
 }
 
 #Feature_Options .feature_links{
-    display:none;
+    /* display:none; */
 }
 
 #Votes_Mapper {
     width: 400px;
+    padding: 0px;
 }
 
 .feature_btns{
@@ -86,7 +87,7 @@
         width: 250px;
     }
 
-    #Votes_Mapper h3 {
+    #Feature  #info #Votes_Mapper h4 {
         text-align: center;
     }
 

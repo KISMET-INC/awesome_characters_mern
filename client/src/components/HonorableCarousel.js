@@ -13,32 +13,50 @@ import React, {useState} from 'react';
 const Honorable_Carousel = props => {
 
     const [resState] = useState({
-            0: {
-                items:1,
-            },
+            // 0: {
+            //     items:1,
+            // },
 
-            321: {
-                items:2,
+            // 321: {
+            //     items:2,
+
         
-            },
+            // },
         
-            631: {
-                items: 2,
-            },
-            768: {
-                margin: 0,
-            },
-            941: {
-                items: 3,
-            },
+            // 631: {
+            //     items: 2,
+            // },
+            // 768: {
+            //     margin: 0,
+            // },
+            // 941: {
+            //     items: 3,
+            // },
             
-            1300: {
-                items: 3,
-            },
-            1400: {
-                items: 4,
+            0: {
+                items: 1,
+                margin:-100,
             },
 
+            405 : {
+                items: 2,
+                margin: 50,
+            },
+            600: {
+                items: 3,
+                margin: 70,
+               
+            },
+            771 : {
+                items: 4,
+                margin: 150,
+            },
+
+            1200 : {
+                items: 5,
+                margin: 150,
+            },
+        
 
     })
 
@@ -52,9 +70,10 @@ const Honorable_Carousel = props => {
             loop
             autoplayHoverPause = {true}
             responsiveClass={true}
+            items ={5}
+            margin={50}
             responsive = {resState}
-            center = {true}
-            margin = {50}
+           
             >
 
                 {

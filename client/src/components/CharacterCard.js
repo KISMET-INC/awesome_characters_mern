@@ -21,9 +21,9 @@ const CharacterCard = props => {
 
     return( 
         <>
-        <div  id = "character_wrapper" className = 'flex'>
+        <div id = "character_wrapper" className = 'flex'>
             <img src = {character.url} alt={character.charName} />
-            <VoteBtn character ={character} vote ={updateCharacter} />
+            <VoteBtn label = {'Vote'} character ={character} vote ={updateCharacter} />
             <ViewBtn rank = {rank} character_id={character._id} />
             <h4>{character.charName}</h4>
             <p>Rank {rank} | Votes: {votes.length} </p>

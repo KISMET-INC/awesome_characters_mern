@@ -15,7 +15,7 @@ module.exports.findOneSingleCharacter = (req, res) => {
 module.exports.createNewCharacter = (req, res) => {
     Character.create(req.body)
         .then((newCharacter) => res.json({ character: newCharacter }))
-        .catch((err) => res.json({ message: "Something went wrong", error: err }));
+        .catch((err) => res.json({ error:err }));
 };
 
 module.exports.updateExistingCharacter = (req, res) => {

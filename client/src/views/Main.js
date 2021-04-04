@@ -7,6 +7,8 @@ import '../static/css/Main.css';
 import axios from 'axios';
 import Nav from '../components/Nav.js';
 import QueueAnim from 'rc-queue-anim';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 
 
@@ -29,10 +31,10 @@ const Main = props => {
         
         <div id ='Main'>
 
-            <QueueAnim ease={[[0.42, 0, 0.58, 1], [0.42, 0, 0.58, 1]]} >
-            <div key = '1'>
-                <Nav />
-            </div>
+                   
+            
+        <Nav />
+                   
         
             <div id='main_body' className = 'wrapper'>
         
@@ -43,6 +45,8 @@ const Main = props => {
                     
                 }
             </div>
+
+            
             <h3 key='4' className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
             < div key= '5' className = 'honorable carousel'>
                 {
@@ -50,8 +54,9 @@ const Main = props => {
                     
                 }
             </div>
+           
         </div>
-        </QueueAnim>
+      
 
         </div>
 

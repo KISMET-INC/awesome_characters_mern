@@ -4,18 +4,35 @@ import {navigate} from '@reach/router';
 
 
 
-const SearchBtn = props => {
+const SearchBtn = ({type}) => {
 
-    const goto_search = () =>{
+    const go_search = () =>{
         navigate('/search')
     }
 
 
 return (
 
-    <i onClick = { goto_search } className="fas fa-search"></i>
-)
+        <div id ='Search_Btn'>
 
+            {
+
+                type ==='button' ? <button onClick = { go_search }>Search</button> : <></>
+
+            }
+
+            {
+                type === 'icon'?  <i onClick ={ go_search } className="fas fa-search"></i> : <></>
+            }
+
+            {
+                type === 'link'?  <p onClick ={ go_search }> Search </p> : <></>
+            }
+
+        </div>
+    )
 }
 
 export default SearchBtn;
+
+

@@ -5,20 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import QueueAnim from 'rc-queue-anim';
 import Footer from './components/Footer';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 ReactDOM.render(
   <>
-    <QueueAnim>
-
+  
       <div key = '1' style ={{minHeight: '800px'}}>
         <App />
       </div>
+
 
       <div key = '2'>
         <Footer />
       </div>
 
-    </QueueAnim>
+    
   </>,
     
   document.getElementById('root')

@@ -3,8 +3,7 @@ import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
-//import 'owl.carousel/dist/assets/owl.theme.default.min.css';
-
+import ScrollAnimation from 'react-animate-on-scroll';  
 
 
 
@@ -17,12 +16,17 @@ const Featured_Carousel = ({characterList}) => {
 
     return(
         <div id= "feature_carousel" >
-
+        <ScrollAnimation 
+        animatePreScroll ={true}
+        offset
+        animateOnce = {true}
+        duration={1}
+        animateIn="fadeIn">
 
             
             <OwlCarousel 
             className='owl-theme' 
-            margin={50} 
+            margin={100} 
             items= {1} 
             autoplay = {true} 
             autoplaySpeed = {1500}
@@ -40,9 +44,9 @@ const Featured_Carousel = ({characterList}) => {
             }
 
             </OwlCarousel>
-    
-
+            </ScrollAnimation>
         </div>
+
         
     
     )

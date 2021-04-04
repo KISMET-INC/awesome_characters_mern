@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import '../static/css/Footer.css'
 import MERN from '../static/img/MERN-logo.png'; 
+import ScrollAnimation from 'react-animate-on-scroll'; 
 
 
 const Footer = props => {
@@ -9,6 +10,10 @@ const Footer = props => {
 
 
     return(
+
+        <ScrollAnimation        
+        animateOnce = {true}
+        animateIn="slideInUp">
         <footer>
         <aside className = 'footer_aside'>
             <p>ksanmartin909@gmail.com</p>
@@ -36,6 +41,7 @@ const Footer = props => {
             </section>
         </div>
     </footer>
+    </ScrollAnimation>
     )
 
 }

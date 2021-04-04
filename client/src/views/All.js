@@ -7,10 +7,13 @@ import '../static/css/All.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const All = props => {
+   
     const [characterList, setCharacterList] = useState([]);
     const [listLoaded, setListLoaded] = useState(false);
     const [search, setSearch] = useState("")
     const [rankTable, setRankTable] = useState({})
+ 
+
 
 
 
@@ -19,10 +22,11 @@ const All = props => {
         setListLoaded(false);
         axios.get('http://localhost:8000/api/characters')
             .then(response => {
+
                 const ranks = {}
                 const sorted_list =[]
 
-                response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1).foreach((char,i)=> {
+                response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1).forEach((char,i)=> {
                     ranks[char.charName] = i+1
                     sorted_list[i] = char
                 })
@@ -30,12 +34,12 @@ const All = props => {
                 setRankTable(ranks)
                 setCharacterList(sorted_list)
                 setListLoaded(true)
-                console.log(response)
 
             }).catch (error => {
                 console.log(error)
             })
-    },[])
+    },[search])
+
 
 
 
@@ -58,7 +62,11 @@ const All = props => {
                     {
                         listLoaded && search!== "" && characterList.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()) || c.year === search || c.title === search).map((char,i)=>
 
-                        <ScrollAnimation animateIn="fadeIn">
+                        <ScrollAnimation key = {i} 
+                        animatePreScroll ={false}
+                        initiallyVisible ={true}
+                        offset={0}
+                        animateIn="fadeIn">
                             <CharacterCard i = {rankTable[char.charName]}  char = {char} key = {i} />
                         </ScrollAnimation>
     
@@ -67,10 +75,17 @@ const All = props => {
                     }
 
                     {
-                        listLoaded && search === "" && characterList.map((char,index)=>
-
-                        <ScrollAnimation animateIn="fadeIn">
-                            <CharacterCard i={rankTable[char.charName]} char = {char} key = {index} />
+                        listLoaded && search === "" && characterList.map((char,i)=>
+                            
+                               
+                            
+                       <ScrollAnimation key ={i}
+                        animatePreScroll ={true}
+                        animateOnce={true}
+                        offset = {1}
+                        animateIn="slideInLeft"
+                        animateOut= ''>
+                            <CharacterCard i={rankTable[char.charName]} char = {char} key = {i} />
                         </ScrollAnimation>
                         )   
                     }

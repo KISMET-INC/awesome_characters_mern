@@ -15,6 +15,8 @@ const Add = props => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/characters/new", data)
         .then( response => {
+            console.log(response === 'data')
+            console.log(response.data.hasOwnProperty('error'));
             console.log(response)
             navigate('/');
         }).catch ( error => {

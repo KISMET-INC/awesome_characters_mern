@@ -15,6 +15,7 @@ const Main = props => {
     const [characterList, setCharacterList] = useState()
     const [listLoaded, setListLoaded] = useState(false)
     const context = useContext(Context)
+    const [voteList, setVoteList] = useState({})
     
     
     useEffect(()=> {    
@@ -23,6 +24,7 @@ const Main = props => {
             setCharacterList(response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1))
             context.setTotalCharacters(response.data.characters.length)
             setListLoaded(true)
+            console.log('main')
         }).catch(err=>console.log(err))
 
     },[]);
@@ -40,13 +42,13 @@ const Main = props => {
             <h3 key ='2' className ='main_title'>★ FEATURED  ★ Top 5</h3>
             <div key = '3' className= 'featured film_strip carousel'>
                 {
-                    listLoaded && <FeatureCarousel characterList = { characterList }/>
+                    listLoaded && <FeatureCarousel voteList ={voteList} setVoteList ={setVoteList} characterList = { characterList }/>
                     
                 }
             </div>
 
             
-            <h3 key='4' className ='main_title'> ★ Honorable Mentions ★ <Link to= "/search"><span className= 'link'>Click to see all</span></Link></h3>
+            <h3 key='4' className ='main_title'> ★ Honorable Mentions ★</h3> <Link to= "/search"><h3 className= 'link'>Click to see all</h3></Link>
             < div key= '5' className = 'honorable carousel'>
                 {
                     listLoaded && <HonorableCarousel characterList = { characterList }/>

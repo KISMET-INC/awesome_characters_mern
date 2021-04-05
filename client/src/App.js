@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Router} from '@reach/router';
 import Main from './views/Main';
 import Context from './context/Context'
@@ -26,15 +26,37 @@ const goto_vote =(e,character,votes) =>{
   console.log(`votes ${votes}`)
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {
-      const charName = character.charName;
+
+      const temp = {...votedOn}
+      const name = character.charName
       const id = character._id
-      const obj ={...votedOn}
-      obj[charName] = id;
+      temp[name] = id;
+
+      //setVotedOn(temp)
       console.log(response)
   
   }).catch ( error => {
       console.log(error)
   })
+
+}
+const update_character = (e,signature,character,setVotes)=> {
+  e.preventDefault()
+  if(!votedOn.hasOwnProperty(character.charName)){
+      //setVotes([signature,...character.votes])
+      const temp = {...votedOn}
+      const name = character.charName
+      const id = character._id
+      temp[name] = id;
+
+      //setVotedOn(temp)
+      //setVotedOn(true)
+      goto_vote(e,character,character.votes,signature);
+      return true;
+  } else {
+      alert(`You already voted for ${character.charName}`)
+      return false;
+  }
 
 }
 
@@ -45,7 +67,7 @@ const goto_vote =(e,character,votes) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{ votedOn, setVotedOn, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
+      <Context.Provider value= {{ update_character, votedOn, setVotedOn, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

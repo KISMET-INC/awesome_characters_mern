@@ -13,6 +13,7 @@ import React, {useState} from 'react';
 
 const Honorable_Carousel = props => {
 
+
     const [items] = useState({
 
             0: {
@@ -35,7 +36,7 @@ const Honorable_Carousel = props => {
 
             1200 : {
                 items: 5,
-                margin: 150,
+                margin: 10,
             },
         
 
@@ -48,19 +49,18 @@ const Honorable_Carousel = props => {
         <div id = "honorable">
 
             <OwlCarousel 
-            loop
             className='owl-theme' 
-            autoplayHoverPause = {true}
-            responsiveClass={true}
-            items ={5}
+            // responsiveClass={true}
+            items ={4}
             margin={50}
+            // loop
             responsive = {items}
             dots ={false}
             >
 
                 {
                     props.characterList.map((char,i) => 
-                    i > 4 && <CharacterCard i = {i} key={i} char={char} />
+                    i > 4 && i <16 && <CharacterCard i = {i} key={i} char={char} />
                     )
                 }
 

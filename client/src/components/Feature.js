@@ -13,14 +13,17 @@ import '../static/css/Feature.css';
 const Feature = ({character, location, rank, update_character, reset_votes, resultNum}) => {
 const context = useContext(Context)
 const [votes, setVotes] = useState(character.votes)
+const [voted, setVoted] = useState(false)
 
 
 
 
 const local_update_character = (e,signature,character)=> {
     e.preventDefault()
-    if ( update_character(e,signature,character) === true ) {
-        setVotes([signature,...votes]) 
+    if ( context.update_character(e,signature,character,setVotes) === true ) {
+        
+        setVotes([context.signature,...character.votes])
+        setVoted(true)
     } 
 }
 

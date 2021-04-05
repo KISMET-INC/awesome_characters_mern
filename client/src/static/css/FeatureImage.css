@@ -79,6 +79,8 @@
     #Feature_Image .image_info {
         visibility:visible;
     }
+
+  
     #Feature_Image .background {
         background-color: var(--transblack);
         padding: 10px 20px;

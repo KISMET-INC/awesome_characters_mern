@@ -23,7 +23,7 @@ const CharacterCard = props => {
             const id = character._id
             temp[name] = id;
 
-            context.setVotedOn(temp)
+            //context.setVotedOn(temp)
             setVotedOn(true)
             context.goto_vote(e,character,votes,signature);
         } else {

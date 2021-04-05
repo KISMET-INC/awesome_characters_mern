@@ -8,6 +8,7 @@ import Title from '../components/Title';
 import VotesMapper from '../components/VotesMapper';
 import Context from '../context/Context'
 import BasicInfo from '../components/BasicInfo';
+import ScrollAnimation from 'react-animate-on-scroll';  
 
 
 
@@ -67,6 +68,12 @@ const View = props => {
     return (
         <>
         <Nav />
+        <ScrollAnimation 
+        animatePreScroll ={true}
+        animateOnce = {true}
+        duration={2}
+        initiallyVisible ={false}
+        animateIn="fadeIn">
         <div id = 'View' className = 'wrapper'>
             {
 
@@ -101,6 +108,7 @@ const View = props => {
 
         
         </div>
+        </ScrollAnimation>
         </>
     )
 }

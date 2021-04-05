@@ -8,11 +8,29 @@
     
 }
 
-.main_title {
+#Main .main_title {
+    margin-bottom: 20px;
+}
+
+#Main .link {
     margin-bottom: 30px;
+    margin-left:30px;   
+    
 }
 
 
+
+
+/************************/
+/* BREAKPOINT 700px    
+/************************/
+@media (max-width: 700px){
+    #Main #Feature_Image #Feature_Options .feature_links h4:last-child,
+    #Main #Feature_Image #Feature_Options .feature_buttons
+    {
+        display:none; 
+}
+}
 
 /************************/
 /* BREAKPOINT 426px    

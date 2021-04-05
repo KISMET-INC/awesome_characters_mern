@@ -39,28 +39,28 @@ const View = props => {
 
     const update_character = (e,signature,character)=> {
         e.preventDefault()
-        if(!context.votedOn.hasOwnProperty(character.charName)){
-            setVotes([signature,...votes])
-            const temp = {...context.votedOn}
-            const name = character.charName
-            const id = character._id
-            temp[name] = id;
+        // if(!context.votedOn.hasOwnProperty(character.charName)){
+        //     setVotes([signature,...votes])
+        //     const temp = {...context.votedOn}
+        //     const name = character.charName
+        //     const id = character._id
+        //     temp[name] = id;
 
-            context.setVotedOn(temp)
-            setVotedOn(true)
-            context.goto_vote(e,character,votes,signature);
-            return true;
-        } else {
-            alert(`You already voted for ${character.charName}`)
-            return false;
-        }
+        //     context.setVotedOn(temp)
+        //     setVotedOn(true)
+        //     context.goto_vote(e,character,votes,signature);
+        //     return true;
+        // } else {
+        //     alert(`You already voted for ${character.charName}`)
+        //     return false;
+        // }
     
     }
 
     const reset_votes = (e)=> {
         e.preventDefault()
         setVotes(["Anonymous"])
-        context.goto_vote(e,character,[],'Anonymous');
+        // context.goto_vote(e,character,[],'Anonymous');
     }
 
 

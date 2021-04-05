@@ -20,19 +20,24 @@ const [voted, setVoted] = useState(false)
 
 const local_update_character = (e,signature,character)=> {
     e.preventDefault()
-    if ( context.update_character(e,signature,character,setVotes) === true ) {
+    if ( !context.votedList.hasOwnProperty(character.charName) ) {
         
         setVotes([context.signature,...character.votes])
+        context.goto_vote(e,character,character.votes)
         setVoted(true)
-    } 
+        context.setStartPositionF(rank-1)
+    } else {
+        alert(`You've already voted for ${character.charName}`)
+    }
 }
 
 
 
 const local_reset_votes = (e)=> {
     e.preventDefault()
-    if (context.signature === 'admin'){
+    if (context.signature === 'Anonymous'){
         setVotes([context.signature])
+        context.setStartPositionF(rank-1)
         context.goto_vote(e,character,[],context.signature);
     } else {
         alert("Sorry, guests are not allowed to reset votes!")
@@ -66,7 +71,7 @@ return(
         <div id = 'info'>
             <div className = 'flex'>
                 <BasicInfo character = {character} />
-                <FeatureOptions voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {local_reset_votes} update_character = {local_update_character} pkg = {featureOptionsPkg} />
+                <FeatureOptions voted ={voted} voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {local_reset_votes} update_character = {local_update_character} pkg = {featureOptionsPkg} />
             </div>
                 
                 <VotesMapper votes = {votes} resultNum = {resultNum} />

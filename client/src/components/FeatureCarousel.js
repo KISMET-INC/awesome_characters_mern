@@ -1,15 +1,16 @@
-import React, { useState }from 'react';
+import React, { useState , useContext}from 'react';
 import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';  
-
+import Context from '../context/Context'
 
 
 const Featured_Carousel = ({characterList}) => {
     const [location] = useState('carousel')
     const [resultNum] = useState(6)
+    const context = useContext(Context)
 
     
 
@@ -31,6 +32,7 @@ const Featured_Carousel = ({characterList}) => {
             autoplay = {true} 
             autoplaySpeed = {1500}
             autoplayHoverPause = {true}
+            startPosition ={context.startPositionF}
             dots = {false}
             center = {true}
 

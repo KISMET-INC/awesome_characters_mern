@@ -19,46 +19,47 @@ const [signature, setSignature] = useState('Anonymous')
 const [reloadedLocal,setReloadedLocal] = useState(0)
 const [reloadedBase,setReloadedBase] = useState(0)
 const [totalCharacters, setTotalCharacters] = useState(0)
-const [votedOn, setVotedOn] = useState({})
+const [votedList, setVotedList] = useState('')
+const [startPosition,setStartPosition] = useState(0)
+const [startPositionF,setStartPositionF] = useState(0)
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
   console.log(`votes ${votes}`)
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {
-
-      const temp = {...votedOn}
-      const name = character.charName
-      const id = character._id
-      temp[name] = id;
-
-      //setVotedOn(temp)
       console.log(response)
-  
-  }).catch ( error => {
-      console.log(error)
-  })
-
-}
-const update_character = (e,signature,character,setVotes)=> {
-  e.preventDefault()
-  if(!votedOn.hasOwnProperty(character.charName)){
-      //setVotes([signature,...character.votes])
-      const temp = {...votedOn}
       const name = character.charName
       const id = character._id
-      temp[name] = id;
+      const temp = {...votedList}
+      temp[name] = id
 
-      //setVotedOn(temp)
-      //setVotedOn(true)
-      goto_vote(e,character,character.votes,signature);
-      return true;
-  } else {
-      alert(`You already voted for ${character.charName}`)
-      return false;
-  }
-
+      setVotedList(temp)
+      
+    }).catch ( error => {
+      console.log(error)
+    })
 }
+
+
+// const update_character = (e,signature,character)=> {
+//   e.preventDefault()
+//   if(!votedOn.hasOwnProperty(character.charName)){
+//       const temp = {...votedOn}
+//       const name = character.charName
+//       const id = character._id
+//       temp[name] = id;
+
+//       //setVotedOnList(temp)
+//       //setVotedOn(true)
+//       goto_vote(e,character,character.votes,signature);
+//       return true;
+//   } else {
+//       alert(`You already voted for ${character.charName}`)
+//       return false;
+//   }
+
+// }
 
 
 
@@ -67,7 +68,7 @@ const update_character = (e,signature,character,setVotes)=> {
 
   return (
     <div className="App">
-      <Context.Provider value= {{ update_character, votedOn, setVotedOn, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
+      <Context.Provider value= {{startPosition, setStartPosition, startPositionF, setStartPositionF, votedList, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

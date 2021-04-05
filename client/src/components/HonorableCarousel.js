@@ -4,15 +4,16 @@ import CharacterCard from './CharacterCard';
 import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import Context from '../context/Context';
 
 
 
 
 
 
-const Honorable_Carousel = props => {
-
+const Honorable_Carousel = props => { 
+const context = useContext(Context)
 
     const [items] = useState({
 
@@ -50,9 +51,10 @@ const Honorable_Carousel = props => {
 
             <OwlCarousel 
             className='owl-theme' 
-            // responsiveClass={true}
+            responsiveClass={true}
             items ={4}
             margin={50}
+            startPosition={context.startPosition}
             // loop
             responsive = {items}
             dots ={false}

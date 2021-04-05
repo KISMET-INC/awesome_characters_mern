@@ -12,7 +12,7 @@ import '../static/css/FeatureOptions.css'
 //     votes: votes,
 // }
 
-const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
+const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
     const [rank] = useState(pkg.rank)
     const [character] = useState(pkg.character)
     const [location] = useState(pkg.location)
@@ -34,7 +34,7 @@ const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_characte
                 </section>
 
                 <section className ='feature_buttons'>
-                    <VoteBtn label ={voteLabel} character = {character} vote={update_character} />
+                    <VoteBtn votedOn ={voted} label ={voteLabel} character = {character} vote={update_character} />
                     <VoteBtn label = {resetLabel} character={character} vote ={reset_votes} />
                     {
                         location !== 'carousel' ?  <HomeBtn/> : <></>

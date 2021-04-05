@@ -5,12 +5,14 @@ import axios from 'axios';
 import '../App.css';
 import '../static/css/All.css'
 import ScrollAnimation from 'react-animate-on-scroll';
+import Context from '../context/Context';
 
 const All = props => {  
     const [characterList, setCharacterList] = useState([]);
     const [listLoaded, setListLoaded] = useState(false);
     const [search, setSearch] = useState("")
     const [rankTable, setRankTable] = useState({})
+
 
 
 

@@ -21,7 +21,8 @@ const View = props => {
     const [title] = useState("Fantastic Performance!")
     const [resultNum] = useState(8)
     const [votes, setVotes] = useState('')
-    const [votedOn, setVotedOn] = useState(false)
+    const [voted, setVoted] = useState(false)
+    
 
     
     
@@ -37,25 +38,18 @@ const View = props => {
         },[props.id])
         
 
-    const update_character = (e,signature,character)=> {
-        e.preventDefault()
-        // if(!context.votedOn.hasOwnProperty(character.charName)){
-        //     setVotes([signature,...votes])
-        //     const temp = {...context.votedOn}
-        //     const name = character.charName
-        //     const id = character._id
-        //     temp[name] = id;
-
-        //     context.setVotedOn(temp)
-        //     setVotedOn(true)
-        //     context.goto_vote(e,character,votes,signature);
-        //     return true;
-        // } else {
-        //     alert(`You already voted for ${character.charName}`)
-        //     return false;
-        // }
-    
-    }
+        const update_character = (e,signature,character)=> {
+            e.preventDefault()
+            if ( !context.votedList.hasOwnProperty(character.charName) ) {
+                
+                setVotes([context.signature,...character.votes])
+                context.goto_vote(e,character,character.votes)
+                setVoted(true)
+                context.setStartPositionF(rank-1)
+            } else {
+                alert(`You've already voted for ${character.charName}`)
+            }
+        }
 
     const reset_votes = (e)=> {
         e.preventDefault()

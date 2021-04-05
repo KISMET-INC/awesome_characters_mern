@@ -45,9 +45,6 @@ const carouselIndex = useRef(0)
 
     })
 
-    useEffect (()=>{
-        console.log('ue')
-    },[])
 
     const info =(e) => {
         console.log(e.item.index)
@@ -60,7 +57,6 @@ const carouselIndex = useRef(0)
     return(
     
         <div id = "honorable">
-            <p>{carouselIndex.current}</p>
             <OwlCarousel 
             className='owl-theme' 
             responsiveClass={true}

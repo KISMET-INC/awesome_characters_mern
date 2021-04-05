@@ -19,8 +19,13 @@ const [votes, setVotes] = useState(character.votes)
 
 const local_update_character = (e,signature,character)=> {
     e.preventDefault()
-    setVotes([signature,...votes])
-    context.goto_vote(e,character,votes,signature);
+    // if(!context.votedOn.hasOwnProperty(character.charName)){
+    //     setVotes([signature,...votes])
+    //     update_character(e,signature,character);
+    // }
+   if ( update_character(e,signature,character) === true ) {
+    setVotes([signature,...votes]) 
+   } 
     // context.setReloadedLocal((prev)=> prev + 1)
 }
 

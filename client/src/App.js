@@ -19,16 +19,23 @@ const [signature, setSignature] = useState('Anonymous')
 const [reloadedLocal,setReloadedLocal] = useState(0)
 const [reloadedBase,setReloadedBase] = useState(0)
 const [totalCharacters, setTotalCharacters] = useState(0)
+const [votedOn, setVotedOn] = useState({})
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
   console.log(`votes ${votes}`)
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {
+      const charName = character.charName;
+      const id = character._id
+      const obj ={...votedOn}
+      obj[charName] = id;
       console.log(response)
+  
   }).catch ( error => {
       console.log(error)
   })
+
 }
 
 
@@ -38,7 +45,7 @@ const goto_vote =(e,character,votes) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{ totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
+      <Context.Provider value= {{ votedOn, setVotedOn, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

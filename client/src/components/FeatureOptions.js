@@ -35,7 +35,7 @@ const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_characte
 
                 <section className ='feature_buttons'>
                     <VoteBtn label ={voteLabel} character = {character} vote={update_character} />
-                   <VoteBtn label = {resetLabel} character={character} vote ={reset_votes} />
+                    <VoteBtn label = {resetLabel} character={character} vote ={reset_votes} />
                     {
                         location !== 'carousel' ?  <HomeBtn/> : <></>
                     }

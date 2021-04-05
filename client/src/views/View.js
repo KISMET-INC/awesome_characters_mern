@@ -17,9 +17,10 @@ const View = props => {
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [rank] = useState(props.rank)
     const [location] = useState('view')
-    const [title] = useState("Epic Performance!")
+    const [title] = useState("Fantastic Performance!")
     const [resultNum] = useState(8)
     const [votes, setVotes] = useState('')
+    const [votedOn, setVotedOn] = useState(false)
 
     
     
@@ -38,19 +39,42 @@ const View = props => {
         //     setVotes([context.signature,...votes])
         // },[context.reloadedLocal])
         
-        const update_character = (e,signature,character)=> {
-            e.preventDefault()
-            // context.setReloadedBase((prev)=> prev + 1)
-            setVotes([signature,...votes])
-            context.goto_vote(e,character,votes,signature);
-            console.log('here')
+    //     const update_character = (e,signature,character)=> {
+    //         e.preventDefault()
+    //         if(!context.votedOn.hasOwnProperty(character.charName)){
+    //             setVotes([signature,...votes])
+    //             context.goto_vote(e,character,votes,signature);
+    //         } else {
+    //             alert(`You already voted for ${character.charName}`)
+    //             console.log(character.charName)
+    //         }
+    // }
 
+
+    const update_character = (e,signature,character)=> {
+        e.preventDefault()
+        if(!context.votedOn.hasOwnProperty(character.charName)){
+            setVotes([signature,...votes])
+            const temp = {...context.votedOn}
+            const name = character.charName
+            const id = character._id
+            temp[name] = id;
+
+            context.setVotedOn(temp)
+            setVotedOn(true)
+            context.goto_vote(e,character,votes,signature);
+            return true;
+        } else {
+            alert(`You already voted for ${character.charName}`)
+            return false;
+        }
+        // context.setReloadedLocal((prev)=> prev + 1)
     }
 
     const reset_votes = (e)=> {
         e.preventDefault()
-        setVotes([context.signature])
-        context.goto_vote(e,character,[],context.signature);
+        setVotes(["Anonymous"])
+        context.goto_vote(e,character,[],'Anonymous');
     }
 
 
@@ -61,7 +85,7 @@ const View = props => {
         <div id = 'View' className = 'wrapper'>
             {
 
-                characterLoaded && <Title title = {title} subtitle = {character.charName}/>
+                characterLoaded && <Title title = {title} subtitle = {character.actor}/>
             }
             
             <div  className = 'film_strip'>
@@ -87,7 +111,7 @@ const View = props => {
                     characterLoaded && 
                     <VotesMapper resultNum ={resultNum} votes = {votes} />
                 }
-                <h5>Visit "{character.title}" on The Movie Database...</h5>
+                <h5 className ='visitDB'>Visit "{character.title}" on The Movie Database...</h5>
             </section>
 
         

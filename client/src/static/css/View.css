@@ -23,7 +23,9 @@
     margin: auto;
     margin-bottom: 30px;
 }
-
+#View h5.visitDB {
+    margin-top: 20px;
+}
 
 #View .bottom #Basic_Info .movie_details {
     display: flex;

@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 ReactDOM.render(
   <>
   
-      <div key = '1' style ={{minHeight: '700px'}}>
+      <div key = '1' style ={{minHeight: '800px'}}>
         <App />
       </div>
 

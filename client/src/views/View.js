@@ -35,21 +35,6 @@ const View = props => {
             })
         },[props.id])
         
-        // useEffect(()=> {
-        //     setVotes([context.signature,...votes])
-        // },[context.reloadedLocal])
-        
-    //     const update_character = (e,signature,character)=> {
-    //         e.preventDefault()
-    //         if(!context.votedOn.hasOwnProperty(character.charName)){
-    //             setVotes([signature,...votes])
-    //             context.goto_vote(e,character,votes,signature);
-    //         } else {
-    //             alert(`You already voted for ${character.charName}`)
-    //             console.log(character.charName)
-    //         }
-    // }
-
 
     const update_character = (e,signature,character)=> {
         e.preventDefault()
@@ -68,7 +53,7 @@ const View = props => {
             alert(`You already voted for ${character.charName}`)
             return false;
         }
-        // context.setReloadedLocal((prev)=> prev + 1)
+    
     }
 
     const reset_votes = (e)=> {

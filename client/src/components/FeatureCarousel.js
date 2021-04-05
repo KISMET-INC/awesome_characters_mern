@@ -20,6 +20,7 @@ const Featured_Carousel = ({characterList}) => {
         animatePreScroll ={true}
         animateOnce = {true}
         duration={1}
+        initiallyVisible ={false}
         animateIn="fadeIn">
 
             
@@ -43,8 +44,8 @@ const Featured_Carousel = ({characterList}) => {
 
             </OwlCarousel>
             </ScrollAnimation>
-        </div>
 
+        </div>
         
     
     )

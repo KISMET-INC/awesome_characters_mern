@@ -18,11 +18,11 @@ const Nav = props => {
     }
     
     return (
-        <ScrollAnimation 
-        animatePreScroll ={true}
-        initiallyVisible ={true}
+        <>
+        <ScrollAnimation        
         animateOnce = {true}
-        duration={1}
+        offset ={0}
+        initiallyVisible={true}
         animateIn="slideInDown">
         <nav id= 'Nav' className="bar flex">
             <div className = "wrapper flex">
@@ -47,6 +47,11 @@ const Nav = props => {
             </div>
         </nav>
         </ScrollAnimation>
+
+
+        
+
+            </>
         
     )
 }

@@ -19,19 +19,11 @@ const [votes, setVotes] = useState(character.votes)
 
 const local_update_character = (e,signature,character)=> {
     e.preventDefault()
-    // if(!context.votedOn.hasOwnProperty(character.charName)){
-    //     setVotes([signature,...votes])
-    //     update_character(e,signature,character);
-    // }
-   if ( update_character(e,signature,character) === true ) {
-    setVotes([signature,...votes]) 
-   } 
-    // context.setReloadedLocal((prev)=> prev + 1)
+    if ( update_character(e,signature,character) === true ) {
+        setVotes([signature,...votes]) 
+    } 
 }
 
-// useEffect(()=> {
-//     setVotes([context.signature,...votes])
-// },[context.reloadedBase])
 
 
 const local_reset_votes = (e)=> {

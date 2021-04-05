@@ -25,6 +25,7 @@
 }
 #View h5.visitDB {
     margin-top: 20px;
+    text-align: center;
 }
 
 #View .bottom #Basic_Info .movie_details {
@@ -90,10 +91,14 @@
     }
 
     #View .bottom #Votes_Mapper .votes {
-     
+        justify-content: center;
         display: flex;
         flex-wrap: wrap;
         overflow:hidden;
+    }
+
+    #View #Votes_Mapper h4 {
+        text-align: center;
     }
 
 

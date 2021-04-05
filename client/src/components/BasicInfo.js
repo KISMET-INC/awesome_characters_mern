@@ -7,7 +7,7 @@ const BasicInfo = ({character}) => {
     return (
         <section id = 'Basic_Info'>
                 <div className ="movie_details">
-                    <div>
+                    <div className = 'actor'>
                         <h5>Actor:</h5>
                         <p>{character.actor}</p>
                     </div>

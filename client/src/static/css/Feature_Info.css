@@ -9,6 +9,8 @@
 #Basic_Info div {
     margin-bottom: 20px;
 }
+
+
 #Basic_Info,
 #Quote {
     margin-bottom:20px;
@@ -23,6 +25,11 @@
 
 #Quote {
     width: 100%
+}
+
+#Quote p{
+    font-size: 20px;
+    color: var(--orange)
 }
 
 

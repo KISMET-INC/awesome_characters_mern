@@ -1,5 +1,5 @@
 import { navigate } from '@reach/router';
-import React ,{ useEffect, useState} from 'react';
+import React ,{ useState} from 'react';
 import "../App.css"
 import "../static/css/Form.css"
 import HomeBtn from './buttons/HomeBtn';
@@ -22,7 +22,6 @@ const Form = props => {
     const [url, setUrl] = useState(character.url)
     const [quote, setQuote] = useState(character.quote)
     const [rank] = useState(props.pkg.rank)
-    const [errors] = useState(props.errors)
 
     const goto_view =() => {
         navigate(`/view/${character._id}`)
@@ -42,7 +41,7 @@ const Form = props => {
             <div className= 'film_strip flex'>
             <div className ='form_left'>
                 {
-                    charName !== undefined ? <img style= {{opacity: 1}} onClick={goto_view} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
+                    url !== undefined ? <img style= {{opacity: 1}} onClick={goto_view} src = { url } alt = { charName } /> : <img src = 'https://aatfweb.files.wordpress.com/2017/06/film.jpg' alt ="film" />
                 }
             </div>
 
@@ -104,7 +103,7 @@ const Form = props => {
 
                         <div>
                             
-                            <input name = 'votes' type ='hidden' value='Anonymous'></input>
+                             {/* <input name = 'votes' type ='hidden' value=[{props.pkg.signature}></input>  */}
                             <input name = 'rank' type ='hidden' value={rank}></input>
                         </div>
                         <button type='submit'>Submit</button>

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import QueueAnim from 'rc-queue-anim';
+
 import Footer from './components/Footer';
-import ScrollAnimation from 'react-animate-on-scroll';
+
 
 ReactDOM.render(
   <>

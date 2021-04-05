@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, useContext} from 'react';
 import { Link } from '@reach/router';
 import '../App.css';
 import FeatureCarousel from '../components/FeatureCarousel';
@@ -6,8 +6,7 @@ import HonorableCarousel from '../components/HonorableCarousel';
 import '../static/css/Main.css';
 import axios from 'axios';
 import Nav from '../components/Nav.js';
-import QueueAnim from 'rc-queue-anim';
-import ScrollAnimation from 'react-animate-on-scroll';
+import Context from '../context/Context'
 
 
 
@@ -15,11 +14,14 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const Main = props => {
     const [characterList, setCharacterList] = useState()
     const [listLoaded, setListLoaded] = useState(false)
+    const context = useContext(Context)
+    
     
     useEffect(()=> {    
         axios.get('http://localhost:8000/api/characters/')
         .then(response=>{
             setCharacterList(response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1))
+            context.setTotalCharacters(response.data.characters.length)
             setListLoaded(true)
         }).catch(err=>console.log(err))
 

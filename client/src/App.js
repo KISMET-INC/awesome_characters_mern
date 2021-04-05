@@ -18,6 +18,7 @@ function App() {
 const [signature, setSignature] = useState('Anonymous')
 const [reloadedLocal,setReloadedLocal] = useState(0)
 const [reloadedBase,setReloadedBase] = useState(0)
+const [totalCharacters, setTotalCharacters] = useState(0)
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
@@ -37,7 +38,7 @@ const goto_vote =(e,character,votes) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{ reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
+      <Context.Provider value= {{ totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

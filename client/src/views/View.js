@@ -5,7 +5,6 @@ import axios from 'axios';
 import '../App.css'
 import '../static/css/View.css'
 import Title from '../components/Title';
-import FeatureInfo from '../components/FeatureInfo';
 import VotesMapper from '../components/VotesMapper';
 import Context from '../context/Context'
 import BasicInfo from '../components/BasicInfo';

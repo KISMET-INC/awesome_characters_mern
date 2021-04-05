@@ -1,20 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {navigate} from '@reach/router';
 import '../App.css'
 import Form from '../components/Form';
 import Nav from '../components/Nav';
 import axios from 'axios';
 import Title from '../components/Title';
+import Context from '../context/Context'
+
 
 
 const Add = props => {
     const [title] = useState("Add to the Epic...")
     const [subtitle]= useState("Who do you think is an epic movie character?")
     const [errors, setErrors] = useState({})
+    const  context = useContext(Context)
 
     const submitHandler = ( e, data) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/characters/new", data)
+        axios.post("http://localhost:8000/api/characters/new", {...data, 'votes': [context.signature]})
         .then( response => {
     
             if(response.data.hasOwnProperty('error')){
@@ -24,7 +27,7 @@ const Add = props => {
                 navigate('/add');
                 
             } else {
-                navigate(`/view/${response.data.character._id}/${0}`)
+                navigate(`/view/${response.data.character._id}/${context.totalCharacters+1}`)
             }
             console.log(response)
         }).catch ( error => {
@@ -36,7 +39,8 @@ const Add = props => {
     const formPkg = {
         rank: '',
         type: '',
-        character: {},
+        character: {'rank':'0'},
+        signature: 'Anonymous',
         submitHandler: submitHandler,
     }
     return(

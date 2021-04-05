@@ -1,12 +1,11 @@
 
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import '../App.css';
 import Context from '../context/Context';
 import { navigate } from '@reach/router';
 import FeatureOptions from './FeatureOptions';
 import FeatureImage from './FeatureImage';
 import VotesMapper from './VotesMapper';
-import Quote from './Quote';
 import BasicInfo from './BasicInfo';
 import '../static/css/Feature.css';
 
@@ -32,8 +31,13 @@ const local_update_character = (e,signature,character)=> {
 
 const local_reset_votes = (e)=> {
     e.preventDefault()
-    setVotes([context.signature])
-    context.goto_vote(e,character,[],context.signature);
+    if (context.signature === 'admin'){
+        setVotes([context.signature])
+        context.goto_vote(e,character,[],context.signature);
+    } else {
+        alert("Sorry, guests are not allowed to reset votes!")
+    }
+
 }
 
 const goto_view =()=> {

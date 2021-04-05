@@ -5,7 +5,7 @@ import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import React, {useState} from 'react';
-import ScrollAnimation from 'react-animate-on-scroll'; 
+
 
 
 
@@ -55,6 +55,7 @@ const Honorable_Carousel = props => {
             items ={5}
             margin={50}
             responsive = {items}
+            dots ={false}
             >
 
                 {

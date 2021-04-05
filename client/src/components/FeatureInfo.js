@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../static/css/Feature_Info.css'
 import BasicInfo from './BasicInfo';
-import Quote from './Quote';
 
 
 

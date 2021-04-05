@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import '../App.css';
 import '../static/css/Character_Card.css';
 import VoteBtn from './buttons/VoteBtn';
@@ -13,6 +13,8 @@ const CharacterCard = props => {
     const [rank] = useState(props.i+1)
     const [votedOn, setVotedOn] = useState(false)
 
+    
+
 
     const update_character = (e,signature,character)=> {
         e.preventDefault()
@@ -20,9 +22,7 @@ const CharacterCard = props => {
 
             setVotes([signature,...votes])
             setVotedOn(true)
-            var tempPosition = 0;
-            rank-6 < 4 ? tempPosition = rank-6 : tempPosition = 5
-            context.setStartPosition(tempPosition)
+            
             context.goto_vote(e,character,votes,signature);
         
         } else {

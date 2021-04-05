@@ -6,13 +6,12 @@ import '../App.css';
 import '../static/css/All.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 
-const All = props => {
-   
+const All = props => {  
     const [characterList, setCharacterList] = useState([]);
     const [listLoaded, setListLoaded] = useState(false);
     const [search, setSearch] = useState("")
     const [rankTable, setRankTable] = useState({})
- 
+
 
 
 
@@ -27,7 +26,7 @@ const All = props => {
                 const sorted_list =[]
 
                 response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1).forEach((char,i)=> {
-                    ranks[char.charName] = i+1
+                    ranks[char.charName] = i
                     sorted_list[i] = char
                 })
 
@@ -65,7 +64,7 @@ const All = props => {
                         <ScrollAnimation key = {i} 
                         animatePreScroll ={false}
                         initiallyVisible ={true}
-                        offset={0}
+                        offset={1}
                         animateIn="fadeIn">
                             <CharacterCard i = {rankTable[char.charName]}  char = {char} key = {i} />
                         </ScrollAnimation>
@@ -76,10 +75,8 @@ const All = props => {
 
                     {
                         listLoaded && search === "" && characterList.map((char,i)=>
-                            
-                               
-                            
-                       <ScrollAnimation key ={i}
+                        
+                        <ScrollAnimation 
                         animatePreScroll ={true}
                         animateOnce={true}
                         offset = {1}

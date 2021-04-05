@@ -32,13 +32,12 @@ const Featured_Carousel = ({characterList}) => {
             autoplayHoverPause = {true}
             dots = {false}
             center = {true}
-            loop
 
             >
 
             {
                 characterList.map((character,i)=>
-                    <Feature location ={location} resultNum = {resultNum} character ={character} key= {i} rank = {i+1} update_character= {''} reset_votes ={''} />
+                    i < 5 && <Feature location ={location} resultNum = {resultNum} character ={character} key= {i} rank = {i+1} update_character= {''} reset_votes ={''} />
                 )  
             }
 

@@ -44,12 +44,12 @@ const Honorable_Carousel = props => {
 
 
     return(
-       
+    
         <div id = "honorable">
 
             <OwlCarousel 
-            className='owl-theme' 
             loop
+            className='owl-theme' 
             autoplayHoverPause = {true}
             responsiveClass={true}
             items ={5}
@@ -60,7 +60,7 @@ const Honorable_Carousel = props => {
 
                 {
                     props.characterList.map((char,i) => 
-                        <CharacterCard i = {i} key={i} char={char} />
+                    i > 4 && <CharacterCard i = {i} key={i} char={char} />
                     )
                 }
 

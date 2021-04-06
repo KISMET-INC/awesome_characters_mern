@@ -54,7 +54,7 @@ const View = props => {
     const reset_votes = (e)=> {
         e.preventDefault()
         setVotes(["Anonymous"])
-        // context.goto_vote(e,character,[],'Anonymous');
+        context.goto_vote(e,character,[],'Anonymous');
     }
 
 

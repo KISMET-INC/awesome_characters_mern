@@ -1,15 +1,17 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useEffect, useRef, useState} from 'react';
 import Context from '../../context/Context'
 import "../../App.css";
 
 const Signature = (props, ref) => {
 const context = useContext(Context)
 const [signature, setSignature] = useState(context.signature)
+const [input, setInput] = useState('')
+const nameRef = useRef(null);
 
     const update_signature= (e)=>{
         e.preventDefault();
         props.handleClose();
-        context.setSignature(signature)
+        input == ''? context.setSignature('Anonymous') : context.setSignature(input)
 
     }
 
@@ -29,15 +31,21 @@ const [signature, setSignature] = useState(context.signature)
     }
 
 
+    useEffect(()=> {
+        nameRef.current.focus()
+    },[])
+
 
     return (
         <form id = 'Signature' onSubmit ={update_signature} >
             <input 
+            ref = {nameRef}
             style = {signatureStyle} 
             type = "text"  
-            onChange = {(e)=> {setSignature(e.target.value)}} 
+            onChange = {(e)=> {setInput(e.target.value)}} 
             name = "signature" 
-            value = {signature} />
+            value = {input}
+            placeholder ='Anonymous' />
             <div style= {signatureButtons} className = 'signature_buttons'>
                 <button style ={buttons} onClick= {update_signature}>Set Name</button>
                 <button onClick= {props.handleClose}>Stay Anonymous</button>
@@ -45,6 +53,6 @@ const [signature, setSignature] = useState(context.signature)
         </form>
     )
 }
+const forwardInput = React.forwardRef(Signature)
 
-
-export default Signature;
+export default forwardInput;

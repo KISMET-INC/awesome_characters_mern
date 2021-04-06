@@ -2,7 +2,7 @@ import React, { useContext, useState} from 'react';
 import Context from '../../context/Context'
 import "../../App.css";
 
-const Signature = props => {
+const Signature = (props, ref) => {
 const context = useContext(Context)
 const [signature, setSignature] = useState(context.signature)
 
@@ -45,5 +45,6 @@ const [signature, setSignature] = useState(context.signature)
         </form>
     )
 }
+
 
 export default Signature;

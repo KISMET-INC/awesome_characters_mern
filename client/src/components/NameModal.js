@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -35,6 +35,7 @@ export default function NameModal(props) {
   const [location] = useState(props.location)
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const nameInputRef = useRef()
 
   const handleOpen = () => {
     setOpen(true);

@@ -1,48 +1,64 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useEffect, useState, useContext} from 'react';
+import { Link } from '@reach/router';
 import '../App.css';
-import Featured from '../components/Featured';
-import Footer from '../components/Footer';
-import Honorable from '../components/Honorable';
-import Nav from '../components/Nav.js';
-import Test from '../components/Test.js';
-import '../static/css/Main_Breakpoints.css';
+import FeatureCarousel from '../components/FeatureCarousel';
+import HonorableCarousel from '../components/HonorableCarousel';
+import '../static/css/Main.css';
 import axios from 'axios';
+import Nav from '../components/Nav.js';
+import Context from '../context/Context'
+
+
 
 
 const Main = props => {
-    const [windowSize, setWindowSize] = useState(window.innerWidth);
-    const [characterList, setCharacterList] = useState([])
+    const [characterList, setCharacterList] = useState()
+    const [listLoaded, setListLoaded] = useState(false)
+    const context = useContext(Context)
+    const [voteList, setVoteList] = useState({})
     
-
-    // useEffect (()=>{
-    //     window.addEventListener("resize", ()=>{
-    //         setWindowSize(window.innerWidth)
-    //     })
-        
-    // }, [windowSize]);
-
-    useEffect(()=> {
+    
+    useEffect(()=> {    
         axios.get('http://localhost:8000/api/characters/')
         .then(response=>{
-            setCharacterList(response.data.characters)
-            console.log((response.data.characters[0].movie == undefined))
+            setCharacterList(response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1))
+            context.setTotalCharacters(response.data.characters.length)
+            setListLoaded(true)
+            console.log('main')
         }).catch(err=>console.log(err))
 
     },[]);
 
 
-    
 
     return (
-        <div>
+        
+        <div id ='Main'>
 
         <Nav />
-        <Featured characterList ={characterList}/>
-        <Honorable characterList ={characterList} />
-        <Footer />
-       
+        
+            <div id='main_body' className = 'wrapper'>
+        
+            <h3 key ='2' className ='main_title'>★ FEATURED  ★ Top 5</h3>
+            <div key = '3' className= 'featured film_strip carousel'>
+                {
+                    listLoaded && <FeatureCarousel voteList ={voteList} setVoteList ={setVoteList} characterList = { characterList }/>
+                    
+                }
+            </div>
+
+            
+            <h3 key='4' className ='main_title'> ★ Honorable Mentions ★</h3> <Link to= "/search"><h3 className= 'link'>Click to see all</h3></Link>
+            < div key= '5' className = 'honorable carousel'>
+                {
+                    listLoaded && <HonorableCarousel characterList = { characterList }/>
+                    
+                }
+            </div>
         </div>
+
+        </div>
+
     )
 
 }

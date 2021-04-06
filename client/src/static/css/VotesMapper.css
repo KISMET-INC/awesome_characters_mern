@@ -1,0 +1,32 @@
+#Votes_Mapper {
+    background-color: var(--transblack);
+    padding: 20px;
+    border-radius: 20px;
+}
+#Votes_Mapper li {
+    width: 100px;
+    font-size: 13px;
+    list-style: none;
+    font-family: var(--comforta);
+}
+#Votes_Mapper .votes {
+    flex-wrap: wrap;
+}
+
+#Votes_Mapper p {
+    text-align: right;
+}
+
+
+#Votes_Mapper li.plus_votes {
+    color: var(--orange)
+}
+
+#Votes_Mapper h4 {
+    margin-bottom: 10px;
+}
+
+
+
+
+

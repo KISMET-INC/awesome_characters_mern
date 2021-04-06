@@ -4,8 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Footer from './components/Footer';
+
+
 ReactDOM.render(
-    <App />,
+  <>
+  
+      <div key = '1' style ={{minHeight: '800px'}}>
+        <App />
+      </div>
+
+
+      <div key = '2'>
+        <Footer />
+      </div>
+
+    
+  </>,
+    
   document.getElementById('root')
 );
 

@@ -1,0 +1,89 @@
+#Feature_Image {
+    width: 100%;
+}
+
+
+.owl-carousel .owl-item img,
+#Feature_Image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 80px 10px 100px 10px;
+    border: 2px solid var(--orange);
+}
+
+#Feature_Image p {
+    color: var(--orange);
+    font-family: var(--comforta);
+    text-align:center;
+}
+
+#Feature_Image .image_info {
+    visibility:collapse;
+    position: relative;
+    top: -110px;
+    height: 26px;
+
+}
+
+#Feature_Image .image_info h4{
+    margin-top: 10px;
+}
+#Feature_Image .image_info h5{
+   font-size: 15px;
+   height: 100%;
+    color: var(--orange);
+    padding-top:5px;
+}
+
+#Feature_Image #Feature_Options button {
+    width: 100px;
+    /* background-color: transparent;
+    color: var(--orange);
+    border:none;
+    font-size: 19px;
+    text-align: left;
+    width: 75px; */
+
+}
+
+#Feature_Image #Feature_Options .feature_buttons {
+    display:flex;
+
+}
+
+#Feature_Image #Feature_Options {
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+}
+
+#Feature_Image #Feature_Options .feature_buttons button{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+#Feature_Image .image_links {
+    align-items:center;
+    font-size: 15px;
+}
+/*********************************************/
+/* Breakpoint 1000px
+/*********************************************/
+
+/*********************************************/
+/* Breakpoint 700px
+/*********************************************/
+@media (max-width: 700px){
+
+    #Feature_Image .image_info {
+        visibility:visible;
+    }
+
+  
+    #Feature_Image .background {
+        background-color: var(--transblack);
+        padding: 10px 20px;
+    
+    }
+}

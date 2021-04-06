@@ -1,19 +1,53 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
+import {navigate} from '@reach/router';
 import '../App.css'
-import AddForm from '../components/Form';
-import Footer from '../components/Footer';
+import Form from '../components/Form';
 import Nav from '../components/Nav';
-import '../static/css/Main_Breakpoints.css'
+import axios from 'axios';
+import Title from '../components/Title';
+import Context from '../context/Context'
+
 
 
 const Add = props => {
+    const [title] = useState("Add to the Epic...")
+    const [subtitle]= useState("Who do you think is an epic movie character?")
+    const [errors, setErrors] = useState({})
+    const  context = useContext(Context)
 
+    const submitHandler = ( e, data) => {
+        e.preventDefault();
+        axios.post("http://localhost:8000/api/characters/new", {...data, 'votes': [context.signature]})
+        .then( response => {
+    
+            if(response.data.hasOwnProperty('error')){
+                console.log(response.data)
+                setErrors(response.data.error.errors)
 
+                navigate('/add');
+                
+            } else {
+                navigate(`/view/${response.data.character._id}/${context.totalCharacters+1}`)
+            }
+            console.log(response)
+        }).catch ( error => {
+            console.log(error)
+        });
+
+    }
+
+    const formPkg = {
+        rank: '',
+        type: '',
+        character: {'rank':'0'},
+        signature: 'Anonymous',
+        submitHandler: submitHandler,
+    }
     return(
         <>
         <Nav />
-        <AddForm />
-        <Footer />
+        <Title title = {title} subtitle = {subtitle} />
+        <Form pkg = {formPkg} errors ={errors}/>
         </>
     )
 }

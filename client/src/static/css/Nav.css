@@ -1,42 +1,125 @@
-nav {
-
+#Nav {
     margin-bottom: 40px;
 }
-.nav_left {
+
+#Nav #Dropdown_Menu {
+    display:none; 
+}  
+
+#Nav .wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*********************************************/
+
+#Nav .logo {
     align-items: center;
     margin-top: -5px;  
 }
-    .nav_left img {
+    #Nav .logo img {
         height: 95px;
         margin-right: 15px;
         transform: rotate(-10deg);
     }
 
-    .nav_left .heading  p {
-        color:goldenrod;
+    #Nav .logo .titles  p {
+        color:var(--orange);
         font-family: var(--comforta);
         height: 50%;
     }
-    .nav_left .heading  h1{
+    #Nav .logo .titles  h1{
         font-size: 25px;
         height:50%;    
         font-family: var(--monst)
     }
-.nav_right input {
-    width: 100%;
-    text-align: center;
-    border:none;
-}
 
-.nav_right div {
-    margin-top: 10px;
-    justify-content: space-between;
-}
 
-.inner_nav {
-    width: 80%;
-    justify-content: space-between;
-    margin: auto;
+
+#Nav .links {
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+#Nav .links .buttons {
+    margin-bottom: 10px;
+    justify-content: space-between;
+    width: 124px;
+    align-items: center;
+}
+#Nav .links i {
+    font-size: 25px;
+}
+
+#Nav .links #Modal {
+    width: 100%;
+}
+
+#Nav #Modal input {
+    color:black
+}
+
+
+
+
+@media (max-width:655px) {
+
+    #Nav .links {
+        display:none;
+    }
+
+    #Nav #Dropdown_Menu {
+        display: flex;
+        align-items: center;
+    }
+
+    #Nav .wrapper {
+        justify-content: space-around;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    #Nav .wrapper { 
+        width:90%;
+    }
+    
+    #Nav .logo .titles h1 {
+        font-size: 20px;
+    }
+    #Nav .logo .titles p {
+        font-size: 12px;
+    }
+
+    #Nav .logo img {
+        
+    }
+
+}
+
+@media (max-width:360px) {
+    #Nav .logo {
+        flex-direction: column;
+    }
+
+
+    #Nav .logo img {
+     display: none;
+        
+    }
+
+    #Nav .wrapper {
+        width: 100%;
+        height: 45px;
+
+        justify-content: space-around;
+    
+    }
+
+    #Nav i.fa-ellipsis-v::before {
+        font-size: 25px;
+    }
 
 }

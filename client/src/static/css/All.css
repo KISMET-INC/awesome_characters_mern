@@ -1,0 +1,34 @@
+
+#Search input {
+    color:black;
+    width: 100%;
+    padding-left: 10px;
+}
+#Search {
+    flex-direction: column;
+}
+#Search .search_grp {
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 30px;
+    align-items: center;
+    font-family: var(--comforta);
+    
+}
+
+
+#Search .results {
+    width: fit-content;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+/* **************************
+/* BREAK POINT 483px
+/*************************** */
+ @media (max-width: 483px){ 
+   #Search .results {
+       margin-left: -20px;
+   }
+
+} 

@@ -1,17 +1,34 @@
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import '../../App.css'
-import { navigate } from '@reach/router'
+import Context from '../../context/Context';
 
 
-const VoteBtn = props =>{
 
-    const goto_vote =() =>{
-        navigate('/vote')
-    }
-    
+const VoteBtn = ({label, character, vote, votedOn}) =>{
+    const  context = useContext(Context)
+    const [signature, setSignature] = useState(context.signature)
+
+    useEffect(()=>{
+        setSignature(context.signature)
+    },[context.signature])
+
+
     return (
-        <button onClick = { goto_vote }>Vote</button>
+        
+        // <form onSubmit={(e) => vote(e,signature,character)}>
+        //     {
+        //         context.votedOn.hasOwnProperty(character.charName) && label.toLowerCase() === 'vote' ? <button className ='voted'>{label}</button> : <button type ='submit'>{label}</button>
+        //     }
+        // </form>
+
+
+        <form onSubmit={(e) => vote(e,signature,character)}>
+            {
+                context.votedList.hasOwnProperty(character.charName) == true && label.toLowerCase() === 'vote' ? <button className ='voted'>{label}</button> : <button type ='submit'>{label}</button>
+            }
+        </form>
     )
+    
 }
 
 export default VoteBtn;

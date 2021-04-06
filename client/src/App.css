@@ -2,7 +2,13 @@
     margin: 0px;
     padding: 0px;
     color:white;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 :root {
@@ -29,9 +35,13 @@ body {
     background-image: url('./static/img/background2.jpg');
 }
 
-input {
+input , textarea {
     border-radius: 8px;
     height: 30px;
+}
+
+textarea {
+    overflow: scroll;
 }
 
 img {
@@ -65,6 +75,10 @@ i.fa-github {
     display:flex;
 }
 
+.display_none {
+    display:none;
+}
+
 .monst {
     font-family: var(--monst);
 }
@@ -76,11 +90,71 @@ i.fa-github {
 
 button {
     border-radius: 8px;
-    background-color: var(--lightgold);
-    border: 2px solid var(--medgold);
+    background-color: var(--orange); 
+    border: none;
+    border: 2px solid var(--orange  ); 
     color: var(--transblack);
-    width: 150px;
-    height: 25px;
+    background-image: linear-gradient(#FEDF90, var(--orange));
+    width: 155px;
+    height:30px;
     font-weight: bold;
+}
+
+button.voted {
+    background-color: black;
+    border: 2px solid rgba(255, 144, 0,.2); 
+    background-image: linear-gradient(rgba(254, 223, 144,0.5), rgba(255, 144, 0,.5));
+}
+
+.film_strip{
+    background-color: var(--transblack);
+    border-top: 5px dashed var(--orange);
+    border-bottom: 5px dashed var(--orange);
+    min-height: 350px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.wrapper {
+    width: 70%;
+    margin:auto;
+}
+
+.edit_body {
+    min-height: 550px;
+}
+
+@media (max-width: 1300px){
+
+    .wrapper{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+
+    .wrapper{
+        width: 90%;
+    }
+}
+
+/************************/
+/* BREAKPOINT 700px    
+/************************/
+@media (max-width: 450px){
+    .film_strip {
+        padding: 40px 0px;
+        width: 100%;
+    }
+
+    .wrapper {
+        
+        width: 100%;
+    }
 
 }

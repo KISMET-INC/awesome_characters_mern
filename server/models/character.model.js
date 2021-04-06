@@ -8,24 +8,28 @@ const CharacterSchema = new mongoose.Schema({
     },
 
     actor: {
-        type: String
+        type: String,
+        required: [true, "An actor name is required"]
     },
 
-    movieTitle: {
+    title: {
         type: String,
-        required: [true, "A Movie Title is required"]
+        required: [true, "A movie title is required"]
     },
 
     year: {
         type: Number,
+        required: [true, "A released year is required"]
     },
 
     url: {
         type: String,
+        required: [true, "An image URL name is required"]
     },
 
     quote: {
         type: String,
+        required: [true, "A quote is required"]
     },
     
     votes: []

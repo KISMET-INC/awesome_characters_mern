@@ -1,0 +1,123 @@
+*{
+  /* outline: 2px dotted red;     */
+}
+#View #Feature_Options .feature_links {
+    display: unset;
+}
+
+#View #Feature_Image img {
+    height: 370px;
+}
+
+#View .bottom  {
+        display:none;
+}   
+
+#View .wrapper {
+    min-height: 400px;
+}
+
+#View .bottom #Basic_Info,
+#View .bottom #Quote {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+#View h5.visitDB {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#View .bottom #Basic_Info .movie_details {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#View .bottom #Feature_Info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+    justify-content: space-around;
+}
+
+
+
+@media (max-width: 1300px){
+    #View.wrapper{
+        width: 90%;
+    }
+
+
+    
+}
+
+
+
+@media (max-width: 1000px){
+    #View .bottom {
+        display: flex;
+        margin-left: 20px;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    }
+
+    #View .bottom #Basic_Info #Quote {
+        margin: 0px;
+    }
+
+    #View .bottom #Votes_Mapper {
+        width: 100%;
+        padding: 20px;
+    }
+
+
+
+
+
+    #View #Feature #Votes_Mapper {
+        display:none;
+    }
+}
+
+
+
+@media (max-width: 700px){
+    #View .bottom #Votes_Mapper {
+        display: unset;
+        justify-content: center;
+    }
+
+    #View .bottom #Votes_Mapper .votes {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        overflow:hidden;
+    }
+
+    #View #Votes_Mapper h4 {
+        text-align: center;
+    }
+
+
+    #View .bottom  {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #View #Votes_Mapper {
+        width: 100%;
+
+    } 
+
+  
+
+    
+}
+
+
+
+

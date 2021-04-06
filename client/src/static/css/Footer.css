@@ -1,3 +1,7 @@
+
+footer {
+    margin-top: 50px;
+}
 #footer_wrapper {
     background-color: white;
     justify-content: space-around;
@@ -35,10 +39,31 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 10px;
-    height: 75px;
+    height: 99px;
+    margin-bottom: 15px;
     
 }
 .footer_aside {
     text-align: center;
     margin-bottom: 20px;
+}
+
+
+@media (max-width:530px) {
+
+    #footer_wrapper .footer_icons {
+        display:none;
+    
+    }
+
+}
+
+
+@media (max-width:460px) {
+
+    #footer_wrapper img {
+        display:none;
+    
+    }
+    
 }

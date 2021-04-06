@@ -1,0 +1,13 @@
+#Dropdown_Menu i.fa-ellipsis-v {
+    font-size: 30px;
+}
+
+*{
+    /* outline: 2px solid red */
+}
+.link_icon {
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+
+}

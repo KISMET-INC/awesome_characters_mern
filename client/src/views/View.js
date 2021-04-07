@@ -104,7 +104,7 @@ const View = props => {
                     characterLoaded && 
                     <VotesMapper resultNum ={resultNum} votes = {votes} />
                 }
-                <h5 className ='visitDB'>Visit "{character.title}" on The Movie Database...</h5>
+                {/* <h5 className ='visitDB'>Visit "{character.title}" on The Movie Database...</h5> */}
             </section>
 
         

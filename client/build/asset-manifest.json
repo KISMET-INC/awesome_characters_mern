@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.7a5d5afb.chunk.css",
-    "main.js": "/static/js/main.b9078cb1.chunk.js",
-    "main.js.map": "/static/js/main.b9078cb1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a0dca828.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a0dca828.js.map",
-    "static/css/2.e3e97059.chunk.css": "/static/css/2.e3e97059.chunk.css",
-    "static/js/2.03bc1c33.chunk.js": "/static/js/2.03bc1c33.chunk.js",
-    "static/js/2.03bc1c33.chunk.js.map": "/static/js/2.03bc1c33.chunk.js.map",
-    "static/js/3.a4b4c787.chunk.js": "/static/js/3.a4b4c787.chunk.js",
-    "static/js/3.a4b4c787.chunk.js.map": "/static/js/3.a4b4c787.chunk.js.map",
+    "main.css": "/static/css/main.a7d53f44.chunk.css",
+    "main.js": "/static/js/main.88ce6650.chunk.js",
+    "main.js.map": "/static/js/main.88ce6650.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9f82fc56.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9f82fc56.js.map",
+    "static/css/2.b7f73291.chunk.css": "/static/css/2.b7f73291.chunk.css",
+    "static/js/2.3a62df17.chunk.js": "/static/js/2.3a62df17.chunk.js",
+    "static/js/2.3a62df17.chunk.js.map": "/static/js/2.3a62df17.chunk.js.map",
+    "static/js/3.37fee26d.chunk.js": "/static/js/3.37fee26d.chunk.js",
+    "static/js/3.37fee26d.chunk.js.map": "/static/js/3.37fee26d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.e3e97059.chunk.css.map": "/static/css/2.e3e97059.chunk.css.map",
-    "static/css/main.7a5d5afb.chunk.css.map": "/static/css/main.7a5d5afb.chunk.css.map",
-    "static/js/2.03bc1c33.chunk.js.LICENSE.txt": "/static/js/2.03bc1c33.chunk.js.LICENSE.txt",
+    "static/css/2.b7f73291.chunk.css.map": "/static/css/2.b7f73291.chunk.css.map",
+    "static/css/main.a7d53f44.chunk.css.map": "/static/css/main.a7d53f44.chunk.css.map",
+    "static/js/2.3a62df17.chunk.js.LICENSE.txt": "/static/js/2.3a62df17.chunk.js.LICENSE.txt",
     "static/media/MERN-logo.39d4f786.png": "/static/media/MERN-logo.39d4f786.png",
     "static/media/App.css": "/static/media/background2.3604ee49.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a0dca828.js",
-    "static/css/2.e3e97059.chunk.css",
-    "static/js/2.03bc1c33.chunk.js",
-    "static/css/main.7a5d5afb.chunk.css",
-    "static/js/main.b9078cb1.chunk.js"
+    "static/js/runtime-main.9f82fc56.js",
+    "static/css/2.b7f73291.chunk.css",
+    "static/js/2.3a62df17.chunk.js",
+    "static/css/main.a7d53f44.chunk.css",
+    "static/js/main.88ce6650.chunk.js"
   ]
 }

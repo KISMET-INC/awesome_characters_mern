@@ -54,9 +54,9 @@ const goto_vote =(e,character,votes) =>{
         <Router>
           <Main path="/" />
           <Add path="/add" />
-          <Edit path= '/edit/:id/:rank' />
+          <Edit path= '/edit/:id/:rank/' />
           <All path= '/search' />
-          <View path = '/view/:id/:rank' />
+          <View path = '/view/:id/:rank/' />
         </Router>
       </Context.Provider>
   

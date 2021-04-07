@@ -19,10 +19,10 @@ const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_c
                 <section className = 'feature_links'>
                         <h3>{character.charName}</h3> 
                         {
-                            location !== 'view' ? <Link to ={`/view/${character._id}/${rank}`}><h4 className="view" >Click to View</h4></Link>: <></>
+                            location !== 'view' ? <Link to ={`/view/${character._id}/${rank}/`}><h4 className="view" >Click to View</h4></Link>: <></>
                         }
                         
-                        <Link to ={`/edit/${character._id}/${rank}`}><h4 >Click to Edit</h4></Link>
+                        <Link to ={`/edit/${character._id}/${rank}/`}><h4 >Click to Edit</h4></Link>
                 </section>
 
                 <section className ='feature_buttons'>

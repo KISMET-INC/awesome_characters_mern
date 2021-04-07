@@ -20,10 +20,10 @@ const carouselIndex = useRef(0)
 
             0: {
                 items: 1,
-                margin:-100,
+                margin:-50,
             },
 
-            405 : {
+            400 : {
                 items: 2,
                 margin: 50,
             },

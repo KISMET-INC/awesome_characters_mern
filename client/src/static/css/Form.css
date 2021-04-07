@@ -9,6 +9,8 @@
 #Form h5 {
     margin-bottom: 15px;
     text-align: center;
+    width: 90%;
+    font-family: var(--comforta);
 }
 
 #Form .form_left p{
@@ -53,6 +55,7 @@
 
 #Form h2 {
     text-align: center;
+    
 }
 
 #Form p {
@@ -239,7 +242,6 @@
         width: 100%;
     }
     #Form .film_strip.flex {
-        width: 100%;
         padding-left: 10px;
         padding-right: 10px;
         margin-left: 0px;

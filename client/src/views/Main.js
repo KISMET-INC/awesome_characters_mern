@@ -37,10 +37,10 @@ const Main = props => {
 
         <Nav />
         
-            <div id='main_body' className = 'wrapper'>
+            <div id='Main_Body' className = 'wrapper'>
         
-            <h3 key ='2' className ='main_title'>★ FEATURED  ★ Top 5</h3>
-            <div key = '3' className= 'featured film_strip carousel'>
+            <h3 className ='main_title'>★ FEATURED  ★ Top 5</h3>
+            <div  className= 'featured film_strip carousel'>
                 {
                     listLoaded && <FeatureCarousel voteList ={voteList} setVoteList ={setVoteList} characterList = { characterList }/>
                     
@@ -48,8 +48,8 @@ const Main = props => {
             </div>
 
             
-            <h3 key='4' className ='main_title'> ★ Honorable Mentions ★</h3> <Link to= "/search"><h3 className= 'link'>Click to see all</h3></Link>
-            < div key= '5' className = 'honorable carousel'>
+            <h3  className ='main_title'> ★ Honorable Mentions ★</h3> <Link to= "/search"><h3 className= 'link'>Click to see all</h3></Link>
+            < div  className = 'honorable carousel'>
                 {
                     listLoaded && <HonorableCarousel characterList = { characterList }/>
                     

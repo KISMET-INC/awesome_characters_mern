@@ -52,8 +52,12 @@ const View = props => {
 
     const reset_votes = (e)=> {
         e.preventDefault()
-        setVotes(["Anonymous"])
-        context.goto_vote(e,character,[],'Anonymous');
+        if (context.signature == context.adminName){
+            setVotes([context.signature])
+            context.goto_vote(e,character,[], context.signature);
+        } else {
+            alert('Sorry, only admins can reset votes')
+        }
     }
 
 

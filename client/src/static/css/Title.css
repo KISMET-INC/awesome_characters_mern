@@ -16,5 +16,15 @@
     color: var(--orange);
     margin-bottom: 30px;
 }
-    
+
+
+@media (max-width :450px){
+    #Title h2 {
+        font-size: 25px;
+    }
+
+    #Title p {
+        font-size: 20px;
+    }
+}
   

@@ -14,7 +14,7 @@ const Add = props => {
     // Local
     const  context = useContext(Context)
     const [title] = useState("Add to the Epic...")
-    const [subtitle]= useState("Who do you think is an epic movie character?")
+    const [subtitle]= useState("Who else is Epic?")
 
     // To form
     const [errors, setErrors] = useState({})

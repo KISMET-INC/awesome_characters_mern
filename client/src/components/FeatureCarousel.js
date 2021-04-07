@@ -18,7 +18,7 @@ const Featured_Carousel = ({characterList}) => {
 
 
     return(
-        <div id= "feature_carousel" >
+        <div id= "Feature_Carousel" >
         <ScrollAnimation 
         animatePreScroll ={true}
         animateOnce = {true}

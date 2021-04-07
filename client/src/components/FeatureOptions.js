@@ -14,8 +14,6 @@ const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_c
 
     return (
 
-        
-
             <div id='Feature_Options' className = "feature_btns flex">
                 <h3>Rank {rank} </h3>
                 <section className = 'feature_links'>

@@ -26,7 +26,7 @@ const Form = ({type, character, rank, submitHandler, errors}) => {
 
 
     return (
-        <div id = "add_form_wrapper" className='flex'>
+        <div id = "Form" className='flex wrapper'>
             <h5>Intergration with The Movie Database API coming soon..</h5>
             <div className= 'film_strip flex'>
             <div className ='form_left'>

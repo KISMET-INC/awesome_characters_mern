@@ -53,9 +53,8 @@ const Edit = props => {
 
 
     return (
-        <>
+        <div id = 'Edit'>
         <Nav />
-            <div className='edit_body wrapper'>
             {
                 characterLoaded && <Title subtitle={character.charName} title={title} />
 
@@ -65,8 +64,7 @@ const Edit = props => {
                 characterLoaded && <Form type = {type} character ={character} rank={rank} submitHandler={submitHandler} errors = {errors}  />
 
             }
-            </div>
-        </>
+        </div>
     )
 }
 export default Edit;

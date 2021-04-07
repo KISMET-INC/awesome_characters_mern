@@ -45,11 +45,11 @@ const Add = props => {
 
 
     return(
-        <>
+        <div id = 'Add'>
         <Nav />
         <Title title = {title} subtitle = {subtitle} />
         <Form type ={type} character = {character} rank={rank} submitHandler ={submitHandler} errors ={errors}/>
-        </>
+        </div>
     )
 }
 

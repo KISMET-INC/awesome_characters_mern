@@ -17,12 +17,16 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  title: {
+    fontSize: '22px',
+    color: 'black',
+  },
+  label: {
+    color:'black'
+  }
 }));
 
 
-const fontColor = {
-    color: 'black',
-}
 
 const icon2 = {
   marginLeft:  '10px',
@@ -66,8 +70,8 @@ export default function NameModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 style={fontColor} id="transition-modal-title">Set Your Voter Name</h2>
-            <p  style={fontColor} id="transition-modal-description">Set your voter name, or stay anonymous</p>
+            <h2 className={classes.title} id="transition-modal-title">Set Your Voter Name</h2>
+            <p className={classes.label} id="transition-modal-description">Set your voter name, or stay anonymous</p>
             <Signature handleClose= { handleClose }/>
           </div>
         </Fade>

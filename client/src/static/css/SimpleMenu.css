@@ -2,12 +2,10 @@
     font-size: 30px;
 }
 
-*{
-    /* outline: 2px solid red */
-}
 .link_icon {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 90px;
-
+    font-size: 15px;
 }

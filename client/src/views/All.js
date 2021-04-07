@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../App.css';
 import '../static/css/All.css'
 import ScrollAnimation from 'react-animate-on-scroll';
-import Context from '../context/Context';
+
 
 const All = props => {  
     const [characterList, setCharacterList] = useState([]);
@@ -14,12 +14,11 @@ const All = props => {
     const [rankTable, setRankTable] = useState({})
 
 
-
+    
 
 
 
     useEffect (()=>{
-        console.log('useEffect')
         setListLoaded(false);
         axios.get('http://localhost:8000/api/characters')
             .then(response => {
@@ -32,8 +31,15 @@ const All = props => {
                     sorted_list[i] = char
                 })
 
+                const nameList = sorted_list.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()))
+                const titleList = sorted_list.filter(e => !nameList.includes(e)).filter(c => c.title.toLowerCase().includes(search.toLowerCase()))
+                const yearList = sorted_list.filter(e => !nameList.includes(e) || !titleList.includes(e)).filter(c => c.year.toString().includes(search))
+    
+                
+                const newList = nameList.concat(titleList).concat(yearList)
+                setCharacterList(newList)
+
                 setRankTable(ranks)
-                setCharacterList(sorted_list)
                 setListLoaded(true)
 
             }).catch (error => {
@@ -54,14 +60,14 @@ const All = props => {
             <div id =  'Search' className = 'wrapper flex'>
 
                 <div className = 'search_grp flex'>
-                    <p>Search by: name, year, movie title</p>
+                    <p>Search by charcter name</p>
                     <input value = {search}  type = 'text' onChange = {(e)=> {setSearch(e.target.value)}}></input>
                 </div>
 
                 
                 <section className = 'results flex'>
                     {
-                        listLoaded && search!== "" && characterList.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()) || c.year === search || c.title === search).map((char,i)=>
+                        listLoaded && search!== "" && characterList.map((char,i)=>
 
                         <ScrollAnimation key = {i} 
                         animatePreScroll ={false}

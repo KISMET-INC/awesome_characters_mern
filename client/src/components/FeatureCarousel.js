@@ -2,7 +2,9 @@ import React, { useState , useRef}from 'react';
 import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
-import ScrollAnimation from 'react-animate-on-scroll';  
+import ScrollAnimation from 'react-animate-on-scroll'; 
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 
 
 const Featured_Carousel = ({characterList}) => {
@@ -16,7 +18,7 @@ const Featured_Carousel = ({characterList}) => {
 
 
     return(
-        <div id= "feature_carousel" >
+        <div id= "Feature_Carousel" >
         <ScrollAnimation 
         animatePreScroll ={true}
         animateOnce = {true}

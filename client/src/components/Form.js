@@ -7,8 +7,7 @@ import ViewBtn from './buttons/ViewBtn';
 
 
 
-const Form = props => {
-    const [character] = useState(props.pkg.character)
+const Form = ({type, character, rank, submitHandler, errors}) => {
     const [charName,setCharName] = useState(character.charName)
     const [title, setTitle] = useState(character.title)
     const [year, setYear] = useState(character.year)
@@ -16,7 +15,6 @@ const Form = props => {
     const [votes] = useState(character.votes)
     const [url, setUrl] = useState(character.url)
     const [quote, setQuote] = useState(character.quote)
-    const [rank] = useState(props.pkg.rank)
 
     const goto_view =() => {
         navigate(`/view/${character._id}`)
@@ -28,7 +26,7 @@ const Form = props => {
 
 
     return (
-        <div id = "add_form_wrapper" className='flex'>
+        <div id = "Form" className='flex wrapper'>
             <h5>Intergration with The Movie Database API coming soon..</h5>
             <div className= 'film_strip flex'>
             <div className ='form_left'>
@@ -37,22 +35,22 @@ const Form = props => {
                 }
             </div>
 
-                <form  className='flex' onSubmit={ (e) => props.pkg.submitHandler( e, { charName, title, year, actor,url, votes, quote,rank } ) }>
+                <form  className='flex' onSubmit={ (e) => submitHandler( e, { charName, title, year, actor,url, votes, quote,rank } ) }>
                     <div className = 'col_1'>
                         <div>
                             <label htmlFor = 'charName' >Character Name:</label>
                             <input name= 'charName'  value= { charName } type ='text' onChange= {(e)=> {setCharName(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('charName') &&
-                                <h6 className ='error'>{props.errors.charName.message}</h6>
+                                errors.hasOwnProperty('charName') &&
+                                <h6 className ='error'>{errors.charName.message}</h6>
                             }
                         </div>
                         <div>
                             <label htmlFor = 'title'>Movie Title:</label>
                             <input name = 'title' value = { title } type ='text' onChange= {(e)=> {setTitle(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('title') &&
-                                <h6 className ='error'>{props.errors.title.message}</h6>
+                                errors.hasOwnProperty('title') &&
+                                <h6 className ='error'>{errors.title.message}</h6>
                             }
                         </div>
 
@@ -60,16 +58,16 @@ const Form = props => {
                             <label htmlFor ='year'>Release Year:</label>
                             <input name = 'year' value = { year } type ='text' onChange= {(e)=> {setYear(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('year') &&
-                                <h6 className ='error'>{props.errors.year.message}</h6>
+                                errors.hasOwnProperty('year') &&
+                                <h6 className ='error'>{errors.year.message}</h6>
                             }
                         </div>
                         <div>
                             <label htmlFor ='actor'>Actor / Actress:</label>
                             <input name = 'actor' value = { actor } type ='text' onChange= {(e)=> {setActor(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('actor') &&
-                                <h6 className ='error'>{props.errors.actor.message}</h6>
+                                errors.hasOwnProperty('actor') &&
+                                <h6 className ='error'>{errors.actor.message}</h6>
                             }
                         </div>
                     </div>
@@ -79,8 +77,8 @@ const Form = props => {
                             <label htmlFor = 'url'>Image Url:</label>
                             <input name = 'url' type ='text'value={url} onChange= {(e)=> {setUrl(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('url') &&
-                                <h6 className ='error'>{props.errors.url.message}</h6>
+                                errors.hasOwnProperty('url') &&
+                                <h6 className ='error'>{errors.url.message}</h6>
                             }
                         </div>
 
@@ -89,20 +87,19 @@ const Form = props => {
                             <textarea name = 'quote' value = { quote } type ='text' onChange= {(e)=> {setQuote(e.target.value)} }></textarea>
                         </div>
                         {
-                                props.errors.hasOwnProperty('quote') &&
-                                <h6 className ='error'>{props.errors.quote.message}</h6>
+                                errors.hasOwnProperty('quote') &&
+                                <h6 className ='error'>{errors.quote.message}</h6>
                             }
 
                         <div>
                             
-                             {/* <input name = 'votes' type ='hidden' value=[{props.pkg.signature}></input>  */}
                             <input name = 'rank' type ='hidden' value={rank}></input>
                         </div>
                         <button type='submit'>Submit</button>
                         <button onClick = {go_home}>Cancel</button>
                         <HomeBtn />
                         {
-                            charName !== undefined ? <ViewBtn rank = {rank} character_id = {character._id} /> : <></>
+                            type !== 'add' ? <ViewBtn rank = {rank} character_id = {character._id} /> : <></>
                         }
                     </div>
 

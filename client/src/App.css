@@ -121,7 +121,7 @@ button.voted {
 }
 
 .wrapper {
-    width: 70%;
+    width: 80%;
     margin:auto;
 }
 
@@ -152,9 +152,5 @@ button.voted {
         width: 100%;
     }
 
-    .wrapper {
-        
-        width: 100%;
-    }
 
 }

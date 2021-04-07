@@ -2,13 +2,17 @@
     width: 100%;
 }
 
-#feature_carousel {
+#Feature_Carousel {
     width:100%;
     
 }
 
 #Main .main_title {
     margin-bottom: 20px;
+}
+
+#Main .film_strip{
+    height: 500px
 }
 
 #Main .link {
@@ -43,13 +47,16 @@
 }
 
 /************************/
-/* BREAKPOINT 426px    
+/* BREAKPOINT 450px    
 /************************/
 @media (max-width: 450px){
     #Main .main_title {
         padding: 0px 20px;
-        font-size: 21px;
+        font-size: 18px;
         text-align: center;
+    }
+    #Main .film_strip {
+        height: 400px;
     }
 
 }

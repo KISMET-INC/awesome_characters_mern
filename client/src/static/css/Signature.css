@@ -1,0 +1,23 @@
+#Signature input {
+    color: black;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 10px;
+
+}
+
+
+#Signature button  {
+    width: 45%;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+#Signature .signature_buttons {
+    display: flex;
+    justify-content:  space-between;
+}
+
+@media (max-width: 400px){
+}

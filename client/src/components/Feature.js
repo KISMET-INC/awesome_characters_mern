@@ -36,13 +36,13 @@ const local_update_character = (e,signature,character)=> {
 
 const local_reset_votes = (e)=> {
     e.preventDefault()
-    if (context.signature === 'Anonymous'){
+    if (context.signature === context.adminName){
         setVotes([context.signature])
         context.setStartPositionF(rank-1)
         setReset(true)
         context.goto_vote(e,character,[]);
     } else {
-        alert("Sorry, guests are not allowed to reset votes!")
+        alert("Sorry, only admins are allowed to reset votes")
     }
 
 }

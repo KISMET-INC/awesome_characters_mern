@@ -1,33 +1,36 @@
-#add_form_wrapper {
+#Form {
     flex-direction: column;
     align-items: center;
 }
 
-#add_form_wrapper  .flex {
+#Form  .flex {
     height: fit-content;
 }
-#add_form_wrapper h5 {
+#Form h5 {
     margin-bottom: 15px;
+    text-align: center;
+    width: 90%;
+    font-family: var(--comforta);
 }
 
-#add_form_wrapper .form_left p{
+#Form .form_left p{
     margin: 0px;
 
 }
 
-#add_form_wrapper .error {
+#Form .error {
     color: red;
     margin-top: -10px;
     margin-bottom: 20px;
     width: 100%;
 }
 
-#add_form_wrapper .form_left {
+#Form .form_left {
     height: 100%;
 }
 
 
-#add_form_wrapper div.flex {
+#Form div.flex {
     width: 100%;
     height: 100%;
     margin: auto;
@@ -35,13 +38,13 @@
     justify-content: space-between;
 }
 
-#add_form_wrapper form{
+#Form form{
     width: 60%;
     margin:auto;
     height: 300px;
 }
 
-#add_form_wrapper img {
+#Form img {
     width: 350px;
     height: 290px;
     /* border-radius: 120px 20px 20px 120px; */
@@ -50,19 +53,20 @@
     opacity:0.5;
 }
 
-#add_form_wrapper h2 {
+#Form h2 {
     text-align: center;
+    
 }
 
-#add_form_wrapper p {
+#Form p {
     text-align: center;
     font-family: var(--comforta);
     color: var(--orange);
     margin-bottom: 30px;
 }
 
-#add_form_wrapper form input,
-#add_form_wrapper form textarea
+#Form form input,
+#Form form textarea
 {
     margin-bottom: 20px;
     border: 2px dashed var(--orange);
@@ -72,14 +76,14 @@
     width: 100%;
 }
 
-#add_form_wrapper form input {
+#Form form input {
     height: 30px;
     border: 1px solid var(--orange);
     
 }
 
 
-#add_form_wrapper form textarea {
+#Form form textarea {
     height: 65px;
     width: 100%;
     resize: none;
@@ -92,27 +96,27 @@
 
 
 
-#add_form_wrapper label,
-#add_form_wrapper input {
+#Form label,
+#Form input {
     width: 90%
 }
 
 
 
-#add_form_wrapper form .col_1, 
-#add_form_wrapper form .col_2  { 
+#Form form .col_1, 
+#Form form .col_2  { 
     flex-direction: column;
 
 }
 
-#add_form_wrapper form .col_2  { 
+#Form form .col_2  { 
     padding-left: 30px;
 
 }
 
 
 
-#add_form_wrapper form button:first-of-type {
+#Form form button:first-of-type {
     margin-right: 20px;
     margin-bottom: 20px;
 
@@ -125,33 +129,33 @@
 /* BREAK POINT 1150px
 /*************************** */
 @media(max-width: 1150px){
-    #add_form_wrapper .film_strip {
+    #Form .film_strip {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    #add_form_wrapper .form_left {
+    #Form .form_left {
         justify-content: center;
         align-items: center;
     
     }
 
-    #add_form_wrapper .form_left img {
+    #Form .form_left img {
         margin:auto;
     }
 
-    #add_form_wrapper form.flex {
+    #Form form.flex {
         margin-top: 20px;
         width: 100%;
     }
 
-    #add_form_wrapper img {
+    #Form img {
         width: 500px;
     }
 
-    #add_form_wrapper  form input,
-    #add_form_wrapper  form textarea {
+    #Form  form input,
+    #Form  form textarea {
         border: 1px solid var(--orange);
     }
 }
@@ -160,24 +164,24 @@
 /* BREAKPOINT 586px
 / *************************** */
 @media (max-width: 586px){
-    #add_form_wrapper form {
+    #Form form {
         flex-direction: column;
     }
 
     
-    #add_form_wrapper .form_left {
+    #Form .form_left {
         width:100%;
     }
 
-    #add_form_wrapper .form_left img{
+    #Form .form_left img{
         width:100%;
     }
-    #add_form_wrapper .col_2 button,
-    #add_form_wrapper .col_2  div{
+    #Form .col_2 button,
+    #Form .col_2  div{
         width: 100%;
     }
 
-    #add_form_wrapper form .col_2 button {
+    #Form form .col_2 button {
         margin-bottom: 10px;
         margin-right: 0px;
     }
@@ -185,7 +189,7 @@
 
 
     
-    #add_form_wrapper form .col_2 {
+    #Form form .col_2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -211,20 +215,20 @@
 /* BREAK POINT 426px
 /*************************** */
 @media(max-width: 426px){
-    #add_form_wrapper  {
+    #Form  {
         width: 100%;
     }
 
-    #add_form_wrapper  .film_strip.flex {
+    #Form  .film_strip.flex {
         width: 90%;
 
     }
 
-    #add_form_wrapper form {
+    #Form form {
         flex-direction: column;
     }
 
-    #add_form_wrapper form .col_2 {
+    #Form form .col_2 {
         padding: 0px;
     }
 }
@@ -234,17 +238,16 @@
 /*************************** */
 @media(max-width: 321px){
 
-    #add_form_wrapper {
+    #Form {
         width: 100%;
     }
-    #add_form_wrapper .film_strip.flex {
-        width: 100%;
+    #Form .film_strip.flex {
         padding-left: 10px;
         padding-right: 10px;
         margin-left: 0px;
         margin-right: 0px;
     }
-    #add_form_wrapper .form_left img {
+    #Form .form_left img {
         width: 100%;
     }
 }

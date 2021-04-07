@@ -23,6 +23,7 @@ const [votedList, setVotedList] = useState('')
 const [startPosition,setStartPosition] = useState(0)
 const [startPositionF,setStartPositionF] = useState(0)
 const [carouselIndex, setCarouselIndex] = useState(0)
+const [adminName] = useState('Kristen')
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
@@ -49,7 +50,7 @@ const goto_vote =(e,character,votes) =>{
 
   return (
     <div className="App">
-      <Context.Provider value= {{carouselIndex, setCarouselIndex,startPosition, setStartPosition, startPositionF, setStartPositionF, votedList, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
+      <Context.Provider value= {{adminName, carouselIndex, setCarouselIndex,startPosition, setStartPosition, startPositionF, setStartPositionF, votedList, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />

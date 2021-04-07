@@ -10,10 +10,17 @@ import Context from '../context/Context'
 
 
 const Add = props => {
-    const [title] = useState("Add to the Epic...")
-    const [subtitle]= useState("Who do you think is an epic movie character?")
-    const [errors, setErrors] = useState({})
+
+    // Local
     const  context = useContext(Context)
+    const [title] = useState("Add to the Epic...")
+    const [subtitle]= useState("Who else is Epic?")
+
+    // To form
+    const [errors, setErrors] = useState({})
+    const [type] = useState('add')
+    const [character] = useState({})
+    const [rank] = useState(0)
 
     const submitHandler = ( e, data) => {
         e.preventDefault();
@@ -34,19 +41,15 @@ const Add = props => {
 
     }
 
-    const formPkg = {
-        rank: '',
-        type: '',
-        character: {'rank':'0'},
-        signature: 'Anonymous',
-        submitHandler: submitHandler,
-    }
+
+
+
     return(
-        <>
+        <div id = 'Add'>
         <Nav />
         <Title title = {title} subtitle = {subtitle} />
-        <Form pkg = {formPkg} errors ={errors}/>
-        </>
+        <Form type ={type} character = {character} rank={rank} submitHandler ={submitHandler} errors ={errors}/>
+        </div>
     )
 }
 

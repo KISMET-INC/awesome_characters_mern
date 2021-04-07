@@ -157,6 +157,13 @@
         margin-left: 20px;
     }
 
+    .owl-carousel .owl-item img, 
+    #Feature_Image img {
+        height: 300px;
+
+    }
+    
+    
 }
 
 

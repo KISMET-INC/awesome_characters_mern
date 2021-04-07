@@ -9,6 +9,9 @@ import VotesMapper from '../components/VotesMapper';
 import Context from '../context/Context'
 import BasicInfo from '../components/BasicInfo';
 import ScrollAnimation from 'react-animate-on-scroll';  
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+
 
 
 

@@ -19,13 +19,13 @@
 
 #View .bottom #Basic_Info,
 #View .bottom #Quote {
-    width: 90%;
-    margin: auto;
+    width: 85%;
     margin-bottom: 30px;
 }
 #View h5.visitDB {
-    margin-top: 20px;
+    margin-top: 60px;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 #View .bottom #Basic_Info .movie_details {
@@ -44,23 +44,28 @@
 
 
 
-@media (max-width: 1300px){
+
     #View.wrapper{
         width: 90%;
     }
+    
 
 
     
+
+
+
+
+#Footer {
+    margin-top: 0px;
 }
 
-
-
 @media (max-width: 1000px){
+
     #View .bottom {
         display: flex;
         margin-left: 20px;
         flex-direction: column;
-        width: 80%;
         margin: auto;
     }
 
@@ -73,18 +78,22 @@
         padding: 20px;
     }
 
-
-
-
-
-    #View #Feature #Votes_Mapper {
-        display:none;
+    #View .bottom {
+        display: flex;
+        margin-left: 20px;
+        flex-direction: column;
+        margin: auto;
     }
-}
 
+    #View .bottom #Basic_Info #Quote {
+        margin: 0px;
+    }
 
+    #View .bottom #Votes_Mapper {
+        width: 100%;
+        padding: 20px 30px;
+    }
 
-@media (max-width: 700px){
     #View .bottom #Votes_Mapper {
         display: unset;
         justify-content: center;
@@ -111,8 +120,14 @@
     #View #Votes_Mapper {
         width: 100%;
 
-    } 
+    }
 
+    #View #Feature_Image {
+        margin-bottom: 20px;
+    }
+    #View #Feature_Image .feature_links {
+        margin-bottom: 10px;
+    }
   
 
     

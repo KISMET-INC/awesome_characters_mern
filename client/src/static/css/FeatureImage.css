@@ -72,9 +72,9 @@
 /*********************************************/
 
 /*********************************************/
-/* Breakpoint 700px
+/* Breakpoint 1000px
 /*********************************************/
-@media (max-width: 700px){
+@media (max-width: 1000px){
 
     #Feature_Image .image_info {
         visibility:visible;
@@ -84,6 +84,7 @@
     #Feature_Image .background {
         background-color: var(--transblack);
         padding: 10px 20px;
+        height: 120px
     
     }
 }

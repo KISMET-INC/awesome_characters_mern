@@ -22,9 +22,9 @@
 
 
 /************************/
-/* BREAKPOINT 700px    
+/* BREAKPOINT 1000px    
 /************************/
-@media (max-width: 700px){
+@media (max-width: 1000px){
     #Main #Feature_Image #Feature_Options .feature_links h4:last-child,
     #Main #Feature_Image #Feature_Options .feature_buttons
     {

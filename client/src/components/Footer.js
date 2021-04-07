@@ -3,6 +3,7 @@ import '../App.css';
 import '../static/css/Footer.css'
 import MERN from '../static/img/MERN-logo.png'; 
 import ScrollAnimation from 'react-animate-on-scroll'; 
+import { Link, navigate } from '@reach/router';
 
 
 const Footer = props => {
@@ -14,9 +15,14 @@ const Footer = props => {
         <ScrollAnimation        
         animateOnce = {true}
         animateIn="slideInUp">
-        <footer>
+        <footer id = 'Footer'>
         <aside className = 'footer_aside'>
-            <p>ksanmartin909@gmail.com</p>
+        <section className='footer_icons'>
+        <a target="_blank" href="https://github.com/KISMET-INC  "><i className="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/kristen-sanmartin/"><i className="fab fa-linkedin"></i></a>
+        </section>
+
+        <a href="mailto:ksanmartin909@gmail.com"><p>ksanmartin909@gmail.com</p></a>
             <p>© 2021 Kristen San Martin</p>
         </aside>
         <div id = 'footer_wrapper' className= 'flex'>
@@ -27,7 +33,8 @@ const Footer = props => {
                     <p>Express</p>
                     <p>React.js</p>
                     <p>Node.js</p>
-                    <p>AdobeXD</p>
+                    <p>Adobe XD,</p>
+                    <p>Photoshop</p>
                     <p>Postman</p>
                     <p>Github</p>
                 </div>    
@@ -35,9 +42,13 @@ const Footer = props => {
 
             <img className='footer_image' src ={MERN} alt= 'mern logo' /> 
 
-            <section className='footer_icons'>
-            <i className="fab fa-github"></i>
-            <i className="fab fa-linkedin"></i>
+            <section className='footer_tech'>
+                <h5>Libraries</h5>
+                <div className= 'tech_list flex'>
+                    <p>animate-on-scroll</p>
+                    <p>react-owl-carousel</p>
+                    <p>material-ui</p>
+                </div>    
             </section>
         </div>
     </footer>

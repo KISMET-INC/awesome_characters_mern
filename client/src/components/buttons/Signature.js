@@ -45,7 +45,9 @@ const nameRef = useRef(null);
             onChange = {(e)=> {setInput(e.target.value)}} 
             name = "signature" 
             value = {input}
-            placeholder ='Anonymous' />
+            placeholder ='Anonymous' 
+            maxlength="10"
+            />
             <div style= {signatureButtons} className = 'signature_buttons'>
                 <button style ={buttons} onClick= {update_signature}>Set Name</button>
                 <button onClick= {props.handleClose}>Stay Anonymous</button>

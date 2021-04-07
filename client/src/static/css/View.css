@@ -5,9 +5,7 @@
     display: unset;
 }
 
-#View #Feature_Image img {
-    height: 370px;
-}
+
 
 #View .bottom  {
         display:none;
@@ -17,15 +15,13 @@
     min-height: 400px;
 }
 
-#View .bottom #Basic_Info,
-#View .bottom #Quote {
+#View .bottom #Basic_Info {
     width: 85%;
     margin-bottom: 30px;
 }
 #View h5.visitDB {
     margin-top: 60px;
     text-align: center;
-    margin-bottom: 60px;
 }
 
 #View .bottom #Basic_Info .movie_details {
@@ -56,7 +52,7 @@
 
 
 
-#Footer {
+#View #Footer {
     margin-top: 0px;
 }
 

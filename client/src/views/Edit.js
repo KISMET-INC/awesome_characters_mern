@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios'
-import '../App.css'
+import '../static/css/App.css'
 import Form from '../components/Form';
 import Nav from '../components/Nav';
 import { navigate } from '@reach/router';

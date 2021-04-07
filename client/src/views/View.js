@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from 'react';
 import Feature from '../components/Feature';
 import Nav from '../components/Nav';
 import axios from 'axios';
-import '../App.css'
+import '../static/css/App.css'
 import '../static/css/View.css'
 import Title from '../components/Title';
 import VotesMapper from '../components/VotesMapper';

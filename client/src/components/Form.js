@@ -1,6 +1,6 @@
 import { navigate } from '@reach/router';
 import React ,{ useState} from 'react';
-import "../App.css"
+import "../static/css/App.css"
 import "../static/css/Form.css"
 import HomeBtn from './buttons/HomeBtn';
 import ViewBtn from './buttons/ViewBtn';

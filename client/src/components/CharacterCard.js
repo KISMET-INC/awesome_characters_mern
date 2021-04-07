@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import '../App.css';
+import '../static/css/App.css';
 import '../static/css/Character_Card.css';
 import VoteBtn from './buttons/VoteBtn';
 import Context from '../context/Context';

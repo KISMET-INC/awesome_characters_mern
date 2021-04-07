@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../static/css/App.css';
 import '../static/css/Footer.css'
 import MERN from '../static/img/MERN-logo.png'; 
 import ScrollAnimation from 'react-animate-on-scroll'; 

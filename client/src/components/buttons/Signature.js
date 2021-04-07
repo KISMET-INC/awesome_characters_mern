@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState} from 'react';
 import Context from '../../context/Context'
-import "../../App.css";
+import "../../static/css/App.css";
 import '../../static/css/Signature.css'
 
 const Signature = (props, ref) => {

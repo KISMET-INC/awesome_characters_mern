@@ -1,5 +1,5 @@
 import React, { useState , useRef}from 'react';
-import '../App.css';
+import '../static/css/App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
 import ScrollAnimation from 'react-animate-on-scroll'; 

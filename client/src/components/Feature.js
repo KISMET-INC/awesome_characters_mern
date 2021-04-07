@@ -1,6 +1,6 @@
 
 import React, {useState, useContext} from 'react';
-import '../App.css';
+import '../static/css/App.css';
 import Context from '../context/Context';
 import { navigate } from '@reach/router';
 import FeatureOptions from './FeatureOptions';

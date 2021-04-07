@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../App.css';
+import '../../static/css/App.css';
+
 import {navigate} from '@reach/router';
 
 

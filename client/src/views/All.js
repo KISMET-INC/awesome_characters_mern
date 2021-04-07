@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CharacterCard from '../components/CharacterCard';
 import Nav from '../components/Nav';
 import axios from 'axios';
-import '../App.css';
+import '../static/css/App.css';
 import '../static/css/All.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 

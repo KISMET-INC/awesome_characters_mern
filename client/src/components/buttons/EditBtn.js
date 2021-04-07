@@ -1,6 +1,6 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import '../../App.css';
+import '../../static/css/App.css';
 
 
 const EditBtn = props => {

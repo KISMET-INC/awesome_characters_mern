@@ -1,4 +1,4 @@
-import '../App.css';
+import '../static/css/App.css';
 import '../static/css/Honorable.css'
 import CharacterCard from './CharacterCard';
 import OwlCarousel from 'react-owl-carousel';

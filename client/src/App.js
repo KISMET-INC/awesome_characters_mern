@@ -1,4 +1,4 @@
-import './App.css';
+import './static/css/App.css';
 import React, { useState } from 'react';
 import {Router} from '@reach/router';
 import Main from './views/Main';

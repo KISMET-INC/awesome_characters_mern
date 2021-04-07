@@ -19,7 +19,6 @@ export default function SimpleMenu() {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log(anchorEl)
   };
 
   const handleClose = () => {

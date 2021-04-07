@@ -5,12 +5,7 @@ import "../static/css/Form.css"
 import HomeBtn from './buttons/HomeBtn';
 import ViewBtn from './buttons/ViewBtn';
 
-// const formPkg = {
-//     rank: rank,
-//     type: type,
-//     character: character,
-//     submitHandler: submitHandler,
-// }
+
 
 const Form = props => {
     const [character] = useState(props.pkg.character)
@@ -32,9 +27,6 @@ const Form = props => {
     }
 
 
-
-
-
     return (
         <div id = "add_form_wrapper" className='flex'>
             <h5>Intergration with The Movie Database API coming soon..</h5>
@@ -51,8 +43,8 @@ const Form = props => {
                             <label htmlFor = 'charName' >Character Name:</label>
                             <input name= 'charName'  value= { charName } type ='text' onChange= {(e)=> {setCharName(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('actor') &&
-                                <h6 className ='error'>{props.errors.actor.message}</h6>
+                                props.errors.hasOwnProperty('charName') &&
+                                <h6 className ='error'>{props.errors.charName.message}</h6>
                             }
                         </div>
                         <div>

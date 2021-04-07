@@ -1,23 +1,17 @@
-import React, { useState , useContext, useRef}from 'react';
+import React, { useState , useRef}from 'react';
 import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
-// import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';  
-import Context from '../context/Context'
 
 
 const Featured_Carousel = ({characterList}) => {
     const [location] = useState('carousel')
     const [resultNum] = useState(6)
-    const context = useContext(Context)
     const carouselIndex = useRef(0)
 
     const info =(e) => {
-        console.log(e.item.index)
         carouselIndex.current = e.item.index
-        
-        
     }
 
 

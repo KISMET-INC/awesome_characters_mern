@@ -14,6 +14,7 @@ const Feature = ({character, location, rank, update_character, reset_votes, resu
 const context = useContext(Context)
 const [votes, setVotes] = useState(character.votes)
 const [voted, setVoted] = useState(false)
+const [reset, setReset] = useState(false)
 
 
 
@@ -38,7 +39,8 @@ const local_reset_votes = (e)=> {
     if (context.signature === 'Anonymous'){
         setVotes([context.signature])
         context.setStartPositionF(rank-1)
-        context.goto_vote(e,character,[],context.signature);
+        setReset(true)
+        context.goto_vote(e,character,[]);
     } else {
         alert("Sorry, guests are not allowed to reset votes!")
     }

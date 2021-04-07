@@ -4,14 +4,13 @@ import "../../App.css";
 
 const Signature = (props, ref) => {
 const context = useContext(Context)
-const [signature, setSignature] = useState(context.signature)
 const [input, setInput] = useState('')
 const nameRef = useRef(null);
 
     const update_signature= (e)=>{
         e.preventDefault();
         props.handleClose();
-        input == ''? context.setSignature('Anonymous') : context.setSignature(input)
+        input === ''? context.setSignature('Anonymous') : context.setSignature(input)
 
     }
 
@@ -45,7 +44,9 @@ const nameRef = useRef(null);
             onChange = {(e)=> {setInput(e.target.value)}} 
             name = "signature" 
             value = {input}
-            placeholder ='Anonymous' />
+            placeholder ='Anonymous' 
+            maxLength="10"
+            />
             <div style= {signatureButtons} className = 'signature_buttons'>
                 <button style ={buttons} onClick= {update_signature}>Set Name</button>
                 <button onClick= {props.handleClose}>Stay Anonymous</button>

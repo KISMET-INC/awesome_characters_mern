@@ -2,10 +2,9 @@ import '../App.css';
 import '../static/css/Honorable.css'
 import CharacterCard from './CharacterCard';
 import OwlCarousel from 'react-owl-carousel';
-// import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
-import React, {useState, useContext, useEffect, useRef} from 'react';
-import Context from '../context/Context';
+import React, {useState, useRef} from 'react';
+
 
 
 
@@ -13,7 +12,6 @@ import Context from '../context/Context';
 
 
 const Honorable_Carousel = props => { 
-const context = useContext(Context)
 const carouselIndex = useRef(0)
 
 
@@ -47,10 +45,7 @@ const carouselIndex = useRef(0)
 
 
     const info =(e) => {
-        console.log(e.item.index)
         carouselIndex.current = e.item.index
-        
-        
     }
 
 
@@ -62,7 +57,6 @@ const carouselIndex = useRef(0)
             responsiveClass={true}
             touchDrag={true}
             startPosition={carouselIndex.current}
-            // loop
             responsive = {items}
             dots ={false}
             onChanged ={info}

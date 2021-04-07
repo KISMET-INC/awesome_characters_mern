@@ -29,7 +29,8 @@
 
 #Quote p{
     font-size: 20px;
-    color: var(--orange)
+    color: var(--orange);
+    margin-top: 15px;
 }
 
 

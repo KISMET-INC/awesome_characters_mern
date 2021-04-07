@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {Router} from '@reach/router';
 import Main from './views/Main';
 import Context from './context/Context'
@@ -26,43 +26,22 @@ const [carouselIndex, setCarouselIndex] = useState(0)
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
-  console.log(`votes ${votes}`)
+
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {
     
-    console.log(response)
     
   }).catch ( error => {
     console.log(error)
   })
-      const name = character.charName
-      const id = character._id
-      const temp = {...votedList}
-      temp[name] = id
-      setVotedList(temp)
+  if (votes.length >= 1){
+    const name = character.charName
+    const id = character._id
+    const temp = {...votedList}
+    temp[name] = id
+    setVotedList(temp)
   }
-
-
-
-// const update_character = (e,signature,character)=> {
-//   e.preventDefault()
-//   if(!votedOn.hasOwnProperty(character.charName)){
-//       const temp = {...votedOn}
-//       const name = character.charName
-//       const id = character._id
-//       temp[name] = id;
-
-//       //setVotedOnList(temp)
-//       //setVotedOn(true)
-//       goto_vote(e,character,character.votes,signature);
-//       return true;
-//   } else {
-//       alert(`You already voted for ${character.charName}`)
-//       return false;
-//   }
-
-// }
-
+}
 
 
 

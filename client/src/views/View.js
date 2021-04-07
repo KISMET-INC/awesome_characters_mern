@@ -11,6 +11,7 @@ import BasicInfo from '../components/BasicInfo';
 import ScrollAnimation from 'react-animate-on-scroll';  
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+import OwlCarousel from 'react-owl-carousel';
 
 
 

@@ -18,16 +18,16 @@ const Main = props => {
     const [voteList, setVoteList] = useState({})
     
     
-    useEffect(()=> {    
+    useEffect(()=> {  
+    
         axios.get('http://localhost:8000/api/characters/')
         .then(response=>{
             setCharacterList(response.data.characters.sort((a,b)=> a.votes.length > b.votes.length ? -1 : 1))
             context.setTotalCharacters(response.data.characters.length)
             setListLoaded(true)
-            console.log('main')
         }).catch(err=>console.log(err))
 
-    },[]);
+    },[context]);
 
 
 

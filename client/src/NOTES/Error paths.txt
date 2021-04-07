@@ -1,8 +1,0 @@
-// LENGTH ERRORS res.data
-
-error.message = Something
-error.errors != underfined
-
-
-//UNIQUE ERRORS res.data
-data.error = Product Exitst

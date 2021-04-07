@@ -5,12 +5,7 @@ import "../static/css/Form.css"
 import HomeBtn from './buttons/HomeBtn';
 import ViewBtn from './buttons/ViewBtn';
 
-// const formPkg = {
-//     rank: rank,
-//     type: type,
-//     character: character,
-//     submitHandler: submitHandler,
-// }
+
 
 const Form = props => {
     const [character] = useState(props.pkg.character)
@@ -30,9 +25,6 @@ const Form = props => {
     const go_home =() => {
         navigate(`/`)
     }
-
-
-
 
 
     return (

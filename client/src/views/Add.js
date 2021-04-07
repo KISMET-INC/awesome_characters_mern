@@ -21,7 +21,6 @@ const Add = props => {
         .then( response => {
     
             if(response.data.hasOwnProperty('error')){
-                console.log(response.data)
                 setErrors(response.data.error.errors)
 
                 navigate('/add');
@@ -29,7 +28,6 @@ const Add = props => {
             } else {
                 navigate(`/view/${response.data.character._id}/${context.totalCharacters+1}`)
             }
-            console.log(response)
         }).catch ( error => {
             console.log(error)
         });

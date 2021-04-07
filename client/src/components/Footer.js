@@ -3,7 +3,6 @@ import '../App.css';
 import '../static/css/Footer.css'
 import MERN from '../static/img/MERN-logo.png'; 
 import ScrollAnimation from 'react-animate-on-scroll'; 
-import { Link, navigate } from '@reach/router';
 
 
 const Footer = props => {
@@ -18,8 +17,8 @@ const Footer = props => {
         <footer id = 'Footer'>
         <aside className = 'footer_aside'>
         <section className='footer_icons'>
-        <a target="_blank" href="https://github.com/KISMET-INC  "><i className="fab fa-github"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/kristen-sanmartin/"><i className="fab fa-linkedin"></i></a>
+        <a target="_blank" rel="noreferrer" href="https://github.com/KISMET-INC  "><i className="fab fa-github"></i></a>
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/kristen-sanmartin/"><i className="fab fa-linkedin"></i></a>
         </section>
 
         <a href="mailto:ksanmartin909@gmail.com"><p>ksanmartin909@gmail.com</p></a>

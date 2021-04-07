@@ -4,14 +4,13 @@ import "../../App.css";
 
 const Signature = (props, ref) => {
 const context = useContext(Context)
-const [signature, setSignature] = useState(context.signature)
 const [input, setInput] = useState('')
 const nameRef = useRef(null);
 
     const update_signature= (e)=>{
         e.preventDefault();
         props.handleClose();
-        input == ''? context.setSignature('Anonymous') : context.setSignature(input)
+        input === ''? context.setSignature('Anonymous') : context.setSignature(input)
 
     }
 

@@ -21,7 +21,7 @@ const View = props => {
     const [title] = useState("Fantastic Performance!")
     const [resultNum] = useState(8)
     const [votes, setVotes] = useState('')
-    const [voted, setVoted] = useState(false)
+    
     
 
     
@@ -44,7 +44,6 @@ const View = props => {
                 
                 setVotes([context.signature,...character.votes])
                 context.goto_vote(e,character,character.votes)
-                setVoted(true)
                 context.setStartPositionF(rank-1)
             } else {
                 alert(`You've already voted for ${character.charName}`)

@@ -10,7 +10,6 @@ import Title from '../components/Title';
 
 const Edit = props => {
     const [title] = useState("Edit the EPIC...")
-    // const [subtitle, setSubtitle] = useState("");
     const [character,setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
     const [type] = useState('edit')
@@ -21,7 +20,6 @@ const Edit = props => {
         axios.get(`http://localhost:8000/api/characters/${props.id}`)
             .then(response => {
 
-              
                 setCharacter(response.data)
                 setCharacterLoaded(true)
             }).catch(errors => {
@@ -32,14 +30,10 @@ const Edit = props => {
 
     const submitHandler = (e, data) => {
         e.preventDefault();
-        console.log("SUBMIT")
         axios.put(`http://localhost:8000/api/characters/edit/${props.id}`, data)
         .then(response => {
 
-            console.log(response)
-
             if(response.data.hasOwnProperty('error')){
-                console.log(response.data)
                 setErrors(response.data.error.errors)
 
                 navigate(`/edit/${character._id}/${rank}`);
@@ -49,7 +43,6 @@ const Edit = props => {
                 navigate(`/view/${props.id}/${rank}`)
             }
     
-            console.log(response)
         }).catch (error => {
             console.log(error)
         })

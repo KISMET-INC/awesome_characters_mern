@@ -2,10 +2,7 @@
 import React, { useState } from 'react';
 import styles from '../static/css/Title.css';
 
-// titlePkg = {
-//     title: title,
-//     subtitle: subtitle,
-// }
+
 
 const Title = (props) => {
     const [title] =  useState(props.title)

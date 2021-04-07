@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import '../App.css';
 import '../static/css/Character_Card.css';
 import VoteBtn from './buttons/VoteBtn';
@@ -14,7 +14,6 @@ const CharacterCard = props => {
     const [votedOn, setVotedOn] = useState(false)
 
     
-
 
     const update_character = (e,signature,character)=> {
         e.preventDefault()

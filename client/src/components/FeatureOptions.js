@@ -4,14 +4,6 @@ import HomeBtn from '../components/buttons/HomeBtn';
 import '../static/css/FeatureOptions.css'
 import { Link } from '@reach/router';
 
-// const featureOptionsPkg = {
-//     rank: rank,
-//     character: character,
-//     location : location,
-//     goto_view: goto_view,
-//     goto_edit: goto_edit,
-//     votes: votes,
-// }
 
 const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
     const [rank] = useState(pkg.rank)

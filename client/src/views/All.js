@@ -14,15 +14,12 @@ const All = props => {
     const [rankTable, setRankTable] = useState({})
 
 
-    
-
 
 
     useEffect (()=>{
         setListLoaded(false);
         axios.get('http://localhost:8000/api/characters')
             .then(response => {
-
                 const ranks = {}
                 const sorted_list =[]
 
@@ -84,7 +81,7 @@ const All = props => {
                     {
                         listLoaded && search === "" && characterList.map((char,i)=>
                         
-                        <ScrollAnimation 
+                        <ScrollAnimation  key={i}
                         animatePreScroll ={true}
                         animateOnce={true}
                         offset = {1}

@@ -45,7 +45,7 @@ const nameRef = useRef(null);
             name = "signature" 
             value = {input}
             placeholder ='Anonymous' 
-            maxlength="10"
+            maxLength="10"
             />
             <div style= {signatureButtons} className = 'signature_buttons'>
                 <button style ={buttons} onClick= {update_signature}>Set Name</button>

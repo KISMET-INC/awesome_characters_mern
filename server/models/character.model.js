@@ -5,19 +5,20 @@ const CharacterSchema = new mongoose.Schema({
     charName: {
         type: String,
         required: [true, "A character name is required"],
-        maxlength: [15, "Name must be 15 letters or less."]
+        maxlength: [20, " Character name must be 20 letters or less."]
     },
 
     actor: {
         type: String,
         required: [true, "An actor name is required"],
-        maxlength: [15, "Name must be 15 letters or less."]
+        maxlength: [20, "Actor name must be 20 letters or less."]
+        
     },
 
     title: {
         type: String,
         required: [true, "A movie title is required"],
-        maxlength: [20, "Title must be 20 letters or less"]
+        maxlength: [25, "Title must be 20 letters or less"]
     },
 
     year: {

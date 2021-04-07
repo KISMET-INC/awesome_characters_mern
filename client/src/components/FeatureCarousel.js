@@ -2,7 +2,6 @@ import React, { useState , useRef}from 'react';
 import '../App.css';
 import Feature from './Feature';
 import OwlCarousel from 'react-owl-carousel';
-// import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';  
 
 

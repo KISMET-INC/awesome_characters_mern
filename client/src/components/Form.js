@@ -43,8 +43,8 @@ const Form = props => {
                             <label htmlFor = 'charName' >Character Name:</label>
                             <input name= 'charName'  value= { charName } type ='text' onChange= {(e)=> {setCharName(e.target.value)} }></input>
                             {
-                                props.errors.hasOwnProperty('actor') &&
-                                <h6 className ='error'>{props.errors.actor.message}</h6>
+                                props.errors.hasOwnProperty('charName') &&
+                                <h6 className ='error'>{props.errors.charName.message}</h6>
                             }
                         </div>
                         <div>

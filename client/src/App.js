@@ -26,6 +26,7 @@ const [carouselIndex, setCarouselIndex] = useState(0)
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
+
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {
     
@@ -33,12 +34,14 @@ const goto_vote =(e,character,votes) =>{
   }).catch ( error => {
     console.log(error)
   })
-      const name = character.charName
-      const id = character._id
-      const temp = {...votedList}
-      temp[name] = id
-      setVotedList(temp)
+  if (votes.length >= 1){
+    const name = character.charName
+    const id = character._id
+    const temp = {...votedList}
+    temp[name] = id
+    setVotedList(temp)
   }
+}
 
 
 

@@ -8,7 +8,8 @@ import Edit from './views/Edit';
 import All from './views/All';
 import View from './views/View';
 import axios from 'axios'
-
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 
 
 

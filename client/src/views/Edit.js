@@ -10,8 +10,9 @@ import Title from '../components/Title';
 
 const Edit = props => {
     const [title] = useState("Edit the EPIC...")
-    const [character,setCharacter] = useState({})
     const [characterLoaded, setCharacterLoaded] = useState(false)
+    
+    const [character,setCharacter] = useState({})
     const [type] = useState('edit')
     const [rank] = useState(props.rank)
     const [errors, setErrors] = useState({})
@@ -49,12 +50,7 @@ const Edit = props => {
 
     }
 
-    const formPkg = {
-        rank: rank,
-        type: type,
-        character: character,
-        submitHandler: submitHandler,
-    }
+
 
     return (
         <>
@@ -66,7 +62,7 @@ const Edit = props => {
             }
             
             {
-                characterLoaded && <Form errors = {errors} pkg = {formPkg} />
+                characterLoaded && <Form type = {type} character ={character} rank={rank} submitHandler={submitHandler} errors = {errors}  />
 
             }
             </div>

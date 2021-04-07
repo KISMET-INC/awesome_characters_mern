@@ -30,7 +30,7 @@ const All = props => {
 
                 const nameList = sorted_list.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()))
                 const titleList = sorted_list.filter(e => !nameList.includes(e)).filter(c => c.title.toLowerCase().includes(search.toLowerCase()))
-                const yearList = sorted_list.filter(e => !nameList.includes(e) || !titleList.includes(e)).filter(c => c.year.toString().includes(search))
+                const yearList = sorted_list.filter(e => !nameList.includes(e) && !titleList.includes(e)).filter(c => c.year.toString().includes(search))
     
                 
                 const newList = nameList.concat(titleList).concat(yearList)
@@ -57,7 +57,7 @@ const All = props => {
             <div id =  'Search' className = 'wrapper flex'>
 
                 <div className = 'search_grp flex'>
-                    <p>Search by charcter name</p>
+                    <p>Search by : charcter name, movie title, or year released</p>
                     <input value = {search}  type = 'text' onChange = {(e)=> {setSearch(e.target.value)}}></input>
                 </div>
 

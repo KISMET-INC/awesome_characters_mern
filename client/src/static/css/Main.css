@@ -36,14 +36,11 @@
     }
 
     #Main .main_title,
-    #Main h3 {
-        text-align: center;
-    }
-
     #Main .link {
-        margin-left: 0px;
-
+        text-align: center;
+        margin-left : 0px;
     }
+
 
     
 }

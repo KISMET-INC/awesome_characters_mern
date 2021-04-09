@@ -24,16 +24,20 @@ const carouselIndex = useRef(0)
             },
 
             400 : {
-                items: 2,
-                margin: 50,
+                items: 1,
+                margin: -100,
             },
             600: {
-                items: 3,
-                margin: 70,
+                items: 2,
+                margin: -100,
             },
-            771 : {
-                items: 4,
-                margin: 150,
+            714 : {
+                margin:0
+                
+            },
+            900 : {
+                items: 3,
+                margin: -90,
             },
 
             1200 : {

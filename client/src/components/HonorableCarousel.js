@@ -20,30 +20,28 @@ const carouselIndex = useRef(0)
 
             0: {
                 items: 1,
-                margin:-50,
+              
             },
 
-            400 : {
-                items: 1,
-                margin: -100,
+            500 : {
+                items: 2,
+                
             },
             600: {
                 items: 2,
-                margin: -100,
+            
             },
-            714 : {
+            700 : {
                 items: 3,
-                margin:0
+        
                 
             },
-            900 : {
-                items: 3,
-                margin: -90,
+            1000 : {
+                items: 4,
             },
-
             1200 : {
                 items: 4,
-                margin: 10,
+    
             },
         
 
@@ -64,7 +62,7 @@ const carouselIndex = useRef(0)
             touchDrag={true}
             startPosition={carouselIndex.current}
             responsive = {items}
-            dots ={false}
+            dots ={true}
             onChanged ={info}
             >
 

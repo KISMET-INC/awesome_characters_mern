@@ -13,7 +13,9 @@ const Footer = props => {
 
         <ScrollAnimation        
         animateOnce = {true}
-        animateIn="slideInUp">
+        animateIn="slideInUp"
+        initiallyVisible={false}
+        >
         <footer id = 'Footer'>
         <aside className = 'footer_aside'>
         <section className='footer_icons'>

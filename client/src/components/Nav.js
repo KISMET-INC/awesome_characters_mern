@@ -21,7 +21,8 @@ const Nav = props => {
         <>
         <ScrollAnimation        
         animateOnce = {true}
-        offset ={0}
+        offset ={5}
+        duration={1}
         initiallyVisible={true}
         animateIn="slideInDown">
         <nav id= 'Nav' className="bar flex">

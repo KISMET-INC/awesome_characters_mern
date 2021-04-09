@@ -98,9 +98,7 @@ const Form = ({type, character, rank, submitHandler, errors}) => {
                         <button type='submit'>Submit</button>
                         <button onClick = {go_home}>Cancel</button>
                         <HomeBtn />
-                        {
-                            type !== 'add' ? <ViewBtn rank = {rank} character_id = {character._id} /> : <></>
-                        }
+                        
                     </div>
 
                 </form>

@@ -11,6 +11,7 @@
 #Search .search_grp {
     flex-direction: column;
     margin: auto;
+    text-align: center;
     margin-bottom: 30px;
     align-items: center;
     font-family: var(--comforta);
@@ -23,13 +24,6 @@
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
+    min-height: max-content; 
 }
-/* **************************
-/* BREAK POINT 483px
-/*************************** */
- @media (max-width: 483px){ 
-   #Search .results {
-       margin-left: -20px;
-   }
 
-} 

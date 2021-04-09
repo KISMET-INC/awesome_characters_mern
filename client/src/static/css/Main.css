@@ -9,16 +9,18 @@
 
 #Main .main_title {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #Main .film_strip{
-    height: 500px
+    height: 500px;
 }
 
 #Main .link {
-    margin-bottom: 30px;
-    margin-left:29px;   
+    margin-bottom: 30px;  
     margin-top: -15px;
+    text-align: center;
+
 }
 
 

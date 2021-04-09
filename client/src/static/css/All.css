@@ -6,7 +6,6 @@
 }
 #Search {
     flex-direction: column;
-    height: max-content;
 }
 #Search .search_grp {
     flex-direction: column;
@@ -24,6 +23,10 @@
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
-    min-height: 1000px; 
 }
+#Search #character_wrapper {
+    margin-right: 10px;
+}
+
+
 

@@ -9,9 +9,7 @@ import VotesMapper from '../components/VotesMapper';
 import Context from '../context/Context'
 import BasicInfo from '../components/BasicInfo';
 import ScrollAnimation from 'react-animate-on-scroll';  
-import 'owl.carousel/dist/assets/owl.carousel.min.css';
-import 'owl.carousel/dist/assets/owl.theme.default.min.css';
-import OwlCarousel from 'react-owl-carousel';
+
 
 
 
@@ -56,7 +54,7 @@ const View = props => {
 
     const reset_votes = (e)=> {
         e.preventDefault()
-        if (context.signature == context.adminName){
+        if (context.signature === context.adminName){
             setVotes([context.signature])
             context.goto_vote(e,character,[], context.signature);
         } else {

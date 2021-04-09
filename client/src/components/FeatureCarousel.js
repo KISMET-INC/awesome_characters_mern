@@ -22,8 +22,6 @@ const Featured_Carousel = ({characterList}) => {
         <ScrollAnimation 
         animatePreScroll ={true}
         animateOnce = {true}
-        duration={1}
-        delay={500}
         initiallyVisible ={false}
         animateIn="fadeIn">
 

@@ -6,6 +6,7 @@
 }
 #Search {
     flex-direction: column;
+    height: max-content;
 }
 #Search .search_grp {
     flex-direction: column;

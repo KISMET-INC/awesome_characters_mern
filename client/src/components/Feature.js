@@ -14,7 +14,7 @@ const Feature = ({character, location, rank, update_character, reset_votes, resu
 const context = useContext(Context)
 const [votes, setVotes] = useState(character.votes)
 const [voted, setVoted] = useState(false)
-const [reset, setReset] = useState(false)
+
 
 
 
@@ -39,7 +39,6 @@ const local_reset_votes = (e)=> {
     if (context.signature === context.adminName){
         setVotes([context.signature])
         context.setStartPositionF(rank-1)
-        setReset(true)
         context.goto_vote(e,character,[]);
     } else {
         alert("Sorry, only admins are allowed to reset votes")

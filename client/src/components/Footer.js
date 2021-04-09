@@ -15,7 +15,6 @@ const Footer = props => {
         animateOnce = {true}
         animateIn="slideInUp"
         initiallyVisible={false}
-        delay={500}
         >
         <footer id = 'Footer'>
         <aside className = 'footer_aside'>

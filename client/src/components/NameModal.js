@@ -57,7 +57,7 @@ export default function NameModal(props) {
   return (
     <div id = 'Modal'>
       {
-      location !== 'dropdown' ? <button type="button" onClick={handleOpen}> Set your vote name</button> : < div onClick={handleOpen}> <span className={classes.name}>Set Name</span><i style={icon2} className="fas fa-signature"></i></div>
+      location !== 'dropdown' ? <button type="button" onClick={handleOpen}> Set Voter Name </button> : < div onClick={handleOpen}> <span className={classes.name}>Signature</span><i style={icon2} className="fas fa-signature"></i></div>
       }
       <Modal
         aria-labelledby="transition-modal-title"

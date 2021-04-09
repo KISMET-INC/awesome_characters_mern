@@ -32,6 +32,7 @@ const carouselIndex = useRef(0)
                 margin: -100,
             },
             714 : {
+                items: 3,
                 margin:0
                 
             },

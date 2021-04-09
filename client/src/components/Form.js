@@ -96,7 +96,7 @@ const Form = ({type, character, rank, submitHandler, errors}) => {
                             <input name = 'rank' type ='hidden' value={rank}></input>
                         </div>
                         <button type='submit'>Submit</button>
-                        <button onClick = {go_home}>Cancel</button>
+                        <button type='button' onClick = {go_home}>Cancel</button>
                         <HomeBtn />
                         
                     </div>

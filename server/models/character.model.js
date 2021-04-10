@@ -5,7 +5,7 @@ const CharacterSchema = new mongoose.Schema({
     charName: {
         type: String,
         required: [true, "A character name is required"],
-        maxlength: [25, " Character name must be 25 letters or less."]
+        maxlength: [26, " Character name must be 25 letters or less."]
     },
 
     actor: {

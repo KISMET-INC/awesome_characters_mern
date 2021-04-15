@@ -12,8 +12,6 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 
 
-
-
 const View = props => {
     const context = useContext(Context)
     const [character, setCharacter] = useState({})
@@ -24,9 +22,7 @@ const View = props => {
     const [resultNum] = useState(8)
     const [votes, setVotes] = useState('')
     
-    
 
-    
     
     useEffect (()=>{
         axios.get(`http://localhost:8000/api/characters/${props.id}`)
@@ -50,9 +46,6 @@ const View = props => {
 
 
 
-
-
-
     return (
         <>
         <Nav />
@@ -62,41 +55,40 @@ const View = props => {
         duration={2}
         initiallyVisible ={false}
         animateIn="fadeIn">
-        <div id = 'View' className = 'wrapper'>
-            {
+            <div id = 'View' className = 'wrapper'>
+                {
 
-                characterLoaded && <Title title = {title} subtitle = {character.actor}/>
-            }
-            
-            <div  className = 'film_strip'>
-                {   
-                    characterLoaded && 
-                    <Feature 
-                    resultNum = {resultNum} 
-                    character={character} 
-                    location ={location} 
-                    rank= {rank} 
-                    root_update_character ={root_update_character} 
-                    root_reset_votes={root_reset_votes} 
-                    />
+                    characterLoaded && <Title title = {title} subtitle = {character.actor}/>
                 }
                 
+                <div  className = 'film_strip'>
+                    {   
+                        characterLoaded && 
+                        <Feature 
+                        resultNum = {resultNum} 
+                        character={character} 
+                        location ={location} 
+                        rank= {rank} 
+                        root_update_character ={root_update_character} 
+                        root_reset_votes={root_reset_votes} 
+                        />
+                    }
+                    
+                </div>
+
+                <section className = 'bottom flex'>
+                    {
+                        characterLoaded && 
+                        <BasicInfo character ={character}/>
+                    }
+
+                    {
+                        characterLoaded && 
+                        <VotesMapper resultNum ={resultNum} votes = {votes} />
+                    }
+                </section>
+                
             </div>
-
-            <section className = 'bottom flex'>
-                {
-                    characterLoaded && 
-                    <BasicInfo character ={character}/>
-                }
-                {
-                    characterLoaded && 
-                    <VotesMapper resultNum ={resultNum} votes = {votes} />
-                }
-                {/* <h5 className ='visitDB'>Visit "{character.title}" on The Movie Database...</h5> */}
-            </section>
-
-        
-        </div>
         </ScrollAnimation>
         </>
     )

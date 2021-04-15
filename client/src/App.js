@@ -13,21 +13,23 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 
 
 
-
 function App() {
-
 const [signature, setSignature] = useState('Anonymous')
 const [totalCharacters, setTotalCharacters] = useState(0)
 const [votedList, setVotedList] = useState('')
 const [adminName] = useState('Kristen')
 
+
+
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
   .then(response => {})
-  .catch ( error => {
-    console.log(error)
+  .catch ( error => 
+  {
+      console.log(error)
   })
+
   if (votes.length >= 1){
     const name = character.charName
     const id = character._id
@@ -36,6 +38,7 @@ const goto_vote =(e,character,votes) =>{
     setVotedList(temp)
   }
 }
+
 
 const update_character = (e,character,setVotes)=> {
   e.preventDefault()
@@ -47,6 +50,7 @@ const update_character = (e,character,setVotes)=> {
   }
 }
 
+
 const reset_votes = (e,character,setVotes)=> {
   e.preventDefault()
   if (signature === adminName){
@@ -56,6 +60,7 @@ const reset_votes = (e,character,setVotes)=> {
       alert('Sorry, only admins can reset votes')
   }
 }
+
 
 
   return (

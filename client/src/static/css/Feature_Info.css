@@ -3,7 +3,7 @@
 #Basic_Info h5,
 #Quote h5,
 #VotesMapper h5 {
-   margin-bottom: 3px
+    margin-bottom: 3px
 }
 
 #Basic_Info div {
@@ -28,7 +28,7 @@
 }
 
 #Quote p{
-    font-size: 20px;
+    font-size: 16px;
     color: var(--orange);
     margin-top: 15px;
 }

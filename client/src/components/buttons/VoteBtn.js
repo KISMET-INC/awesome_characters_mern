@@ -4,7 +4,7 @@ import Context from '../../context/Context';
 
 
 
-const VoteBtn = ({label, character, vote, votedOn}) =>{
+const VoteBtn = ({label, character, vote}) =>{
     const  context = useContext(Context)
     const [signature, setSignature] = useState(context.signature)
 

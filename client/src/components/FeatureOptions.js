@@ -5,7 +5,7 @@ import '../static/css/FeatureOptions.css'
 import { Link } from '@reach/router';
 
 
-const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
+const FeatureOptions = ({pkg, voteLabel,reset_votes, resetLabel, update_character}) => {
     const [rank] = useState(pkg.rank)
     const [character] = useState(pkg.character)
     const [location] = useState(pkg.location)
@@ -22,11 +22,11 @@ const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_c
                             location !== 'view' ? <Link to ={`/view/${character._id}/${rank}/`}><h4 className="view" >Click to View</h4></Link>: <></>
                         }
                         
-                        <Link to ={`/edit/${character._id}/${rank}/`}><h4 >Click to Edit</h4></Link>
+                        <Link to ={`/edit/${character._id}/${rank}/`}><h4>Click to Edit</h4></Link>
                 </section>
 
                 <section className ='feature_buttons'>
-                    <VoteBtn votedOn ={voted} label ={voteLabel} character = {character} vote={update_character} />
+                    <VoteBtn label ={voteLabel} character = {character} vote={update_character} />
                     <VoteBtn label = {resetLabel} character={character} vote ={reset_votes} />
                     {
                         location !== 'carousel' ?  <HomeBtn/> : <></>
@@ -34,9 +34,6 @@ const FeatureOptions = ({voted, pkg, voteLabel,reset_votes, resetLabel, update_c
                 </section>
             </div>
             
-        
-    
-
     )
 }
 

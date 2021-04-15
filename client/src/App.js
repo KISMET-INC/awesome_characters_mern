@@ -17,23 +17,15 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 function App() {
 
 const [signature, setSignature] = useState('Anonymous')
-const [reloadedLocal,setReloadedLocal] = useState(0)
-const [reloadedBase,setReloadedBase] = useState(0)
 const [totalCharacters, setTotalCharacters] = useState(0)
 const [votedList, setVotedList] = useState('')
-const [startPosition,setStartPosition] = useState(0)
-const [startPositionF,setStartPositionF] = useState(0)
-const [carouselIndex, setCarouselIndex] = useState(0)
 const [adminName] = useState('Kristen')
 
 const goto_vote =(e,character,votes) =>{
   e.preventDefault();
-
   axios.put(`http://localhost:8000/api/characters/edit/${character._id}`, { votes : [signature,...votes] })
-  .then(response => {
-    
-    
-  }).catch ( error => {
+  .then(response => {})
+  .catch ( error => {
     console.log(error)
   })
   if (votes.length >= 1){
@@ -45,13 +37,30 @@ const goto_vote =(e,character,votes) =>{
   }
 }
 
+const update_character = (e,character,setVotes)=> {
+  e.preventDefault()
+  if ( !votedList.hasOwnProperty(character.charName) ) {
+          setVotes([signature,...character.votes])
+          goto_vote(e,character,character.votes)
+  } else {
+      alert(`You've already voted for ${character.charName}`)
+  }
+}
 
-
+const reset_votes = (e,character,setVotes)=> {
+  e.preventDefault()
+  if (signature === adminName){
+      setVotes([signature])
+      goto_vote(e,character,[], signature);
+  } else {
+      alert('Sorry, only admins can reset votes')
+  }
+}
 
 
   return (
     <div className="App">
-      <Context.Provider value= {{adminName, carouselIndex, setCarouselIndex,startPosition, setStartPosition, startPositionF, setStartPositionF, votedList, totalCharacters, setTotalCharacters,reloadedLocal,setReloadedLocal, reloadedBase, setReloadedBase, signature,setSignature, goto_vote}}>
+      <Context.Provider value= {{adminName, votedList, totalCharacters, setTotalCharacters, signature,setSignature, update_character, reset_votes}}>
         <Router>
           <Main path="/" />
           <Add path="/add" />
@@ -60,8 +69,7 @@ const goto_vote =(e,character,votes) =>{
           <View path = '/view/:id/:rank/' />
         </Router>
       </Context.Provider>
-  
-      </div>
+    </div>
   );
 }
 

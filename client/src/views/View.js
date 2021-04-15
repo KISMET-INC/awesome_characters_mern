@@ -40,27 +40,16 @@ const View = props => {
         },[props.id])
         
 
-        const update_character = (e,signature,character)=> {
-            e.preventDefault()
-            if ( !context.votedList.hasOwnProperty(character.charName) ) {
-                
-                setVotes([context.signature,...character.votes])
-                context.goto_vote(e,character,character.votes)
-                context.setStartPositionF(rank-1)
-            } else {
-                alert(`You've already voted for ${character.charName}`)
-            }
+        const root_update_character = (e)=> {
+            context.update_character(e,character,setVotes)
         }
 
-    const reset_votes = (e)=> {
-        e.preventDefault()
-        if (context.signature === context.adminName){
-            setVotes([context.signature])
-            context.goto_vote(e,character,[], context.signature);
-        } else {
-            alert('Sorry, only admins can reset votes')
+        const root_reset_votes = (e)=> {
+            context.resetvotes(e,character,setVotes)
         }
-    }
+
+
+
 
 
 
@@ -87,7 +76,8 @@ const View = props => {
                     character={character} 
                     location ={location} 
                     rank= {rank} 
-                    update_character ={update_character} reset_votes={reset_votes} 
+                    root_update_character ={root_update_character} 
+                    root_reset_votes={root_reset_votes} 
                     />
                 }
                 

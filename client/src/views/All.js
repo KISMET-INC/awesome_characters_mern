@@ -28,17 +28,7 @@ const All = props => {
                     sorted_list[i] = char
                 })
 
-                // const nameList = sorted_list.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()))
-                // const titleList = sorted_list.filter(e => !nameList.includes(e)).filter(c => c.title.toLowerCase().includes(search.toLowerCase()))
-                // const yearList = sorted_list.filter(e => !nameList.includes(e) && !titleList.includes(e)).filter(c => c.year.toString().includes(search))
-                
-                const newList = sorted_list.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()) ||  c.title.toLowerCase().includes(search.toLowerCase()) || c.year.toString().includes(search));
-
-
-                
-                ///const newList = nameList.concat(titleList).concat(yearList)
-                setCharacterList(newList)
-
+                setCharacterList(sorted_list)
                 setRankTable(ranks)
                 setListLoaded(true)
 
@@ -67,7 +57,7 @@ const All = props => {
                 
                 <section className = 'results flex'>
                     {
-                        listLoaded && search!== "" && characterList.map((char,i)=>
+                        listLoaded && search!== "" && characterList.filter(c => c.charName.toLowerCase().includes(search.toLowerCase()) ||  c.title.toLowerCase().includes(search.toLowerCase()) || c.year.toString().includes(search)).map((char,i)=>
 
                         <ScrollAnimation key = {i} 
                         animatePreScroll ={false}

@@ -10,40 +10,17 @@ import BasicInfo from './BasicInfo';
 import '../static/css/Feature.css';
 
 
-const Feature = ({character, location, rank, update_character, reset_votes, resultNum}) => {
+const Feature = ({character, location, rank, root_update_character, root_reset_votes, resultNum}) => {
 const context = useContext(Context)
 const [votes, setVotes] = useState(character.votes)
-const [voted, setVoted] = useState(false)
 
 
-
-
-
-const local_update_character = (e,signature,character)=> {
-    e.preventDefault()
-    if ( !context.votedList.hasOwnProperty(character.charName) ) {
-        
-        setVotes([context.signature,...character.votes])
-        context.goto_vote(e,character,character.votes)
-        setVoted(true)
-        context.setStartPositionF(rank-1)
-    } else {
-        alert(`You've already voted for ${character.charName}`)
-    }
+const feature_update_character = (e)=> {
+    context.update_character(e,character,setVotes)
 }
 
-
-
-const local_reset_votes = (e)=> {
-    e.preventDefault()
-    if (context.signature === context.adminName){
-        setVotes([context.signature])
-        context.setStartPositionF(rank-1)
-        context.goto_vote(e,character,[]);
-    } else {
-        alert("Sorry, only admins are allowed to reset votes")
-    }
-
+const feature_reset_votes = (e)=> {
+    context.reset_votes(e,character,setVotes)
 }
 
 const goto_view =()=> {
@@ -57,7 +34,6 @@ const goto_edit =()=> {
 const featureOptionsPkg = {
     rank: rank,
     character: character,
-    votes: character.votes,
     location : location,
     goto_view: goto_view,
     goto_edit: goto_edit,
@@ -68,11 +44,13 @@ const featureOptionsPkg = {
 return(
 
     <div id = 'Feature' className = "feature_post flex">
-        <FeatureImage reset_votes = {reset_votes} update_character = {update_character} pkg ={featureOptionsPkg} />
+        <FeatureImage update_character= {root_update_character} reset_votes = {root_reset_votes} pkg ={featureOptionsPkg} />
         <div id = 'info'>
+
+        
             <div className = 'flex'>
                 <BasicInfo character = {character} />
-                <FeatureOptions voted ={voted} voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {local_reset_votes} update_character = {local_update_character} pkg = {featureOptionsPkg} />
+                <FeatureOptions voteLabel= "Vote" resetLabel ="Reset Votes"  reset_votes = {feature_reset_votes} update_character = {feature_update_character} pkg = {featureOptionsPkg} />
             </div>
                 
                 <VotesMapper votes = {votes} resultNum = {resultNum} />
